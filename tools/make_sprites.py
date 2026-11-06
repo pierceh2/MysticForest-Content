@@ -37,6 +37,8 @@ PALETTE = {k: rgb(v) for k, v in {
     "R": "#5f8590", "S": "#486a75", "T": "#34515c",
     # warm glow
     "G": "#f4c85e", "H": "#c98a3a",
+    # pond water, lily flower
+    "W": "#4a9aa3", "X": "#33788a", "Y": "#245c72", "Q": "#a9d9d8", "P": "#d98aa6",
 }.items()}
 
 OAK = "12345"
@@ -273,12 +275,62 @@ def make_shrine():
     return g
 
 
+def make_pond():
+    g = Grid(64, 96)
+    # rim sides (earth), then the grassy top
+    g.paint(polygon([(2, 77), (32, 92), (32, 95), (2, 80)]), lambda x, y: "u" if noise(x, y) % 6 else "v")
+    g.paint(polygon([(32, 92), (62, 77), (62, 80), (32, 95)]), lambda x, y: "v" if noise(x, y) % 6 else "u")
+
+    def grass(x, y):
+        n = noise(x, y)
+        return OAK[0] if n % 9 == 0 else OAK[2] if n % 7 == 0 else OAK[1]
+    g.paint(polygon([(32, 62), (62, 77), (32, 92), (2, 77)]), grass)
+    # inner earth wall, then the water (shifted down so the back wall shows)
+    inner = polygon([(32, 65.5), (55, 77), (32, 88.5), (9, 77)])
+    g.paint(inner, lambda x, y: "v")
+
+    def water(x, y):
+        s = ((x + 0.5 - 32) + (y + 0.5 - 79)) / 40.0
+        tone = "W" if s < -0.22 else "X" if s < 0.12 else "Y"
+        n = noise(x, y)
+        if n % 31 == 0 and s < 0.1:
+            return "Q"
+        if n % 19 == 0 and tone == "X":
+            return "W"
+        return tone
+    shifted = polygon([(32, 67.5), (55, 79), (32, 90.5), (9, 79)])
+    g.paint(lambda x, y: inner(x, y) and shifted(x, y), water)
+    # lily pads, one with a flower
+    for cx, cy, rx, ry in ((26, 80, 4.2, 2.2), (38, 82, 3.8, 1.9), (44, 76, 3.2, 1.6)):
+        g.paint(ellipse(cx, cy, rx, ry), lambda x, y, cx=cx: OAK[2] if x < cx + 1 else OAK[3])
+        g.put(int(cx) + 2, int(cy), "W")  # the notch
+    for dx, dy in ((0, 0), (1, 0), (0, -1), (1, -1)):
+        g.put(37 + dx, 81 + dy, "P")
+    g.put(37, 81, "G")
+    # rocks on the rim
+    for cx, cy, rx, ry in ((58, 77, 3.4, 2.2), (7, 79, 2.8, 1.8)):
+        g.paint(ellipse(cx, cy, rx, ry), lambda x, y, cx=cx, cy=cy: "B" if (x - cx) + (y - cy) < 0 else "C")
+    # reeds with cattail heads, back right and back left
+    for x, base, h, tail in ((46, 73, 20, True), (48, 72, 24, True), (50, 73, 17, False),
+                             (52, 74, 21, True), (14, 73, 13, True), (17, 73, 16, False), (19, 74, 11, True)):
+        for i in range(h):
+            g.put(x + (1 if i > h - 5 and x > 30 else 0), base - i, OAK[3] if i % 4 else OAK[2])
+        if tail:
+            tx = x + (1 if x > 30 else 0)
+            for i in range(4):
+                g.put(tx, base - h - i, "u")
+                g.put(tx + 1, base - h - i, "v")
+    g.outline()
+    return g
+
+
 SPRITES = {
     "oak": make_oak,
     "pine": make_pine,
     "birch": make_birch,
     "willow": make_willow,
     "shrine": make_shrine,
+    "pond": make_pond,
 }
 
 

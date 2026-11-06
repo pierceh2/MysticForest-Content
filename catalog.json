@@ -15,6 +15,8 @@
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1 },
+    { "key": "pond", "name": "Lily Pond", "description": "A quiet pond where lily pads drift and the sky looks back.",
       "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1 }
   ]
 }
