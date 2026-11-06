@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "packs": [
+    { "key": "default8bit", "name": "Default 8-bit" }
+  ],
+  "trees": [],
+  "landmarks": []
+}
