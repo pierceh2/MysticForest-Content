@@ -3,6 +3,18 @@
   "packs": [
     { "key": "default8bit", "name": "Default 8-bit" }
   ],
-  "trees": [],
-  "landmarks": []
+  "trees": [
+    { "key": "oak", "name": "Oak", "description": "A sturdy old oak that has seen a hundred winters.",
+      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1 },
+    { "key": "pine", "name": "Pine", "description": "A tall evergreen that stays green all year.",
+      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1 },
+    { "key": "birch", "name": "Birch", "description": "A slender tree with pale, papery bark.",
+      "tokenPrice": 3, "startsUnlocked": false, "enabled": true, "spriteRevision": 1 },
+    { "key": "willow", "name": "Willow", "description": "Its long branches trail like green rain.",
+      "tokenPrice": 5, "startsUnlocked": false, "enabled": true, "spriteRevision": 1 }
+  ],
+  "landmarks": [
+    { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1 }
+  ]
 }
