@@ -22,6 +22,7 @@ BIOME_FIELDS = {"month", "key", "name", *GROUND_FIELDS}
 KEY_PATTERN = re.compile(r"[a-z][a-z0-9_]*")
 COLOR_PATTERN = re.compile(r"#[0-9A-Fa-f]{6}")
 SEASON_DATE_PATTERN = re.compile(r"(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
+DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # February allows 29
 errors = []
 
 def error(message):
@@ -101,7 +102,11 @@ def main():
             else:
                 for field in ("start", "end"):
                     value = season[field]
-                    if not isinstance(value, str) or not SEASON_DATE_PATTERN.fullmatch(value):
+                    if (
+                        not isinstance(value, str)
+                        or not SEASON_DATE_PATTERN.fullmatch(value)
+                        or int(value[3:]) > DAYS_IN_MONTH[int(value[:2]) - 1]
+                    ):
                         error(f"{label}: season {field} must be a real MM-DD date")
         ground = pack.get("ground")
         if "ground" in pack:

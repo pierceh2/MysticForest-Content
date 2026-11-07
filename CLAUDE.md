@@ -15,6 +15,24 @@ Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled"
 
 Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`
 
+| Field | Rules |
+| --- | --- |
+| `key` | Lowercase letters, digits and underscores, starting with a letter (`^[a-z][a-z0-9_]*$`). Unique across trees and landmarks. Permanent: saved forests on my phone refer to it. |
+| `name` | Short display name, up to 24 characters. |
+| `description` | One sentence, up to 120 characters. Warm and plain, no markdown. |
+| `tokenPrice` | Whole number of Forest tokens, never coins. A tree's price is a one-time unlock (0 only when `startsUnlocked` is true). A landmark's price is paid each time one is placed (at least 1). |
+| `startsUnlocked` | Trees only. True means owned from the start. |
+| `footprint` | Landmarks only. `[width, height]` in tiles. Only `[2, 2]` is supported right now. Ask me before using another size. |
+| `enabled` | False hides the item from the inventory, but old forests still draw it. |
+| `spriteRevision` | Whole number starting at 1. Increase it by 1 whenever the item's PNG changes, because the app only re-downloads art when this changes. |
+
+Rules:
+- Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.
+- Never change a `footprint` once published.
+- Do not add fields that are not listed here. The app ignores unknown fields, so an extra field does nothing and only confuses the file. Growth stages and coin prices are left out on purpose.
+- Prices are placeholders that I tune. Do not change a price unless I ask.
+- Keep the file valid UTF-8 JSON with a two-space indent.
+
 ### Packs in catalog.json
 
 `packs` is a list. The first entry is always the default pack, as it is now. Other packs are seasonal or holiday looks. A day is drawn in one pack. The app falls back to the default pack's sprite for any item a pack doesn't have, so a pack may cover only some items.
@@ -42,24 +60,6 @@ Rules for packs:
 ### Monthly ground colours (optional)
 
 `biomes` is an optional list that overrides the app's built-in ground colours for a month: `{ "month": 1-12, "key", "name", "grassLight", "grassDark", "margin", "soilLeft", "soilRight" }`, colours as `#RRGGBB`. Every field except `month` is optional. **Leave `biomes` out unless I ask**: the app's built-in colours blend smoothly round the year and are what I want unless I say otherwise.
-
-| Field | Rules |
-| --- | --- |
-| `key` | Lowercase letters, digits and underscores, starting with a letter (`^[a-z][a-z0-9_]*$`). Unique across trees and landmarks. Permanent: saved forests on my phone refer to it. |
-| `name` | Short display name, up to 24 characters. |
-| `description` | One sentence, up to 120 characters. Warm and plain, no markdown. |
-| `tokenPrice` | Whole number of Forest tokens, never coins. A tree's price is a one-time unlock (0 only when `startsUnlocked` is true). A landmark's price is paid each time one is placed (at least 1). |
-| `startsUnlocked` | Trees only. True means owned from the start. |
-| `footprint` | Landmarks only. `[width, height]` in tiles. Only `[2, 2]` is supported right now. Ask me before using another size. |
-| `enabled` | False hides the item from the inventory, but old forests still draw it. |
-| `spriteRevision` | Whole number starting at 1. Increase it by 1 whenever the item's PNG changes, because the app only re-downloads art when this changes. |
-
-Rules:
-- Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.
-- Never change a `footprint` once published.
-- Do not add fields that are not listed here. The app ignores unknown fields, so an extra field does nothing and only confuses the file. Growth stages and coin prices are left out on purpose.
-- Prices are placeholders that I tune. Do not change a price unless I ask.
-- Keep the file valid UTF-8 JSON with a two-space indent.
 
 ## Sprite format (every PNG)
 | Item | Canvas size in pixels |
