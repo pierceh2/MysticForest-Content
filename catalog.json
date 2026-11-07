@@ -1,7 +1,24 @@
 {
   "version": 1,
   "packs": [
-    { "key": "default8bit", "name": "Default 8-bit", "tokenPrice": 0 }
+    { "key": "default8bit", "name": "Default 8-bit", "tokenPrice": 0 },
+    {
+      "key": "fall",
+      "name": "Autumn Leaves",
+      "description": "Gold and amber leaves drift down over every tree and stone.",
+      "kind": "seasonal",
+      "season": { "start": "10-01", "end": "12-01" },
+      "tokenPrice": 10,
+      "enabled": true,
+      "revision": 1,
+      "ground": {
+        "grassLight": "#9E8538",
+        "grassDark": "#8A6E2E",
+        "margin": "#705726",
+        "soilLeft": "#613D1F",
+        "soilRight": "#4A2E17"
+      }
+    }
   ],
   "trees": [
     { "key": "oak", "name": "Oak", "description": "A sturdy old oak that has seen a hundred winters.",
