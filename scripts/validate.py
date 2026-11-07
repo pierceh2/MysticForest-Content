@@ -13,6 +13,15 @@ FIELDS = {
     "trees": {"key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision"},
     "landmarks": {"key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision"},
 }
+PACK_FIELDS = {
+    "key", "name", "description", "kind", "season", "tokenPrice",
+    "buyOnlyInSeason", "enabled", "revision", "ground",
+}
+GROUND_FIELDS = {"grassLight", "grassDark", "margin", "soilLeft", "soilRight"}
+BIOME_FIELDS = {"month", "key", "name", *GROUND_FIELDS}
+KEY_PATTERN = re.compile(r"[a-z][a-z0-9_]*")
+COLOR_PATTERN = re.compile(r"#[0-9A-Fa-f]{6}")
+SEASON_DATE_PATTERN = re.compile(r"(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
 errors = []
 
 def error(message):
@@ -41,8 +50,8 @@ def main():
     if not isinstance(catalog, dict):
         print("catalog.json: top level must be an object", file=sys.stderr)
         return 1
-    if set(catalog) != {"version", "packs", "trees", "landmarks"}:
-        error("catalog.json: top level must contain only version, packs, trees and landmarks")
+    if set(catalog) - {"version", "packs", "trees", "landmarks", "biomes"} or not {"version", "packs", "trees", "landmarks"}.issubset(catalog):
+        error("catalog.json: top level must contain version, packs, trees and landmarks, and may contain biomes")
     if type(catalog.get("version")) is not int or catalog["version"] != 1:
         error("catalog.json: version must be 1")
     packs = catalog.get("packs")
@@ -50,15 +59,98 @@ def main():
     if not isinstance(packs, list):
         error("catalog.json: packs must be a list")
         packs = []
+    elif not packs:
+        error("catalog.json: packs must start with default8bit")
     for index, pack in enumerate(packs):
-        if not isinstance(pack, dict) or set(pack) != {"key", "name"} or not all(isinstance(pack.get(field), str) and pack[field].strip() for field in ("key", "name")):
-            error(f"packs[{index}]: must contain non-empty string key and name only")
-        elif pack["key"] in pack_keys:
-            error(f"packs[{index}]: duplicate key {pack['key']}")
+        label = f"packs[{index}]"
+        if not isinstance(pack, dict):
+            error(f"{label}: pack must be an object")
+            continue
+        if set(pack) - PACK_FIELDS or not {"key", "name", "tokenPrice"}.issubset(pack):
+            error(f"{label}: fields do not match the pack schema")
+        key = pack.get("key")
+        if not isinstance(key, str) or not KEY_PATTERN.fullmatch(key):
+            error(f"{label}: key must match [a-z][a-z0-9_]*")
+        elif key in pack_keys:
+            error(f"{label}: duplicate key {key}")
         else:
-            pack_keys.add(pack["key"])
-    if "default8bit" not in pack_keys:
-        error("catalog.json: packs must include default8bit")
+            pack_keys.add(key)
+        if index == 0 and key != "default8bit":
+            error("catalog.json: the first pack must have key default8bit")
+        name = pack.get("name")
+        if not isinstance(name, str) or not name.strip() or len(name) > 24:
+            error(f"{label}: name must be 1 to 24 characters")
+        description = pack.get("description")
+        if "description" in pack and (not isinstance(description, str) or len(description) > 120):
+            error(f"{label}: description must be at most 120 characters")
+        if "kind" in pack and not isinstance(pack["kind"], str):
+            error(f"{label}: kind must be text")
+        price = pack.get("tokenPrice")
+        if type(price) is not int or price < 0:
+            error(f"{label}: tokenPrice must be a whole number of at least 0")
+        revision = pack.get("revision", 0)
+        if type(revision) is not int or revision < 0:
+            error(f"{label}: revision must be a whole number of at least 0")
+        for field in ("enabled", "buyOnlyInSeason"):
+            if field in pack and type(pack[field]) is not bool:
+                error(f"{label}: {field} must be a boolean")
+        if "season" in pack:
+            season = pack["season"]
+            if not isinstance(season, dict) or set(season) != {"start", "end"}:
+                error(f"{label}: season must contain start and end")
+            else:
+                for field in ("start", "end"):
+                    value = season[field]
+                    if not isinstance(value, str) or not SEASON_DATE_PATTERN.fullmatch(value):
+                        error(f"{label}: season {field} must be a real MM-DD date")
+        ground = pack.get("ground")
+        if "ground" in pack:
+            if not isinstance(ground, dict) or set(ground) - GROUND_FIELDS:
+                error(f"{label}: ground must contain only supported colour fields")
+            else:
+                for field, value in ground.items():
+                    if not isinstance(value, str) or not COLOR_PATTERN.fullmatch(value):
+                        error(f"{label}: ground {field} must be a #RRGGBB colour")
+
+    earlier = previous_catalog()
+    if isinstance(earlier, dict):
+        old_packs = earlier.get("packs", [])
+        if isinstance(old_packs, list):
+            current_pack_keys = {
+                pack["key"] for pack in packs
+                if isinstance(pack, dict) and isinstance(pack.get("key"), str)
+            }
+            for pack in old_packs:
+                if isinstance(pack, dict) and isinstance(pack.get("key"), str) and pack["key"] not in current_pack_keys:
+                    error(f"catalog.json: previously published pack key {pack['key']} was removed")
+
+    biomes = catalog.get("biomes")
+    if "biomes" in catalog:
+        if not isinstance(biomes, list):
+            error("catalog.json: biomes must be a list")
+        else:
+            biome_months = set()
+            for index, biome in enumerate(biomes):
+                label = f"biomes[{index}]"
+                if not isinstance(biome, dict):
+                    error(f"{label}: biome must be an object")
+                    continue
+                if set(biome) - BIOME_FIELDS or "month" not in biome:
+                    error(f"{label}: fields do not match the biome schema")
+                month = biome.get("month")
+                if type(month) is not int or not 1 <= month <= 12:
+                    error(f"{label}: month must be a whole number from 1 to 12")
+                elif month in biome_months:
+                    error(f"{label}: month {month} is repeated")
+                else:
+                    biome_months.add(month)
+                for field in GROUND_FIELDS & biome.keys():
+                    value = biome[field]
+                    if not isinstance(value, str) or not COLOR_PATTERN.fullmatch(value):
+                        error(f"{label}: {field} must be a #RRGGBB colour")
+
+    if not packs or not isinstance(packs[0], dict) or packs[0].get("key") != "default8bit":
+        error("catalog.json: packs must be a list whose first entry has key default8bit")
     items = {}
     for collection, fields in FIELDS.items():
         entries = catalog.get(collection)
@@ -73,7 +165,7 @@ def main():
             if set(item) != fields:
                 error(f"{label}: fields do not match the {collection[:-1]} schema")
             key = item.get("key")
-            if not isinstance(key, str) or not re.fullmatch(r"[a-z][a-z0-9_]*", key):
+            if not isinstance(key, str) or not KEY_PATTERN.fullmatch(key):
                 error(f"{label}: key must match [a-z][a-z0-9_]*")
                 key = f"invalid_{collection}_{index}"
             if key in items:
@@ -105,6 +197,10 @@ def main():
             if item.get("enabled") is True and not (SPRITES / "default8bit" / f"{key}.png").is_file():
                 error(f"enabled item {key}: missing sprites/default8bit/{key}.png")
 
+    if SPRITES.exists():
+        for directory in SPRITES.iterdir():
+            if directory.is_dir() and directory.name not in pack_keys:
+                error(f"{directory.relative_to(ROOT)}: pack is not listed in catalog.json")
     for path in SPRITES.rglob("*.png") if SPRITES.exists() else []:
         relative = path.relative_to(SPRITES)
         if len(relative.parts) != 2 or path.stem not in items:
@@ -132,7 +228,6 @@ def main():
                     error(f"{path.relative_to(ROOT)}: opaque pixel touches left or right edge")
         except OSError as exc:
             error(f"{path.relative_to(ROOT)}: cannot read PNG ({exc})")
-    earlier = previous_catalog()
     if isinstance(earlier, dict):
         old_items = {item.get("key"): item for kind in FIELDS for item in earlier.get(kind, []) if isinstance(item, dict)}
         for key, old in old_items.items():

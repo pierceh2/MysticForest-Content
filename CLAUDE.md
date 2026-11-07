@@ -9,11 +9,39 @@ The Mystic Forest tab of my iOS app reads this repo (read-only) from raw.githubu
 - `tools/make_sprites.py`: draws sprites in code. Optional for new items.
 
 ## catalog.json
-Top level: `version` (always 1), `packs`, `trees`, `landmarks`.
+Top level: `version` (always 1), `packs`, `trees`, `landmarks`, and optional `biomes`.
 
 Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision" }`
 
 Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`
+
+### Packs in catalog.json
+
+`packs` is a list. The first entry is always the default pack, as it is now. Other packs are seasonal or holiday looks. A day is drawn in one pack. The app falls back to the default pack's sprite for any item a pack doesn't have, so a pack may cover only some items.
+
+| Field | Rules |
+| --- | --- |
+| `key` | Lowercase letters, digits and underscores (`^[a-z][a-z0-9_]*$`). Unique among packs. **Permanent**, like item keys. It is also the folder name `sprites/<key>/`. |
+| `name` | Display name, up to 24 characters. |
+| `description` | One warm sentence, up to 120 characters. Optional. |
+| `kind` | Optional text such as `seasonal` or `holiday`. For information only. |
+| `season` | Optional window the pack is "in season", as `{ "start": "MM-DD", "end": "MM-DD" }`. It repeats every year and may run over the new year (`"12-01"` to `"02-28"`). A pack with no `season` is always in season. |
+| `tokenPrice` | Whole number of Forest tokens to unlock it once. Much larger than a tree. A placeholder I tune. |
+| `buyOnlyInSeason` | Optional, default `true`. When true the pack can only be bought while its `season` is open. Once bought it stays owned for good. |
+| `enabled` | False hides it from the shop. Days already in it still draw it. |
+| `revision` | Whole number, default 0. **Increase it by 1 whenever any of the pack's art changes**, because the app only downloads a pack's sprites again when this goes up. (An item's own `spriteRevision` still covers changes to the default pack's sprite.) |
+| `ground` | Optional colours `{ "grassLight", "grassDark", "margin", "soilLeft", "soilRight" }` as `#RRGGBB`. They replace the month's ground colours for days in this pack. Any left out keep the month's. |
+
+Rules for packs:
+- Never delete a pack, rename its key, or reuse a key. To retire one set `"enabled": false` and keep its folder.
+- Pack art uses exactly the same sprite format as the default pack (sizes, anchor, transparency, hard pixels). A reskinned item must keep its silhouette's footprint and foot position so it sits on the ground the same way.
+- A non-default pack folder may be missing sprites. The **default pack must still have a sprite for every enabled item**.
+- A season written wrongly (not `MM-DD`) means the pack never opens, so check every window.
+- Do not add a pack, or change a pack's price, window or colours, unless asked.
+
+### Monthly ground colours (optional)
+
+`biomes` is an optional list that overrides the app's built-in ground colours for a month: `{ "month": 1-12, "key", "name", "grassLight", "grassDark", "margin", "soilLeft", "soilRight" }`, colours as `#RRGGBB`. Every field except `month` is optional. **Leave `biomes` out unless I ask**: the app's built-in colours blend smoothly round the year and are what I want unless I say otherwise.
 
 | Field | Rules |
 | --- | --- |
@@ -45,7 +73,7 @@ Rules:
 - Do not draw the ground tile into the sprite. A soft shadow of up to 2 rows right under a tree's foot is fine.
 - Nothing may touch the left, right or top edge of the canvas.
 - Style: 8-bit pixel art, a 1-pixel dark outline, light from the top left, at most 16 colours per sprite. Forest greens and browns, slightly darker than a bright cartoon (the app has a dark theme). Each species must be recognisable by silhouette alone at this size.
-- Later, not now: monthly ground tiles `sprites/<pack>/ground/<biome>.png` (32x16). Extra art packs are more folders beside `default8bit`; a pack that lacks an item falls back to `default8bit`.
+- Extra art packs are more folders beside `default8bit`; a pack that lacks an item falls back to `default8bit`.
 
 ## Workflow for any change
 1. Read this file.

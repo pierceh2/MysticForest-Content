@@ -1,7 +1,7 @@
 {
   "version": 1,
   "packs": [
-    { "key": "default8bit", "name": "Default 8-bit" }
+    { "key": "default8bit", "name": "Default 8-bit", "tokenPrice": 0 }
   ],
   "trees": [
     { "key": "oak", "name": "Oak", "description": "A sturdy old oak that has seen a hundred winters.",
