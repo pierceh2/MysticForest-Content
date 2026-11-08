@@ -9,6 +9,7 @@
       "kind": "seasonal",
       "season": "autumn",
       "window": { "start": "10-01", "end": "12-01" },
+      "tags": ["cosy", "leaves"],
       "tokenPrice": 10,
       "enabled": true,
       "revision": 1,
@@ -23,18 +24,24 @@
   ],
   "trees": [
     { "key": "oak", "name": "Oak", "description": "A sturdy old oak that has seen a hundred winters.",
-      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1 },
+      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1,
+      "tags": ["deciduous", "classic"] },
     { "key": "pine", "name": "Pine", "description": "A tall evergreen that stays green all year.",
-      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1 },
+      "tokenPrice": 0, "startsUnlocked": true, "enabled": true, "spriteRevision": 1,
+      "tags": ["evergreen", "conifer"] },
     { "key": "birch", "name": "Birch", "description": "A slender tree with pale, papery bark.",
-      "tokenPrice": 3, "startsUnlocked": false, "enabled": true, "spriteRevision": 1 },
+      "tokenPrice": 3, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["deciduous", "slender"] },
     { "key": "willow", "name": "Willow", "description": "Its long branches trail like green rain.",
-      "tokenPrice": 5, "startsUnlocked": false, "enabled": true, "spriteRevision": 1 }
+      "tokenPrice": 5, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["deciduous", "waterside"] }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
-      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1 },
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
+      "tags": ["stone", "mossy"] },
     { "key": "pond", "name": "Lily Pond", "description": "A quiet pond where lily pads drift and the sky looks back.",
-      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1 }
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
+      "tags": ["water", "waterside"] }
   ]
 }
