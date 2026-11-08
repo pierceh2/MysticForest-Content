@@ -11,16 +11,18 @@ The Mystic Forest tab of my iOS app reads this repo (read-only) from raw.githubu
 ## catalog.json
 Top level: `version` (always 1), `packs`, `trees`, `landmarks`, and optional `biomes`.
 
-Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision" }`
+Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision" }`, optionally `storePrice` and `plantPrice`.
 
-Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`
+Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`, optionally `storePrice` and `plantPrice`.
 
 | Field | Rules |
 | --- | --- |
 | `key` | Lowercase letters, digits and underscores, starting with a letter (`^[a-z][a-z0-9_]*$`). Unique across trees and landmarks. Permanent: saved forests on my phone refer to it. |
 | `name` | Short display name, up to 24 characters. |
 | `description` | One sentence, up to 120 characters. Warm and plain, no markdown. |
-| `tokenPrice` | Whole number of Forest tokens, never coins. A tree's price is a one-time unlock (0 only when `startsUnlocked` is true). A landmark's price is paid each time one is placed (at least 1). |
+| `tokenPrice` | Required whole number of Forest tokens, never coins. Keep this field even when `storePrice` or `plantPrice` is present. For trees, it is the default store price; for landmarks, it is the default plant price. A tree's `tokenPrice` is 0 only when `startsUnlocked` is true. |
+| `storePrice` | Optional nonnegative whole number of Forest tokens to buy the item from the store once. Defaults to a tree's `tokenPrice` or 8 for a landmark. |
+| `plantPrice` | Optional nonnegative whole number of Forest tokens each time the item is placed. Defaults to 1 for a tree or a landmark's `tokenPrice`. |
 | `startsUnlocked` | Trees only. True means owned from the start. |
 | `footprint` | Landmarks only. `[width, height]` in tiles. Only `[2, 2]` is supported right now. Ask me before using another size. |
 | `enabled` | False hides the item from the inventory, but old forests still draw it. |
@@ -99,13 +101,13 @@ changes.json
 sprites/<pack>/<key>.png
 ```
 
-`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. `add` and `edit` entries may include `season` and `tags`. The delivery agent does not set revision numbers.
+`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. `add` and `edit` entries may include `season`, `tags`, `storePrice` and `plantPrice`. The delivery agent does not set revision numbers.
 
-The sprite agent may include optional item `season` and `tags` fields in deliveries. Tags are lowercase browsing labels, such as `halloween`, `cosy` or `stone`. Use them when a request names them or an item clearly belongs to a season, and list the choices in the README under "Decisions for the owner".
+The sprite agent may include optional item `season`, `tags`, `storePrice` and `plantPrice` fields in deliveries. Tags are lowercase browsing labels, such as `halloween`, `cosy` or `stone`. Use them when a request names them or an item clearly belongs to a season, and list the choices in the README under "Decisions for the owner".
 
 Apply a delivery in this order:
 
-1. Read the delivery's `README.md` and `changes.json` completely. If they conflict with these rules, stop and ask before changing anything. This includes a reused or removed key, a changed footprint, a footprint other than `[2, 2]`, a pack `season` that is not a valid id, an extra field, a changed price or `startsUnlocked` value on an existing item, or the season spelled "fall".
+1. Read the delivery's `README.md` and `changes.json` completely. If they conflict with these rules, stop and ask before changing anything. This includes a reused or removed key, a changed footprint, a footprint other than `[2, 2]`, a pack `season` that is not a valid id, an unlisted field, a changed price or `startsUnlocked` value on an existing item, or the season spelled "fall".
 2. Copy each listed PNG from the delivery's `sprites/<pack>/<key>.png` to the same path in this repo. Replace an existing PNG only when it is listed in `spritesChanged`. An unlisted PNG is a delivery mistake; ask before proceeding.
 3. Merge `changes.json` into `catalog.json` without reformatting unrelated content:
    - Append each `add` entry to its matching section. If a key already exists anywhere, stop and ask.

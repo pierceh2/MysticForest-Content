@@ -14,7 +14,7 @@ FIELDS = {
     "trees": {"key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision"},
     "landmarks": {"key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision"},
 }
-OPTIONAL_ITEM_FIELDS = {"season", "tags"}
+OPTIONAL_ITEM_FIELDS = {"season", "tags", "storePrice", "plantPrice"}
 PACK_FIELDS = {
     "key", "name", "description", "kind", "season", "window", "tags", "tokenPrice",
     "buyOnlyInSeason", "enabled", "revision", "ground",
@@ -234,6 +234,9 @@ def main():
             price = item.get("tokenPrice")
             if type(price) is not int or price < (0 if collection == "trees" else 1):
                 error(f"{key}: tokenPrice must be a whole number and valid for this item type")
+            for field in ("storePrice", "plantPrice"):
+                if field in item and (type(item[field]) is not int or item[field] < 0):
+                    error(f"{key}: {field} must be a whole number of at least 0")
             if collection == "trees":
                 unlocked = item.get("startsUnlocked")
                 if type(unlocked) is not bool:
