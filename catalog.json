@@ -12,7 +12,7 @@
       "tags": ["cosy", "leaves"],
       "tokenPrice": 10,
       "enabled": true,
-      "revision": 1,
+      "revision": 2,
       "ground": {
         "grassLight": "#9E8538",
         "grassDark": "#8A6E2E",
@@ -46,7 +46,19 @@
     { "key": "scarecrow", "name": "Scarecrow",
       "description": "A patched, straw-stuffed scarecrow keeping a cheerful watch over the harvest.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["halloween"] }
+      "season": "autumn", "tags": ["halloween"] },
+    { "key": "larch", "name": "Larch",
+      "description": "A feathery conifer that turns to gold and lets its needles fall when the cold comes.",
+      "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["conifer"] },
+    { "key": "maple", "name": "Maple",
+      "description": "A tall maple with pointed leaves that blaze red when the days grow short.",
+      "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["deciduous"] },
+    { "key": "ginkgo", "name": "Ginkgo",
+      "description": "A fan-leafed ginkgo that glows lemon yellow and drops every leaf in a single night.",
+      "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["deciduous"] }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
