@@ -1,0 +1,31 @@
+{
+  "add": {
+    "packs": [
+      {
+        "key": "thanksgiving_feast",
+        "name": "Thanksgiving Feast",
+        "description": "Golden light, ribboned trees and baskets of fruit set the Forest for a harvest feast.",
+        "kind": "holiday",
+        "season": "thanksgiving",
+        "window": { "start": "11-15", "end": "11-30" },
+        "tags": ["autumn", "harvest", "cosy"],
+        "tokenPrice": 10,
+        "enabled": true,
+        "ground": {
+          "grassLight": "#A98240",
+          "grassDark": "#946E34",
+          "margin": "#775628",
+          "soilLeft": "#6A3A1E",
+          "soilRight": "#512C16"
+        }
+      }
+    ]
+  },
+  "spritesChanged": [
+    { "pack": "thanksgiving_feast", "key": "oak" },
+    { "pack": "thanksgiving_feast", "key": "maple" },
+    { "pack": "thanksgiving_feast", "key": "apple_tree" },
+    { "pack": "thanksgiving_feast", "key": "pumpkin" },
+    { "pack": "thanksgiving_feast", "key": "scarecrow" }
+  ]
+}

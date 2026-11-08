@@ -5,20 +5,26 @@
         "key": "apple_tree",
         "name": "Apple Tree",
         "description": "A gnarled apple tree heavy with red fruit, with a few windfalls waiting in the grass.",
-        "tokenPrice": 3,
+        "tokenPrice": 4,
         "startsUnlocked": false,
         "enabled": true,
-        "tags": ["fruit", "harvest"]
+        "tags": [
+          "fruit",
+          "harvest"
+        ]
       },
       {
         "key": "corn_stalks",
         "name": "Corn Stalks",
         "description": "A tied bundle of dry corn stalks, rustling softly where the harvest has been gathered.",
-        "tokenPrice": 3,
+        "tokenPrice": 4,
         "startsUnlocked": false,
         "enabled": true,
         "season": "autumn",
-        "tags": ["harvest", "thanksgiving"]
+        "tags": [
+          "harvest",
+          "thanksgiving"
+        ]
       }
     ],
     "landmarks": [
@@ -27,16 +33,31 @@
         "name": "Harvest Table",
         "description": "A long table laid with pie, bread and candlelight, waiting for everyone to sit down.",
         "tokenPrice": 4,
-        "footprint": [2, 2],
+        "footprint": [
+          2,
+          2
+        ],
         "enabled": true,
-        "season": "autumn",
-        "tags": ["thanksgiving", "harvest"]
+        "season": "thanksgiving",
+        "tags": [
+          "harvest",
+          "autumn"
+        ]
       }
     ]
   },
   "spritesChanged": [
-    { "pack": "default8bit", "key": "apple_tree" },
-    { "pack": "default8bit", "key": "corn_stalks" },
-    { "pack": "default8bit", "key": "harvest_table" }
+    {
+      "pack": "default8bit",
+      "key": "apple_tree"
+    },
+    {
+      "pack": "default8bit",
+      "key": "corn_stalks"
+    },
+    {
+      "pack": "default8bit",
+      "key": "harvest_table"
+    }
   ]
 }

@@ -1,6 +1,6 @@
 # Delivery 2026-11-08-thanksgiving-items
 
-Delivery 1 of 3 for the Thanksgiving work. It adds three new default-pack items. The `thanksgiving` pack itself (its entry, window, price, ground colours and the reskins) comes in the next deliveries, and will reskin these items too.
+Delivery 1 of 3 for the Thanksgiving work (revised: prices and season updated after the owner confirmed them). It adds three new default-pack items. The `thanksgiving` pack itself (its entry, window, price, ground colours and the reskins) comes in the next deliveries, and will reskin these items too.
 
 ## What's in it
 | Key | Name | Type | Look |
@@ -16,7 +16,8 @@ All three PNGs passed `check_sprite.py` (right size, hard alpha, nothing on the 
 The drawing code is `tools/make_thanksgiving_items.py`. It reuses `tools/make_sprites.py` and the palette in `tools/make_november.py`.
 
 ## Placeholders
-- **Prices are guesses; you gave none.** `tokenPrice` 3 for each tree and 4 for the landmark (the standard placeholders). With the default store and plant prices, the trees cost 3 to unlock and 1 to plant, and the table costs 8 to unlock and 4 to place. No `storePrice` or `plantPrice` is written.
+- **Tree prices are the owner's:** `tokenPrice` 4 for each new regular tree (apple tree and corn stalks). With the default store and plant prices, each costs 4 to unlock and 1 to plant.
+- **The landmark's price is a guess:** `tokenPrice` 4 for the harvest table (the standard landmark placeholder), so it costs 8 to unlock and 4 to place under the defaults. No `storePrice` or `plantPrice` is written.
 
 ## Weak spots
 - **Corn Stalks:** stylised. The thick golden stalks dominate, so at 1x it can read a little like wheat until you see the cobs.
@@ -24,7 +25,7 @@ The drawing code is `tools/make_thanksgiving_items.py`. It reuses `tools/make_sp
 - **Apple Tree:** the two windfall apples sit just outside the foot's diamond, near its right edge.
 
 ## Decisions for the owner
-- **Season and tags.** `corn_stalks` and `harvest_table` get `"season": "autumn"`, since they clearly belong to harvest time. The apple tree has no season, because it is a regular year-round tree. Tags: `fruit`, `harvest` (apple tree); `harvest`, `thanksgiving` (corn stalks); `thanksgiving`, `harvest` (table). All are my choices. Note that `thanksgiving` is used as a tag here; if you later make `thanksgiving` a season id, any of these items filed under it would be an item season, so tell me if you want that.
+- **Season and tags.** The harvest table is Thanksgiving-only, so it has `"season": "thanksgiving"` (the owner's new season id), and `autumn` is in its tags so it still shows when filtering by autumn: `["harvest", "autumn"]`. `thanksgiving` is not repeated in its tags. The corn stalks are a general harvest item, so they keep `"season": "autumn"` with tags `["harvest", "thanksgiving"]`; tell me if you would rather file them under `thanksgiving`. The apple tree is a regular year-round tree, with no season and tags `["fruit", "harvest"]`. All tags are my choices.
 - **Key naming.** `apple_tree` for the apple tree's key, since keys are permanent.
 - **Descriptions** are mine, one sentence each, in the voice of the existing ones.
 - **No pack in this delivery.** No `revision` changes are needed. The three new items start at `spriteRevision` 1.
