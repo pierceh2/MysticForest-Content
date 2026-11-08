@@ -1,0 +1,8 @@
+{
+  "spritesChanged": [
+    { "pack": "thanksgiving_feast", "key": "hay_bales" },
+    { "pack": "thanksgiving_feast", "key": "shrine" },
+    { "pack": "thanksgiving_feast", "key": "birch" },
+    { "pack": "thanksgiving_feast", "key": "pond" }
+  ]
+}

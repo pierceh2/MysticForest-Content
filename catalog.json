@@ -31,7 +31,7 @@
       "tags": ["autumn", "harvest", "cosy"],
       "tokenPrice": 10,
       "enabled": true,
-      "revision": 1,
+      "revision": 2,
       "ground": {
         "grassLight": "#A98240",
         "grassDark": "#946E34",
