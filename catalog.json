@@ -57,15 +57,18 @@
     { "key": "pumpkin", "name": "Pumpkin",
       "description": "A plump orange pumpkin warming itself in the last of the autumn sun.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["halloween", "pumpkin"] },
+      "season": "autumn", "tags": ["halloween", "pumpkin"],
+      "window": { "start": "10-01", "end": "12-01" } },
     { "key": "jack_o_lantern", "name": "Jack-o'-Lantern",
       "description": "A grinning pumpkin with a candle inside, keeping watch through the long autumn nights.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["halloween", "pumpkin"] },
+      "season": "autumn", "tags": ["halloween", "pumpkin"],
+      "window": { "start": "10-01", "end": "12-01" } },
     { "key": "scarecrow", "name": "Scarecrow",
       "description": "A patched, straw-stuffed scarecrow keeping a cheerful watch over the harvest.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["halloween"] },
+      "season": "autumn", "tags": ["halloween"],
+      "window": { "start": "10-01", "end": "12-01" } },
     { "key": "larch", "name": "Larch",
       "description": "A feathery conifer that turns to gold and lets its needles fall when the cold comes.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
@@ -81,11 +84,13 @@
     { "key": "apple_tree", "name": "Apple Tree",
       "description": "A gnarled apple tree heavy with red fruit, with a few windfalls waiting in the grass.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "tags": ["fruit", "harvest"] },
+      "tags": ["fruit", "harvest"],
+      "window": { "start": "11-15", "end": "11-30" } },
     { "key": "corn_stalks", "name": "Corn Stalks",
       "description": "A tied bundle of dry corn stalks, rustling softly where the harvest has been gathered.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["harvest", "thanksgiving"] }
+      "season": "autumn", "tags": ["harvest", "thanksgiving"],
+      "window": { "start": "11-15", "end": "11-30" } }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
@@ -97,10 +102,12 @@
     { "key": "hay_bales", "name": "Hay Bale Stack",
       "description": "A tall stack of golden hay bales, tied with twine and smelling of summer.",
       "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["harvest"] },
+      "season": "autumn", "tags": ["harvest"],
+      "window": { "start": "10-01", "end": "12-01" } },
     { "key": "harvest_table", "name": "Harvest Table",
       "description": "A long table laid with pie, bread and candlelight, waiting for everyone to sit down.",
       "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
-      "season": "thanksgiving", "tags": ["harvest", "autumn"] }
+      "season": "thanksgiving", "tags": ["harvest", "autumn"],
+      "window": { "start": "11-15", "end": "11-30" } }
   ]
 }
