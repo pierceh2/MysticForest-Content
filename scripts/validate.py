@@ -14,7 +14,7 @@ FIELDS = {
     "trees": {"key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision"},
     "landmarks": {"key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision"},
 }
-OPTIONAL_ITEM_FIELDS = {"season", "tags", "storePrice", "plantPrice"}
+OPTIONAL_ITEM_FIELDS = {"season", "tags", "storePrice", "plantPrice", "window"}
 PACK_FIELDS = {
     "key", "name", "description", "kind", "season", "window", "tags", "tokenPrice",
     "buyOnlyInSeason", "enabled", "revision", "ground",
@@ -222,6 +222,14 @@ def main():
                     error(f"{key}: season must be text matching [a-z][a-z0-9_]*")
                 elif season == "fall":
                     warnings.append(f"{key}: season id 'fall' should be 'autumn'")
+            if "window" in item:
+                window = item["window"]
+                if not isinstance(window, dict) or set(window) != {"start", "end"}:
+                    error(f"{key}: window must contain start and end")
+                else:
+                    for field in ("start", "end"):
+                        if not valid_window_date(window[field]):
+                            error(f"{key}: window {field} must be a real MM-DD date")
             validate_tags(key, item)
             for field, limit in (("name", 24), ("description", 120)):
                 value = item.get(field)

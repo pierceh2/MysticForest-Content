@@ -11,9 +11,9 @@ The Mystic Forest tab of my iOS app reads this repo (read-only) from raw.githubu
 ## catalog.json
 Top level: `version` (always 1), `packs`, `trees`, `landmarks`, and optional `biomes`.
 
-Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision" }`, optionally `storePrice` and `plantPrice`.
+Tree: `{ "key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision" }`, optionally `storePrice`, `plantPrice` and `window`.
 
-Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`, optionally `storePrice` and `plantPrice`.
+Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision" }`, optionally `storePrice`, `plantPrice` and `window`.
 
 | Field | Rules |
 | --- | --- |
@@ -23,6 +23,7 @@ Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled",
 | `tokenPrice` | Required whole number of Forest tokens, never coins. Keep this field even when `storePrice` or `plantPrice` is present. For trees, it is the default store price; for landmarks, it is the default plant price. A tree's `tokenPrice` is 0 only when `startsUnlocked` is true. |
 | `storePrice` | Optional nonnegative whole number of Forest tokens to buy the item from the store once. Defaults to a tree's `tokenPrice` or 8 for a landmark. |
 | `plantPrice` | Optional nonnegative whole number of Forest tokens each time the item is placed. Defaults to 1 for a tree or a landmark's `tokenPrice`. |
+| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`. Both zero-padded month-day dates are required, inclusive, and repeat every year. It may run over the new year, such as `"12-01"` to `"02-28"`. |
 | `startsUnlocked` | Trees only. True means owned from the start. |
 | `footprint` | Landmarks only. `[width, height]` in tiles. Only `[2, 2]` is supported right now. Ask me before using another size. |
 | `enabled` | False hides the item from the inventory, but old forests still draw it. |
@@ -31,6 +32,8 @@ Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled",
 | `tags` | Optional list of up to 12 lowercase labels matching `^[a-z][a-z0-9_]*$`, with no duplicates. A season already labels the item; do not repeat it in `tags`. |
 
 Item seasons and tags are used for browsing only; they change no price or rule.
+
+An item with a `window` is hidden from the Store while outside that window if it is unowned. Owned items stay owned, remain in the Inventory, and can be planted all year. The app checks the device's local date. An unreadable window makes the item never buyable. Items without a window are buyable all year. `buyOnlyInSeason` is not allowed on items.
 
 Rules:
 - Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.
@@ -101,9 +104,9 @@ changes.json
 sprites/<pack>/<key>.png
 ```
 
-`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. `add` and `edit` entries may include `season`, `tags`, `storePrice` and `plantPrice`. The delivery agent does not set revision numbers.
+`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. `add` and `edit` entries may include `season`, `tags`, `storePrice`, `plantPrice` and `window`. The delivery agent does not set revision numbers.
 
-The sprite agent may include optional item `season`, `tags`, `storePrice` and `plantPrice` fields in deliveries. Tags are lowercase browsing labels, such as `halloween`, `cosy` or `stone`. Use them when a request names them or an item clearly belongs to a season, and list the choices in the README under "Decisions for the owner".
+The sprite agent may include optional item `season`, `tags`, `storePrice`, `plantPrice` and `window` fields in deliveries. Tags are lowercase browsing labels, such as `halloween`, `cosy` or `stone`. Use them when a request names them or an item clearly belongs to a season, and list the choices in the README under "Decisions for the owner".
 
 Apply a delivery in this order:
 
