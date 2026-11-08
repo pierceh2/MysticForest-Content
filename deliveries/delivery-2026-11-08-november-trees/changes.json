@@ -1,0 +1,41 @@
+{
+  "add": {
+    "trees": [
+      {
+        "key": "larch",
+        "name": "Larch",
+        "description": "A feathery conifer that turns to gold and lets its needles fall when the cold comes.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "tags": ["conifer"]
+      },
+      {
+        "key": "maple",
+        "name": "Maple",
+        "description": "A tall maple with pointed leaves that blaze red when the days grow short.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "tags": ["deciduous"]
+      },
+      {
+        "key": "ginkgo",
+        "name": "Ginkgo",
+        "description": "A fan-leafed ginkgo that glows lemon yellow and drops every leaf in a single night.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "tags": ["deciduous"]
+      }
+    ]
+  },
+  "spritesChanged": [
+    { "pack": "default8bit", "key": "larch" },
+    { "pack": "default8bit", "key": "maple" },
+    { "pack": "default8bit", "key": "ginkgo" },
+    { "pack": "fall", "key": "larch" },
+    { "pack": "fall", "key": "maple" },
+    { "pack": "fall", "key": "ginkgo" }
+  ]
+}
