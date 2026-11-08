@@ -1,0 +1,15 @@
+{
+  "edit": {
+    "trees": [
+      { "key": "corn_stalks", "window": { "start": "11-15", "end": "11-30" } },
+      { "key": "apple_tree", "window": { "start": "11-15", "end": "11-30" } },
+      { "key": "pumpkin", "window": { "start": "10-01", "end": "12-01" } },
+      { "key": "jack_o_lantern", "window": { "start": "10-01", "end": "12-01" } },
+      { "key": "scarecrow", "window": { "start": "10-01", "end": "12-01" } }
+    ],
+    "landmarks": [
+      { "key": "harvest_table", "window": { "start": "11-15", "end": "11-30" } },
+      { "key": "hay_bales", "window": { "start": "10-01", "end": "12-01" } }
+    ]
+  }
+}
