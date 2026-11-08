@@ -1,0 +1,54 @@
+{
+  "add": {
+    "trees": [
+      {
+        "key": "pumpkin",
+        "name": "Pumpkin",
+        "description": "A plump orange pumpkin warming itself in the last of the autumn sun.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "season": "autumn",
+        "tags": ["halloween", "pumpkin"]
+      },
+      {
+        "key": "jack_o_lantern",
+        "name": "Jack-o'-Lantern",
+        "description": "A grinning pumpkin with a candle inside, keeping watch through the long autumn nights.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "season": "autumn",
+        "tags": ["halloween", "pumpkin"]
+      },
+      {
+        "key": "scarecrow",
+        "name": "Scarecrow",
+        "description": "A patched, straw-stuffed scarecrow keeping a cheerful watch over the harvest.",
+        "tokenPrice": 4,
+        "startsUnlocked": false,
+        "enabled": true,
+        "season": "autumn",
+        "tags": ["halloween"]
+      }
+    ],
+    "landmarks": [
+      {
+        "key": "hay_bales",
+        "name": "Hay Bale Stack",
+        "description": "A tall stack of golden hay bales, tied with twine and smelling of summer.",
+        "tokenPrice": 4,
+        "footprint": [2, 2],
+        "enabled": true,
+        "season": "autumn",
+        "tags": ["harvest"]
+      }
+    ]
+  },
+  "spritesChanged": [
+    { "pack": "default8bit", "key": "pumpkin" },
+    { "pack": "default8bit", "key": "jack_o_lantern" },
+    { "pack": "default8bit", "key": "scarecrow" },
+    { "pack": "default8bit", "key": "hay_bales" }
+  ]
+}
