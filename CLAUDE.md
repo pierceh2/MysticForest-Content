@@ -43,9 +43,10 @@ Rules:
 | `name` | Display name, up to 24 characters. |
 | `description` | One warm sentence, up to 120 characters. Optional. |
 | `kind` | Optional text such as `seasonal` or `holiday`. For information only. |
-| `season` | Optional window the pack is "in season", as `{ "start": "MM-DD", "end": "MM-DD" }`. It repeats every year and may run over the new year (`"12-01"` to `"02-28"`). A pack with no `season` is always in season. |
+| `season` | Optional season id matching `^[a-z][a-z0-9_]*$`. Use `winter`, `spring`, `summer` or `autumn` for the natural seasons, and a holiday's own id (`halloween`, `christmas`) for a holiday. Never use "fall". |
+| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, the yearly range in which the pack can be bought and is worn on its own. It may run over the new year. |
 | `tokenPrice` | Whole number of Forest tokens to unlock it once. Much larger than a tree. A placeholder I tune. |
-| `buyOnlyInSeason` | Optional, default `true`. When true the pack can only be bought while its `season` is open. Once bought it stays owned for good. |
+| `buyOnlyInSeason` | Optional, default `true`. When true the pack can only be bought while its window is open. Once bought it stays owned for good. |
 | `enabled` | False hides it from the shop. Days already in it still draw it. |
 | `revision` | Whole number, default 0. **Increase it by 1 whenever any of the pack's art changes**, because the app only downloads a pack's sprites again when this goes up. (An item's own `spriteRevision` still covers changes to the default pack's sprite.) |
 | `ground` | Optional colours `{ "grassLight", "grassDark", "margin", "soilLeft", "soilRight" }` as `#RRGGBB`. They replace the month's ground colours for days in this pack. Any left out keep the month's. |
@@ -54,8 +55,14 @@ Rules for packs:
 - Never delete a pack, rename its key, or reuse a key. To retire one set `"enabled": false` and keep its folder.
 - Pack art uses exactly the same sprite format as the default pack (sizes, anchor, transparency, hard pixels). A reskinned item must keep its silhouette's footprint and foot position so it sits on the ground the same way.
 - A non-default pack folder may be missing sprites. The **default pack must still have a sprite for every enabled item**.
-- A season written wrongly (not `MM-DD`) means the pack never opens, so check every window.
+- A window written wrongly (not `MM-DD`) means the pack never opens, so check every window.
 - Do not add a pack, or change a pack's price, window or colours, unless asked.
+
+## Words
+
+- **Season**: an app-wide named look, with an id and a name. Ids are lowercase letters, digits and underscores (`^[a-z][a-z0-9_]*$`). The four natural seasons are `winter`, `spring`, `summer` and `autumn` (always spelled **autumn**, not "fall"). Holidays and events are more ids, such as `halloween` and `christmas`. A season is not a date range.
+- **Window**: a pack's yearly date range, `{ "start": "MM-DD", "end": "MM-DD" }`. It may run over the new year (`"12-01"` to `"02-28"`). The pack can be bought, and is worn on its own, while its window is open.
+- **Pack**: a set of sprites that is the Forest's art for one season. A pack's key is its folder name and is permanent. The key does not have to match the season id (a pack called `fall` can be the art for the season `autumn`).
 
 ### Monthly ground colours (optional)
 

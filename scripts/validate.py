@@ -3,6 +3,7 @@ import os
 import re
 import subprocess
 import sys
+from datetime import date
 from pathlib import Path
 
 from PIL import Image
@@ -14,19 +15,30 @@ FIELDS = {
     "landmarks": {"key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision"},
 }
 PACK_FIELDS = {
-    "key", "name", "description", "kind", "season", "tokenPrice",
+    "key", "name", "description", "kind", "season", "window", "tokenPrice",
     "buyOnlyInSeason", "enabled", "revision", "ground",
 }
 GROUND_FIELDS = {"grassLight", "grassDark", "margin", "soilLeft", "soilRight"}
 BIOME_FIELDS = {"month", "key", "name", *GROUND_FIELDS}
 KEY_PATTERN = re.compile(r"[a-z][a-z0-9_]*")
+SEASON_ID_PATTERN = re.compile(r"^[a-z][a-z0-9_]*$")
 COLOR_PATTERN = re.compile(r"#[0-9A-Fa-f]{6}")
-SEASON_DATE_PATTERN = re.compile(r"(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
-DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]  # February allows 29
+WINDOW_DATE_PATTERN = re.compile(r"(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
 errors = []
+warnings = []
 
 def error(message):
     errors.append(message)
+
+def valid_window_date(value):
+    if not isinstance(value, str) or not WINDOW_DATE_PATTERN.fullmatch(value):
+        return False
+    month, day = map(int, value.split("-"))
+    try:
+        date(2000, month, day)
+    except ValueError:
+        return False
+    return True
 
 def previous_catalog():
     revision = "HEAD~1"
@@ -97,17 +109,25 @@ def main():
                 error(f"{label}: {field} must be a boolean")
         if "season" in pack:
             season = pack["season"]
-            if not isinstance(season, dict) or set(season) != {"start", "end"}:
-                error(f"{label}: season must contain start and end")
+            if not isinstance(season, str):
+                if isinstance(season, dict):
+                    error(f"{label}: season is an object; this is the old spelling of window")
+                else:
+                    error(f"{label}: season must be text matching [a-z][a-z0-9_]*")
+            elif not SEASON_ID_PATTERN.fullmatch(season):
+                error(f"{label}: season must be text matching [a-z][a-z0-9_]*")
+            if season == "fall":
+                warnings.append(f"{label}: season id 'fall' should be 'autumn'")
+        if "window" in pack:
+            window = pack["window"]
+            if not isinstance(window, dict) or set(window) != {"start", "end"}:
+                error(f"{label}: window must contain start and end")
             else:
                 for field in ("start", "end"):
-                    value = season[field]
-                    if (
-                        not isinstance(value, str)
-                        or not SEASON_DATE_PATTERN.fullmatch(value)
-                        or int(value[3:]) > DAYS_IN_MONTH[int(value[:2]) - 1]
-                    ):
-                        error(f"{label}: season {field} must be a real MM-DD date")
+                    if not valid_window_date(window[field]):
+                        error(f"{label}: window {field} must be a real MM-DD date")
+            if "season" not in pack:
+                warnings.append(f"{label}: pack has a window but no season id")
         ground = pack.get("ground")
         if "ground" in pack:
             if not isinstance(ground, dict) or set(ground) - GROUND_FIELDS:
@@ -241,6 +261,8 @@ def main():
             elif "footprint" in old and items[key][1].get("footprint") != old["footprint"]:
                 error(f"catalog.json: footprint for {key} changed")
 
+    if warnings:
+        print("\n".join(f"Warning: {message}" for message in warnings), file=sys.stderr)
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
