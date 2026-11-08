@@ -82,6 +82,42 @@ Rules for packs:
 - Style: 8-bit pixel art, a 1-pixel dark outline, light from the top left, at most 16 colours per sprite. Forest greens and browns, slightly darker than a bright cartoon (the app has a dark theme). Each species must be recognisable by silhouette alone at this size.
 - Extra art packs are more folders beside `default8bit`; a pack that lacks an item falls back to `default8bit`.
 
+## Applying a delivery
+
+A sprite agent may provide a `delivery-<yyyy-mm-dd>-<name>/` folder containing:
+
+```text
+README.md
+changes.json
+sprites/<pack>/<key>.png
+```
+
+`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. The delivery agent does not set revision numbers.
+
+Apply a delivery in this order:
+
+1. Read the delivery's `README.md` and `changes.json` completely. If they conflict with these rules, stop and ask before changing anything. This includes a reused or removed key, a changed footprint, a footprint other than `[2, 2]`, a pack `season` that is not a valid id, an extra field, a changed price or `startsUnlocked` value on an existing item, or the season spelled "fall".
+2. Copy each listed PNG from the delivery's `sprites/<pack>/<key>.png` to the same path in this repo. Replace an existing PNG only when it is listed in `spritesChanged`. An unlisted PNG is a delivery mistake; ask before proceeding.
+3. Merge `changes.json` into `catalog.json` without reformatting unrelated content:
+   - Append each `add` entry to its matching section. If a key already exists anywhere, stop and ask.
+   - Apply each `edit` only to the existing entry with that key, and change only the supplied fields. If the key does not exist, stop and ask.
+   - For each `retire` key, set `"enabled": false`. Never delete an entry or its PNG.
+   - Preserve the existing order, two-space indentation and wording.
+4. Set revisions yourself. A new item starts with `spriteRevision` 1. When a PNG changes in the default pack for an existing item, increase that item's `spriteRevision` by 1. When one or more PNGs change in any other existing pack, increase that pack's `revision` by 1 once for the delivery. A new pack starts with `revision` 1.
+5. If the README identifies placeholder prices or windows, apply them as given and leave them unchanged. Note each placeholder in the commit message; do not tune it yourself.
+6. Run `python3 scripts/validate.py` until it prints `OK`. If validation fails because of the delivery, report the exact problem and stop; do not patch its art or text yourself.
+7. Commit with a clear message, such as `Add maple tree (delivery 2026-11-07-maple)`, and include a separate line for each placeholder. Push to `main` and confirm the GitHub Action passes.
+8. Report the result in this form:
+
+```text
+Applied: <delivery name>
+Added / changed / retired: <keys>
+Files: <catalog.json and the PNGs touched>
+Revisions raised: <item or pack, old to new>
+Placeholders to tune: <prices or windows the owner should set>
+Concerns: <anything the delivery's README flagged, or anything odd you saw>
+```
+
 ## Workflow for any change
 1. Read this file.
 2. Make the change.
