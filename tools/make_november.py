@@ -21,7 +21,7 @@ PALETTE.update({k: rgb(v) for k, v in {
     "!": "#a9c75f", "@": "#86ab4c", "#": "#678d3d", "$": "#4b7032", "%": "#365527",
     # maple: cool deep green, then autumn red
     "^": "#68a85a", "&": "#4c9150", "*": "#387648", "(": "#285c3e", ")": "#1b4331",
-    "-": "#e4573a", "_": "#c43c2e", "=": "#a22b2a", "+": "#7d2226", "~": "#5a1a22",
+    "-": "#f2603a", "_": "#e0402f", "=": "#c42f2c", "+": "#9a2328", "~": "#6e1a22",
     # ginkgo: lime green, then lemon yellow
     "<": "#9ac85a", ">": "#78ac48", "?": "#5c9040", ":": "#447236", ";": "#2f5429",
     "[": "#f8e56a", "]": "#efcf4a", "{": "#d4a93a", "}": "#a98332", "|": "#7a5c2b",
@@ -42,7 +42,7 @@ def scatter_tree(g, colours, seed, count):
     scatter(g, seed, count, colours, allowed, (4, 35, 27, 44))
 
 
-def blob(g, cx, cy, rx, ry, ramp):
+def blob(g, cx, cy, rx, ry, ramp, under=False):
     """A lit ellipse of foliage: light from the top left, darker at the lower right."""
     def pick(x, y):
         s = (-(x + 0.5 - cx) / rx - (y + 0.5 - cy) / ry) / 1.8
@@ -52,6 +52,8 @@ def blob(g, cx, cy, rx, ry, ramp):
             idx -= 1
         elif n % 13 == 0 and idx < 4:
             idx += 1
+        if under and (y + 0.5 - cy) / ry > 0.55:
+            idx = max(idx, 3)  # shaded underside, so each tuft shows
         return ramp[idx]
     g.paint(ellipse(cx, cy, rx, ry), pick)
 
@@ -60,19 +62,20 @@ def make_larch(ramp=LARCH, leaves=None):
     """A feathery conifer: ragged tufts that droop, with a few gaps, unlike the solid pine."""
     g = tree_grid()
     trunk(g, 16, 5, 40, 1.0, 2.8)
-    tiers = ((6.0, 0.0, 3.0), (9.0, 2.8, 3.0), (12.5, 4.4, 3.4), (16.0, 5.8, 3.6),
-             (20.0, 7.0, 3.8), (24.0, 8.2, 4.0), (28.0, 9.2, 4.0), (32.0, 10.0, 3.8))
+    tiers = ((6.0, 0.0, 3.4), (9.0, 3.0, 3.4), (12.0, 4.5, 3.8), (15.0, 5.8, 4.0), (18.5, 7.0, 4.2),
+             (22.0, 8.0, 4.3), (25.5, 8.8, 4.3), (29.0, 9.0, 4.2), (32.5, 9.2, 4.0))
     for i, (y, d, rx) in enumerate(tiers):
-        j = (noise(i, 5) % 3 - 1) * 0.6
+        j = abs(noise(i, 5) % 3 - 1) * 0.5
         centres = [(15.5, y)]
         if d:
-            centres = [(15.5 - d + j, y + noise(i, 9) % 2), (15.5 + d - j, y + noise(i, 4) % 2)]
-            if i < 7:
-                centres.append((15.5, y - 0.5))
+            centres = [(15.5 - d + j, y + noise(i, 9) % 2), (15.5 + d - j, y + noise(i, 4) % 2),
+                       (15.5, y - 0.5)]
+            if i >= 3:  # fill the gap between the centre and the edge
+                centres += [(15.5 - d / 2, y + 0.5), (15.5 + d / 2, y + 0.5)]
         for cx, cy in centres:
-            blob(g, cx, cy, rx, 2.4, ramp)
+            blob(g, cx, cy, rx, 3.0, ramp, under=True)
             for k in range(int(-rx + 1), int(rx)):  # drooping tips
-                x, yy = int(cx + k), int(cy + 3)
+                x, yy = int(cx + k), int(cy + 3.6)
                 if noise(x, yy) % 2 == 0 and g.c[yy][x] == ".":
                     g.put(x, yy, ramp[3])
     g.outline()
@@ -81,7 +84,7 @@ def make_larch(ramp=LARCH, leaves=None):
     return g
 
 
-def make_maple(ramp=MAPLE, leaves=None):
+def make_maple(ramp=MAPLE, leaves=None, accent=None):
     """A crown shaped like a maple leaf: five pointed lobes."""
     g = tree_grid()
     trunk(g, 16, 27, 40, 2.0, 3.2)
@@ -94,6 +97,8 @@ def make_maple(ramp=MAPLE, leaves=None):
         s = (-(x + 0.5 - 16) - (y + 0.5 - 15)) / 20
         idx = 0 if s > 0.35 else 1 if s > 0.0 else 2 if s > -0.3 else 3 if s > -0.55 else 4
         n = noise(x, y)
+        if accent and idx <= 1 and n % 7 == 0:
+            return accent  # a few orange flecks in the light
         if n % 9 == 0 and idx > 0:
             idx -= 1
         elif n % 13 == 0 and idx < 4:
@@ -139,7 +144,7 @@ def make_ginkgo(ramp=GINKGO, leaves=None):
 DEFAULT = {"larch": make_larch, "maple": make_maple, "ginkgo": make_ginkgo}
 FALL = {
     "larch": lambda: make_larch(LARCH_FALL, ("E", "6", "7")),
-    "maple": lambda: make_maple(MAPLE_FALL, ("-", "_", "6")),
+    "maple": lambda: make_maple(MAPLE_FALL, ("-", "_", "6"), "7"),
     "ginkgo": lambda: make_ginkgo(GINKGO_FALL, ("[", "]", "{")),
 }
 PACKS = {"default8bit": DEFAULT, "fall": FALL}

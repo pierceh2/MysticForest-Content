@@ -5,11 +5,11 @@ Three new trees, each with a regular green-season sprite in the default pack and
 
 | Key | Name | Default pack | `fall` pack |
 | --- | --- | --- | --- |
-| larch | Larch | Feathery fresh-green cone of drooping tufts, with gaps, so it differs from the solid pine | Gold, amber and rust needles, a few fallen needles at the base |
-| maple | Maple | Cool deep-green crown shaped like a maple leaf, five pointed lobes | Bright red, a few red and orange leaves at the base |
+| larch | Larch | Full, soft fresh-green cone built from overlapping shaded tufts, so it differs from the hard-tiered pine | Gold, amber and rust needles, a few fallen needles at the base |
+| maple | Maple | Cool deep-green crown shaped like a maple leaf, five pointed lobes | Strong scarlet red with a few orange flecks in the light, and a few red and amber leaves at the base |
 | ginkgo | Ginkgo | Lime-green crown of overlapping fans on a straight trunk | Lemon yellow, with a heavier scatter of fallen yellow leaves, since a ginkgo drops its leaves all at once |
 
-Every PNG passed `check_sprite.py` (32x48, hard alpha, nothing on the edges, foot at the same place as the oak, at most 16 colours; each uses 9 or 10). I also looked at all six enlarged 8x on dark green, next to the oak, pine and birch and their fall versions, and redrew the larch, maple and ginkgo twice.
+Every PNG passed `check_sprite.py` (32x48, hard alpha, nothing on the edges, foot at the same place as the oak, at most 16 colours; each uses 9 or 10). I also looked at all six enlarged 8x on dark green, next to the oak, pine and birch and their fall versions. The larch, maple and ginkgo were each redrawn at least twice. After the owner's review the larch was filled out (default and fall) and the fall maple was made redder; the other three PNGs are unchanged by that revision.
 
 The reskins keep the exact silhouette, canvas and foot position of the default sprites, and add only the autumn colours and a few fallen leaves inside the tile.
 
@@ -19,7 +19,7 @@ The drawing code is `tools/make_november.py`. It reuses the helpers in `tools/ma
 - None. Prices are as requested: `tokenPrice` 4 for each tree. The store price and plant price are left to their defaults (store price = `tokenPrice` = 4, plant price = 1), so no `storePrice` or `plantPrice` is written.
 
 ## Weak spots
-- **Larch:** it reads as a feathery, tiered cone, clearly different from the pine, but the stacked tufts look a little like clipped topiary rather than airy needles.
+- **Larch:** after review it was filled out. It is now a dense, soft cone with shaded tufts. It is clearly different from the pine, but it has lost most of the open, airy gaps a real larch has, and its outline is smoother than a feathery conifer.
 - **Maple:** the leaf-shaped crown is iconic and readable, but it is stylised and slightly smaller than the oak's crown. It looks more like a leaf on a trunk than a real tree.
 - **Ginkgo:** a few small dark dashes show where fans overlap. They add some texture, but at 1x they can look like gaps.
 - **Pack coverage:** the `fall` pack now covers six default items plus these three new ones. Items that are already autumn-themed in the default pack (the pumpkins, scarecrow and hay bales) have no reskin, and need none.
