@@ -1,0 +1,17 @@
+{
+  "edit": {
+    "trees": [
+      { "key": "oak", "tags": ["deciduous", "classic"] },
+      { "key": "pine", "tags": ["evergreen", "conifer"] },
+      { "key": "birch", "tags": ["deciduous", "slender"] },
+      { "key": "willow", "tags": ["deciduous", "waterside"] }
+    ],
+    "landmarks": [
+      { "key": "shrine", "tags": ["stone", "mossy"] },
+      { "key": "pond", "tags": ["water", "waterside"] }
+    ],
+    "packs": [
+      { "key": "fall", "tags": ["cosy", "leaves"] }
+    ]
+  }
+}
