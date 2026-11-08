@@ -14,8 +14,9 @@ FIELDS = {
     "trees": {"key", "name", "description", "tokenPrice", "startsUnlocked", "enabled", "spriteRevision"},
     "landmarks": {"key", "name", "description", "tokenPrice", "footprint", "enabled", "spriteRevision"},
 }
+OPTIONAL_ITEM_FIELDS = {"season", "tags"}
 PACK_FIELDS = {
-    "key", "name", "description", "kind", "season", "window", "tokenPrice",
+    "key", "name", "description", "kind", "season", "window", "tags", "tokenPrice",
     "buyOnlyInSeason", "enabled", "revision", "ground",
 }
 GROUND_FIELDS = {"grassLight", "grassDark", "margin", "soilLeft", "soilRight"}
@@ -39,6 +40,24 @@ def valid_window_date(value):
     except ValueError:
         return False
     return True
+
+def validate_tags(label, entry):
+    if "tags" not in entry:
+        return
+    tags = entry["tags"]
+    if not isinstance(tags, list):
+        error(f"{label}: tags must be a list")
+        return
+    if len(tags) > 12:
+        error(f"{label}: tags must contain at most 12 labels")
+    seen = set()
+    for tag in tags:
+        if not isinstance(tag, str) or not SEASON_ID_PATTERN.fullmatch(tag):
+            error(f"{label}: each tag must match [a-z][a-z0-9_]*")
+        elif tag in seen:
+            error(f"{label}: duplicate tag {tag}")
+        else:
+            seen.add(tag)
 
 def previous_catalog():
     revision = "HEAD~1"
@@ -118,6 +137,7 @@ def main():
                 error(f"{label}: season must be text matching [a-z][a-z0-9_]*")
             if season == "fall":
                 warnings.append(f"{label}: season id 'fall' should be 'autumn'")
+        validate_tags(label, pack)
         if "window" in pack:
             window = pack["window"]
             if not isinstance(window, dict) or set(window) != {"start", "end"}:
@@ -187,7 +207,7 @@ def main():
             if not isinstance(item, dict):
                 error(f"{label}: item must be an object")
                 continue
-            if set(item) != fields:
+            if not fields.issubset(item) or set(item) - fields - OPTIONAL_ITEM_FIELDS:
                 error(f"{label}: fields do not match the {collection[:-1]} schema")
             key = item.get("key")
             if not isinstance(key, str) or not KEY_PATTERN.fullmatch(key):
@@ -196,6 +216,13 @@ def main():
             if key in items:
                 error(f"{label}: duplicate key {key}")
             items[key] = (collection, item)
+            if "season" in item:
+                season = item["season"]
+                if not isinstance(season, str) or not SEASON_ID_PATTERN.fullmatch(season):
+                    error(f"{key}: season must be text matching [a-z][a-z0-9_]*")
+                elif season == "fall":
+                    warnings.append(f"{key}: season id 'fall' should be 'autumn'")
+            validate_tags(key, item)
             for field, limit in (("name", 24), ("description", 120)):
                 value = item.get(field)
                 if not isinstance(value, str) or not value.strip() or len(value) > limit:

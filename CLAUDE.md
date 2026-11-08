@@ -25,6 +25,10 @@ Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled",
 | `footprint` | Landmarks only. `[width, height]` in tiles. Only `[2, 2]` is supported right now. Ask me before using another size. |
 | `enabled` | False hides the item from the inventory, but old forests still draw it. |
 | `spriteRevision` | Whole number starting at 1. Increase it by 1 whenever the item's PNG changes, because the app only re-downloads art when this changes. |
+| `season` | Optional season id matching `^[a-z][a-z0-9_]*$`, such as `autumn` or `halloween`. Never use "fall". |
+| `tags` | Optional list of up to 12 lowercase labels matching `^[a-z][a-z0-9_]*$`, with no duplicates. A season already labels the item; do not repeat it in `tags`. |
+
+Item seasons and tags are used for browsing only; they change no price or rule.
 
 Rules:
 - Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.
@@ -45,6 +49,7 @@ Rules:
 | `kind` | Optional text such as `seasonal` or `holiday`. For information only. |
 | `season` | Optional season id matching `^[a-z][a-z0-9_]*$`. Use `winter`, `spring`, `summer` or `autumn` for the natural seasons, and a holiday's own id (`halloween`, `christmas`) for a holiday. Never use "fall". |
 | `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, the yearly range in which the pack can be bought and is worn on its own. It may run over the new year. |
+| `tags` | Optional list of up to 12 lowercase labels matching `^[a-z][a-z0-9_]*$`, with no duplicates. A season already labels the pack; do not repeat it in `tags`. |
 | `tokenPrice` | Whole number of Forest tokens to unlock it once. Much larger than a tree. A placeholder I tune. |
 | `buyOnlyInSeason` | Optional, default `true`. When true the pack can only be bought while its window is open. Once bought it stays owned for good. |
 | `enabled` | False hides it from the shop. Days already in it still draw it. |
@@ -57,6 +62,8 @@ Rules for packs:
 - A non-default pack folder may be missing sprites. The **default pack must still have a sprite for every enabled item**.
 - A window written wrongly (not `MM-DD`) means the pack never opens, so check every window.
 - Do not add a pack, or change a pack's price, window or colours, unless asked.
+
+Pack seasons and tags are used for browsing only; they change no price or rule.
 
 ## Words
 
@@ -92,7 +99,9 @@ changes.json
 sprites/<pack>/<key>.png
 ```
 
-`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. The delivery agent does not set revision numbers.
+`README.md` describes the contents, placeholders, weak spots and decisions. `changes.json` contains `add` entries for trees, landmarks and packs, `edit` entries containing a `key` and only changed fields, a list of keys to `retire`, and `spritesChanged` entries identifying every new or redrawn PNG by `pack` and `key`. `add` and `edit` entries may include `season` and `tags`. The delivery agent does not set revision numbers.
+
+The sprite agent may include optional item `season` and `tags` fields in deliveries. Tags are lowercase browsing labels, such as `halloween`, `cosy` or `stone`. Use them when a request names them or an item clearly belongs to a season, and list the choices in the README under "Decisions for the owner".
 
 Apply a delivery in this order:
 
