@@ -58,26 +58,31 @@ def blob(g, cx, cy, rx, ry, ramp, under=False):
     g.paint(ellipse(cx, cy, rx, ry), pick)
 
 
+def branch(g, x0, y0, x1, y1, colour):
+    """A 1-pixel branch line."""
+    steps = int(max(abs(x1 - x0), abs(y1 - y0))) * 2 + 1
+    for i in range(steps + 1):
+        t = i / steps
+        g.put(int(x0 + (x1 - x0) * t), int(y0 + (y1 - y0) * t), colour)
+
+
 def make_larch(ramp=LARCH, leaves=None):
-    """A feathery conifer: ragged tufts that droop, with a few gaps, unlike the solid pine."""
+    """A larch: layers of soft needle tufts on a slim trunk, with open gaps between the layers."""
     g = tree_grid()
-    trunk(g, 16, 5, 40, 1.0, 2.8)
-    tiers = ((6.0, 0.0, 3.4), (9.0, 3.0, 3.4), (12.0, 4.5, 3.8), (15.0, 5.8, 4.0), (18.5, 7.0, 4.2),
-             (22.0, 8.0, 4.3), (25.5, 8.8, 4.3), (29.0, 9.0, 4.2), (32.5, 9.2, 4.0))
-    for i, (y, d, rx) in enumerate(tiers):
-        j = abs(noise(i, 5) % 3 - 1) * 0.5
-        centres = [(15.5, y)]
-        if d:
-            centres = [(15.5 - d + j, y + noise(i, 9) % 2), (15.5 + d - j, y + noise(i, 4) % 2),
-                       (15.5, y - 0.5)]
-            if i >= 3:  # fill the gap between the centre and the edge
-                centres += [(15.5 - d / 2, y + 0.5), (15.5 + d / 2, y + 0.5)]
-        for cx, cy in centres:
-            blob(g, cx, cy, rx, 3.0, ramp, under=True)
-            for k in range(int(-rx + 1), int(rx)):  # drooping tips
-                x, yy = int(cx + k), int(cy + 3.6)
-                if noise(x, yy) % 2 == 0 and g.c[yy][x] == ".":
-                    g.put(x, yy, ramp[3])
+    trunk(g, 16, 4, 40, 0.9, 2.8)
+    tip = polygon([(15.5, 3.2), (19.0, 9.5), (12.0, 9.5)])  # a pointed tip
+    g.paint(tip, lambda x, y: ramp[0] if x < 15 else ramp[1] if y < 7 else ramp[2])
+    # (layer height, reach of the outer tufts): about 5.5 pixels apart, so the trunk and background show between
+    layers = ((11.5, 3.6), (17.0, 5.6), (22.5, 7.6), (28.0, 9.2), (33.5, 9.4))
+    for i, (y, d) in enumerate(layers):
+        for side in (-1, 1):  # outer, middle, then the left and right tufts staggered by a pixel
+            for frac, rx in ((1.0, 3.8), (0.5, 3.6)):
+                blob(g, 15.5 + side * d * frac, y + (side > 0) * 1.0 + noise(int(d * frac * 3), int(y)) % 2 * 0.6, rx, 2.0, ramp, under=True)
+        blob(g, 15.5, y - 0.5, 3.4, 1.9, ramp, under=True)
+        for k in range(-int(d + 3), int(d + 3)):  # drooping needle tips under the layer
+            x, yy = 15 + k, int(y + 3.0)
+            if 0 <= x < g.w and noise(x, yy) % 2 == 0 and g.c[yy][x] == "." and g.c[yy - 1][x] != ".":
+                g.put(x, yy, ramp[3])
     g.outline()
     if leaves:
         scatter_tree(g, leaves, 21, 6)
