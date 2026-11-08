@@ -58,7 +58,15 @@
     { "key": "ginkgo", "name": "Ginkgo",
       "description": "A fan-leafed ginkgo that glows lemon yellow and drops every leaf in a single night.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
-      "tags": ["deciduous"] }
+      "tags": ["deciduous"] },
+    { "key": "apple_tree", "name": "Apple Tree",
+      "description": "A gnarled apple tree heavy with red fruit, with a few windfalls waiting in the grass.",
+      "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "tags": ["fruit", "harvest"] },
+    { "key": "corn_stalks", "name": "Corn Stalks",
+      "description": "A tied bundle of dry corn stalks, rustling softly where the harvest has been gathered.",
+      "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 1,
+      "season": "autumn", "tags": ["harvest", "thanksgiving"] }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
@@ -70,6 +78,10 @@
     { "key": "hay_bales", "name": "Hay Bale Stack",
       "description": "A tall stack of golden hay bales, tied with twine and smelling of summer.",
       "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
-      "season": "autumn", "tags": ["harvest"] }
+      "season": "autumn", "tags": ["harvest"] },
+    { "key": "harvest_table", "name": "Harvest Table",
+      "description": "A long table laid with pie, bread and candlelight, waiting for everyone to sit down.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
+      "season": "thanksgiving", "tags": ["harvest", "autumn"] }
   ]
 }
