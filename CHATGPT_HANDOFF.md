@@ -10,6 +10,12 @@ Snapshot date: 2026-11-19 (repo `main` at the commit that added this file).
 
 ---
 
+## Ground pilot for Xcode
+
+Dirt Patch (`dirt_patch`) and Dirt Rows (`dirt_rows`) have approved art for the base forest, Autumn Leaves and Winter. Cobblestone Circle (`cobblestone_circle`) has approved base art. It joins neighboring stone cells to form a courtyard and keeps its border when it touches soil. Additional Ground work, including water and seasonal cobblestone, is paused. The Ground sections in Store and Inventory require the future **Terraforming** spell. Hide both sections while the spell is unavailable or unlearned. Once learned, apply the ordinary item ownership and purchase rules. The monthly floor stays visible to everyone.
+
+The [Xcode handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) covers editing the surface under an existing tree, drawing connected soil and stone in Day and World, and checking older saves. The [Debug catalog proposal](pilots/ground/OBJECT_TYPES.preview.json) is for app integration. The live content validator currently accepts tree and landmark items.
+
 ## 1. The project in one minute
 
 - "Mystic Forest" is a tab in the owner's iOS app. Daily focus time earns tokens; the owner spends tokens to unlock and place pixel-art **trees** (one tile) and **landmarks** (2x2 tiles) on a small isometric plot. Each day is drawn in one **art pack**.

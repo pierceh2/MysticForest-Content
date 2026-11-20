@@ -63,6 +63,16 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `thanksgiving_feast` | `harvest_table` | Thanksgiving-only; its default sprite is already the Thanksgiving look. |
 <!-- excluded:end -->
 
+## Approved ground art for the Xcode pilot
+
+Each linked ground atlas contains 16 adjacency frames. Xcode can use these assets to exercise the future Ground feature. The generated tables above count items in the live catalog.
+
+| Ground item | Base | Autumn Leaves | Winter |
+| --- | --- | --- | --- |
+| Cobblestone Circle | [Base](pilots/ground/surfaces/cobblestone_circle.png) | Uses base | Uses base |
+| Dirt Patch | [Base](pilots/ground/surfaces/dirt_patch.png) | [Autumn](pilots/ground/surfaces/fall/dirt_patch.png) | [Winter](pilots/ground/surfaces/winter/dirt_patch.png) |
+| Dirt Rows | [Base](pilots/ground/surfaces/dirt_rows.png) | [Autumn](pilots/ground/surfaces/fall/dirt_rows.png) | [Winter](pilots/ground/surfaces/winter/dirt_rows.png) |
+
 ## How to use this when planning a pack
 
 1. Open the grid and read the column of the closest existing pack, and the row of any item you are adding.
