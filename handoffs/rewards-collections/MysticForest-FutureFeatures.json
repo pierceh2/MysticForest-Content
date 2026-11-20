@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "destination": ["Settings", "Future Features"],
+  "purpose": "Source copy and design decisions for the existing roadmap. The keys identify handoff records only. The iOS app owns its display model and identifiers.",
+  "repository": "pierceh2/MysticForest-Content",
+  "verifiedMainCommit": "61c05b2879af875de35f049e9e0258458b4c5177",
+  "entries": [
+    {
+      "handoffKey": "forest.terraforming",
+      "title": "Terraforming",
+      "playerSummary": "A planned Terraforming spell will let you lay dirt patches, rows of soil, and cobblestone circles beneath your forest objects.",
+      "contentKeys": ["dirt_patch", "dirt_rows", "cobblestone_circle"],
+      "contentPR": 3,
+      "currentState": "Approved art and ground pilot in draft PR. The spell and the Ground store and inventory gate are future app work.",
+      "proposedUnlock": "Learn the Terraforming spell to reveal Ground in Store and Inventory and enable ground purchases and placement.",
+      "unresolved": ["How the spell is earned", "Individual ground acquisition and pricing after the spell"]
+    },
+    {
+      "handoffKey": "forest.familiars",
+      "title": "Familiars",
+      "playerSummary": "A planned Familiars unlock will introduce forest animals, starting with a cow. Autumn and winter coats are planned for their seasonal packs.",
+      "contentKeys": ["cow"],
+      "contentPR": 4,
+      "currentState": "Approved base, autumn and winter art in the draft animal pilot. The Animals store and inventory gate is future app work.",
+      "proposedUnlock": "Familiars opens the Animals section in Store and Inventory. A spell and an achievement are both under consideration.",
+      "unresolved": ["Spell or achievement", "Earning criteria", "How the cow is acquired and any price after the category opens"]
+    },
+    {
+      "handoffKey": "forest.village-hut",
+      "title": "Village Hut",
+      "playerSummary": "A Village achievement is being considered for the hut. Once the hut is accessible, an eligible seasonal pack can change its appearance.",
+      "contentKeys": ["village_hut"],
+      "contentPR": 1,
+      "currentState": "Disabled landmark on main with base, autumn and winter artwork. No live Village unlock is documented.",
+      "proposedUnlock": "Village achievement, provisionally named. Eligible owned packs select the hut artwork after object access.",
+      "unresolved": ["Achievement identifier and criteria", "Direct reward or store availability after achievement"]
+    },
+    {
+      "handoffKey": "forest.gold-vein",
+      "title": "Gold Vein",
+      "playerSummary": "A cluster of golden crystals is planned as a forest landmark. Its unlock is being considered as a spell or achievement.",
+      "contentKeys": ["gold_vein"],
+      "contentPR": 6,
+      "currentState": "Approved base artwork. Disabled landmark in draft PR.",
+      "proposedUnlock": "A Gold Vein achievement or spell. The same artwork is used year-round.",
+      "unresolved": ["Gate type, name and criteria", "Direct reward or store availability"]
+    },
+    {
+      "handoffKey": "forest.silver-vein",
+      "title": "Silver Vein",
+      "playerSummary": "A silver outcrop is planned as a year-round forest landmark, with its own spell or achievement under consideration.",
+      "contentKeys": ["silver_vein"],
+      "contentPR": 7,
+      "currentState": "Approved base artwork. Disabled landmark in draft PR.",
+      "proposedUnlock": "A Silver Vein achievement or spell. The same artwork is used year-round.",
+      "unresolved": ["Gate type, name and criteria", "Direct reward or store availability"]
+    },
+    {
+      "handoffKey": "forest.bronze-vein",
+      "title": "Bronze Vein",
+      "playerSummary": "A bronze outcrop is planned for the forest. Its own spell or achievement would give players access to the landmark.",
+      "contentKeys": ["bronze_vein"],
+      "contentPR": 7,
+      "currentState": "Approved base artwork. Disabled landmark in draft PR.",
+      "proposedUnlock": "A Bronze Vein achievement or spell. The same artwork is used year-round.",
+      "unresolved": ["Gate type, name and criteria", "Direct reward or store availability"]
+    },
+    {
+      "handoffKey": "forest.cherry-blossom",
+      "title": "Cherry Blossom Tree",
+      "playerSummary": "A flowering cherry tree is planned for the forest. How players will collect it is still open.",
+      "contentKeys": ["cherry_blossom"],
+      "contentPR": 5,
+      "currentState": "Base artwork approved. Tree disabled in draft PR. Seasonal designs await art approval.",
+      "proposedUnlock": null,
+      "unresolved": ["Acquisition method and criteria", "Approval and scheduling of seasonal art"]
+    },
+    {
+      "handoffKey": "forest.classic-retro",
+      "title": "Classic Retro Collection",
+      "playerSummary": "A planned Classic Retro appearance pack would bring back the original forest sprites. Its unlock timing is still open.",
+      "contentKeys": ["classic_retro"],
+      "contentPR": 2,
+      "currentState": "Originals archived on main. The pack key is proposed and has no catalog entry.",
+      "proposedUnlock": null,
+      "unresolved": ["Pack availability and unlock method", "How selection interacts with seasonal packs"]
+    },
+    {
+      "handoffKey": "forest.winter-pack",
+      "title": "Winter Art Pack",
+      "playerSummary": "Winter looks are planned for forest objects including the Village Hut and cow. How the pack becomes available is still open.",
+      "contentKeys": ["winter"],
+      "contentPR": 1,
+      "currentState": "Pack is disabled on main. Hut artwork is on main. Cow artwork is in draft PR 4.",
+      "proposedUnlock": null,
+      "unresolved": ["Release date or seasonal window", "How players obtain the pack"]
+    }
+  ]
+}
