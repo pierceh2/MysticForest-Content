@@ -46,6 +46,14 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 
 <!-- coverage:end -->
 
+## Approved animal art for the Xcode pilot
+
+| Animal | Base | Autumn Leaves | Winter |
+| --- | --- | --- | --- |
+| Cow (`cow`) | [Base sprite](pilots/animals/sprites/default8bit/cow.png) | [Autumn sprite](pilots/animals/sprites/fall/cow.png) | [Winter sprite](pilots/animals/sprites/winter/cow.png) |
+
+All three PNGs share the animal key `cow`. Other packs use the base sprite. The winter appearance is available in the pilot fixture while the live winter pack is disabled.
+
 ## Left out on purpose
 
 Add a row here when an item should not get a reskin in a pack, with the reason, so it is not mistaken for a gap. One row per item.
