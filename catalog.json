@@ -134,6 +134,14 @@
         "village"
       ],
       "spriteRevision": 1
-    }
+    },
+    { "key": "silver_vein", "name": "Silver Vein",
+      "description": "Bright silver blades rise from a shelf of dark stone.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": false, "spriteRevision": 1,
+      "tags": ["monument", "ore"] },
+    { "key": "bronze_vein", "name": "Bronze Vein",
+      "description": "Warm bronze nodules cluster along a low ridge of plum-brown rock.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": false, "spriteRevision": 1,
+      "tags": ["monument", "ore"] }
   ]
 }

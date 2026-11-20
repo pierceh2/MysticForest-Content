@@ -40,8 +40,10 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | - |
 | `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | - |
 | `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
-| **Reskinned** | | | 17 of 17 | 10 of 17 | 9 of 17 | 1 of 17 |
-| **Left out on purpose** | | | 0 | 6 | 2 | 0 |
+| `silver_vein` (Silver Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
+| `bronze_vein` (Bronze Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
+| **Reskinned** | | | 19 of 19 | 10 of 19 | 9 of 19 | 1 of 19 |
+| **Left out on purpose** | | | 0 | 8 | 4 | 2 |
 | **Gaps** | | | 0 | 1 | 6 | 16 |
 
 <!-- coverage:end -->
@@ -61,6 +63,15 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `fall` | `harvest_table` | A Thanksgiving item; its default sprite is already the autumn look. |
 | `thanksgiving_feast` | `jack_o_lantern` | A Halloween item, not Thanksgiving. |
 | `thanksgiving_feast` | `harvest_table` | Thanksgiving-only; its default sprite is already the Thanksgiving look. |
+| `fall` | `gold_vein` | Mineral veins use the base appearance in every pack. |
+| `fall` | `silver_vein` | Mineral veins use the base appearance in every pack. |
+| `fall` | `bronze_vein` | Mineral veins use the base appearance in every pack. |
+| `thanksgiving_feast` | `gold_vein` | Mineral veins use the base appearance in every pack. |
+| `thanksgiving_feast` | `silver_vein` | Mineral veins use the base appearance in every pack. |
+| `thanksgiving_feast` | `bronze_vein` | Mineral veins use the base appearance in every pack. |
+| `winter` | `gold_vein` | Mineral veins use the base appearance in every pack. |
+| `winter` | `silver_vein` | Mineral veins use the base appearance in every pack. |
+| `winter` | `bronze_vein` | Mineral veins use the base appearance in every pack. |
 <!-- excluded:end -->
 
 ## How to use this when planning a pack
