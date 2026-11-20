@@ -8,6 +8,13 @@ DATA=ROOT/'surfaces'
 M=json.loads((DATA/'atlas.json').read_text())
 assert M['connectionMask']['bits']=={'minusU':1,'plusU':2,'minusV':4,'plusV':8}
 assert M['geometry']['screenStepU']==[16,8] and M['geometry']['screenStepV']==[-16,8]
+groups = M['mergeGroupByItem']
+fixture = json.loads((ROOT / 'OBJECT_TYPES.preview.json').read_text())
+items = {item['key']: item['mergeGroup'] for item in fixture['debugItems']}
+assert groups == items == {'dirt_patch': 'soil', 'dirt_rows': 'soil', 'cobblestone_circle': 'stone'}
+assert set(M['itemKeys']) == set(items)
+assert M['formatVersion'] == 2 and M['image']['tileSize'] == [32, 16]
+assert all(set(case['ownedGroundItems']) == set(items) for case in fixture['debugSpellFixtures'])
 ASSETS={}
 for pack,entry in M['packAssets'].items():
     ASSETS[pack]={}
@@ -21,9 +28,15 @@ for pack,entry in M['packAssets'].items():
             assert {c[-1] for count,c in colors}=={0,255} and len(colors)<=17
             assert all(c==(0,0,0,0) for count,c in colors if c[-1]==0)
 assert set(ASSETS)=={'default8bit','winter','fall'}
-ref=ASSETS['default8bit']['dirt_patch']
+base = ASSETS['default8bit']
+assert set(base) == set(items)
+soil_keys = {key for key, group in groups.items() if group == 'soil'}
+assert all(set(ASSETS[pack]) == soil_keys for pack in ('fall', 'winter'))
+ref=base['dirt_patch']
 for pack, items in ASSETS.items():
     for key,frames in items.items():
+        if groups[key] != 'soil':
+            continue
         for m,frame in enumerate(frames):
             assert frame.getchannel('A').tobytes()==ref[m].getchannel('A').tobytes()
         assert len({f.getchannel('A').tobytes() for f in frames})==16
@@ -33,8 +46,17 @@ for pack, items in ASSETS.items():
             assert all(a.tobytes()!=b.tobytes() for a,b in zip(frames,ASSETS['default8bit'][key]))
 
 DIFFS=((-1,0,1),(1,0,2),(0,-1,4),(0,1,8))
-def mask_for(layout,u,v):
-    return sum(bit for du,dv,bit in DIFFS if (u+du,v+dv) in layout)
+def mask_for(layout, u, v):
+    """Derive one frame index from this saved day's surface keys."""
+    group = groups.get(layout.get((u, v)))
+    if group is None or not (0 <= u < 6 and 0 <= v < 6):
+        return 0
+    mask = 0
+    for du, dv, bit in DIFFS:
+        x, y = u + du, v + dv
+        if 0 <= x < 6 and 0 <= y < 6 and groups.get(layout.get((x, y))) == group:
+            mask |= bit
+    return mask
 
 def uv(x,y):
     return (y+.5)/16+(x+.5)/32,(y+.5)/16-(x+.5)/32
@@ -50,6 +72,8 @@ def fill(frame,x,y):
 # remove grass-space and rim on its own side without altering the furrow phase.
 for pack,types in ASSETS.items():
     for key,frames in types.items():
+        if groups[key] != 'soil':
+            continue
         assert sum(n for n,c in frames[15].getcolors(512) if c[3])==256
         for mask,frame in enumerate(frames):
             for y in range(16):
@@ -76,7 +100,8 @@ layouts=[
  {(0,0),(1,1)}
 ]
 for cells in layouts:
-    lookup={p:mask_for(cells,*p) for p in cells}
+    day = dict.fromkeys(cells, 'dirt_patch')
+    lookup={p:mask_for(day,*p) for p in cells}
     if cells=={(0,0),(1,1)}:
         assert set(lookup.values())=={0}
     for x in range(-64,64):
@@ -105,6 +130,54 @@ for pack,items in ASSETS.items():
     coords=[uv(x-16,y) for y in range(16) for x in range(32) if frame.getpixel((x,y))[:3]==deep]
     assert all(min(v%.5,.5-v%.5)<.10 for u,v in coords)
     assert any(0<v<.12 for u,v in coords) and any(.49<v<.62 for u,v in coords)
-print('PASS: six 128x64 hard-alpha atlases, 96 frames; neutral and both seasonal families')
+# Stone uses a rounded ring in the isolated frame. Its connected side faces
+# meet at the same texels as its fully paved courtyard.
+stone_key = 'cobblestone_circle'
+stone = base[stone_key]
+assert len({frame.tobytes() for frame in stone}) == 16
+for mask, frame in enumerate(stone):
+    day = {(2, 2): stone_key}
+    day.update({(2 + du, 2 + dv): stone_key for du, dv, bit in DIFFS if mask & bit})
+    assert mask_for(day, 2, 2) == mask
+    for y in range(16):
+        for x in range(32):
+            u, v = uv(x - 16, y)
+            pixel = frame.getpixel((x, y))
+            if not (0 <= u < 1 and 0 <= v < 1):
+                assert pixel[3] == 0
+                continue
+            if mask == 15:
+                assert pixel[3] == 255
+            for bit, normal, tangent in ((1, u, v), (2, 1-u, v), (4, v, u), (8, 1-v, u)):
+                if mask & bit and normal < .07 and .37 < tangent < .63:
+                    assert pixel[3] == 255 and pixel == stone[15].getpixel((x, y))
+
+for cells in [*layouts, {(0, 0)}, {(1, 0), (1, 1), (1, 2)}]:
+    day = dict.fromkeys(cells, stone_key)
+    occupied = set()
+    for (u, v) in day:
+        frame = stone[mask_for(day, u, v)]
+        left, top = atlas_position(u, v)
+        for y in range(16):
+            for x in range(32):
+                if frame.getpixel((x, y))[3]:
+                    point = (left + x, top + y)
+                    assert point not in occupied
+                    a, b = uv(*point)
+                    assert (floor(a), floor(b)) == (u, v)
+                    occupied.add(point)
+    assert occupied
+
+# Coordinate boundaries and material boundaries must both be honored when
+# a cell changes under foreground objects. Unknown surface keys stay isolated.
+day = {(0, 0): stone_key, (1, 0): stone_key, (2, 0): 'dirt_patch',
+       (3, 0): 'dirt_rows', (4, 0): 'unknown', (-1, 0): stone_key}
+assert [mask_for(day, u, 0) for u in range(5)] == [2, 1, 2, 1, 0]
+day[1, 0] = 'dirt_rows'
+assert [mask_for(day, u, 0) for u in range(4)] == [0, 2, 3, 1]
+del day[2, 0]
+assert [mask_for(day, u, 0) for u in range(4)] == [0, 0, 0, 0]
+assert mask_for({(5, 5): stone_key, (6, 5): stone_key, (5, 6): stone_key}, 5, 5) == 0
+print('PASS: 112 frames in seven hard-alpha atlases; six soil atlases and one base stone atlas')
 print('PASS: all 16 masks, projected footprint and nearest-neighbor seam colors')
 print('PASS: 2x2, L, line and diagonal-only layouts; tilled phase and mixed-material mask identity')

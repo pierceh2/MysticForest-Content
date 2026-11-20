@@ -1,5 +1,5 @@
 {
-  "formatVersion": 1,
+  "formatVersion": 2,
   "units": "native screen pixels",
   "designStatus": "proposed ground asset format; requires a dedicated app reader",
   "itemType": "ground",
@@ -7,17 +7,23 @@
     1,
     1
   ],
-  "mergeGroup": "soil",
+  "mergeGroupByItem": {
+    "dirt_patch": "soil",
+    "dirt_rows": "soil",
+    "cobblestone_circle": "stone"
+  },
   "itemKeys": [
     "dirt_patch",
-    "dirt_rows"
+    "dirt_rows",
+    "cobblestone_circle"
   ],
   "packAssets": {
     "default8bit": {
       "status": "approved art for staging",
       "atlases": {
         "dirt_patch": "dirt_patch.png",
-        "dirt_rows": "dirt_rows.png"
+        "dirt_rows": "dirt_rows.png",
+        "cobblestone_circle": "cobblestone_circle.png"
       }
     },
     "fall": {
@@ -76,7 +82,7 @@
         1
       ]
     },
-    "setBitWhen": "Adjacent cell belongs to the same saved day's 6x6 board and has mergeGroup soil. Ignore object occupancy.",
+    "setBitWhen": "The adjacent cell is on the same saved day's 6×6 plot and its item has the same mergeGroupByItem value as the current item. Ignore foreground occupancy.",
     "frameOriginPx": "[(mask % 4)*32, (mask // 4)*16]",
     "frameOrder": "row-major mask values 0 through 15"
   },

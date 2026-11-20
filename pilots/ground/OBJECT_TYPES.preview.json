@@ -54,6 +54,20 @@
       "mergeGroup": "soil",
       "seasonalLookSource": "effective art pack",
       "debugOwned": true
+    },
+    {
+      "collection": "groundTiles",
+      "typeID": "ground",
+      "key": "cobblestone_circle",
+      "name": "Cobblestone Circle",
+      "cellFootprint": [
+        1,
+        1
+      ],
+      "mergeGroup": "stone",
+      "seasonalLookSource": "base fallback in all current packs",
+      "debugOwned": true,
+      "artStage": "approved_base_art_for_staging"
     }
   ],
   "savedDayExample": {
@@ -76,6 +90,11 @@
         "u": 3,
         "v": 3,
         "itemKey": "dirt_rows"
+      },
+      {
+        "u": 2,
+        "v": 4,
+        "itemKey": "cobblestone_circle"
       }
     ],
     "editExample": {
@@ -95,7 +114,8 @@
       "terraforming": "missing_or_unlearned",
       "ownedGroundItems": [
         "dirt_patch",
-        "dirt_rows"
+        "dirt_rows",
+        "cobblestone_circle"
       ],
       "expectedGroundInStore": false,
       "expectedGroundInInventory": false
@@ -104,7 +124,8 @@
       "terraforming": "learned",
       "ownedGroundItems": [
         "dirt_patch",
-        "dirt_rows"
+        "dirt_rows",
+        "cobblestone_circle"
       ],
       "expectedGroundInStore": "eligible items under existing store rules",
       "expectedGroundInInventory": "owned ground items"

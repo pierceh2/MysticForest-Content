@@ -65,10 +65,11 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 
 ## Approved ground art for the Xcode pilot
 
-Each entry links to a 16-frame soil atlas. Xcode can use these assets to exercise the future Ground feature. The generated tables above count items in the live catalog.
+Each linked ground atlas contains 16 adjacency frames. Xcode can use these assets to exercise the future Ground feature. The generated tables above count items in the live catalog.
 
 | Ground item | Base | Autumn Leaves | Winter |
 | --- | --- | --- | --- |
+| Cobblestone Circle | [Base](pilots/ground/surfaces/cobblestone_circle.png) | Uses base | Uses base |
 | Dirt Patch | [Base](pilots/ground/surfaces/dirt_patch.png) | [Autumn](pilots/ground/surfaces/fall/dirt_patch.png) | [Winter](pilots/ground/surfaces/winter/dirt_patch.png) |
 | Dirt Rows | [Base](pilots/ground/surfaces/dirt_rows.png) | [Autumn](pilots/ground/surfaces/fall/dirt_rows.png) | [Winter](pilots/ground/surfaces/winter/dirt_rows.png) |
 
