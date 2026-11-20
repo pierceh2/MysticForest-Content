@@ -46,6 +46,14 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 
 <!-- coverage:end -->
 
+## Approved animal art for the Xcode pilot
+
+| Animal | Base | Autumn Leaves | Winter |
+| --- | --- | --- | --- |
+| Cow (`cow`) | [Approved sprite](pilots/animals/sprites/default8bit/cow.png) | Pending approval | Pending approval |
+
+The cow uses its base appearance until an approved seasonal override is available for the day's active, owned pack.
+
 ## Left out on purpose
 
 Add a row here when an item should not get a reskin in a pack, with the reason, so it is not mistaken for a gap. One row per item.
