@@ -21,7 +21,7 @@ Snapshot date: 2026-11-19 (repo `main` at the commit that added this file).
 
 ### Animal pilot for Xcode
 
-The approved base cow is a one-cell animal. **Familiars** is the planned unlock for Animals in Store and Inventory. Its source (spell or achievement) is an open decision. Ground uses its own planned Terraforming spell. See the [cow handoff and Debug fixture](pilots/animals/README.md) for the placement, save and visibility rules.
+The cow is a one-cell animal with approved base, Autumn Leaves and winter appearances. **Familiars** is the planned unlock for Animals in Store and Inventory. Its source (spell or achievement) is an open decision. Ground uses its own planned Terraforming spell. See the [cow handoff and Debug fixture](pilots/animals/README.md) for the placement, save and visibility rules.
 
 ## 2. What you (ChatGPT) do, and what you need
 

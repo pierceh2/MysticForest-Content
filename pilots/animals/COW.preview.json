@@ -1,5 +1,5 @@
 {
-  "purpose": "Debug catalog proposal for the approved base cow",
+  "purpose": "Debug catalog proposal for the cow and its approved seasonal appearances",
   "types": [
     {
       "typeID": "animal",
@@ -27,7 +27,9 @@
       "pose": "static",
       "nativeCanvasPx": [32, 48],
       "spritesByPack": {
-        "default8bit": "sprites/default8bit/cow.png"
+        "default8bit": "sprites/default8bit/cow.png",
+        "fall": "sprites/fall/cow.png",
+        "winter": "sprites/winter/cow.png"
       }
     }
   ],

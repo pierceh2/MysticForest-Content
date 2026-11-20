@@ -50,9 +50,9 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 
 | Animal | Base | Autumn Leaves | Winter |
 | --- | --- | --- | --- |
-| Cow (`cow`) | [Approved sprite](pilots/animals/sprites/default8bit/cow.png) | Pending approval | Pending approval |
+| Cow (`cow`) | [Base sprite](pilots/animals/sprites/default8bit/cow.png) | [Autumn sprite](pilots/animals/sprites/fall/cow.png) | [Winter sprite](pilots/animals/sprites/winter/cow.png) |
 
-The cow uses its base appearance until an approved seasonal override is available for the day's active, owned pack.
+All three PNGs share the animal key `cow`. Other packs use the base sprite. The winter appearance is available in the pilot fixture while the live winter pack is disabled.
 
 ## Left out on purpose
 
