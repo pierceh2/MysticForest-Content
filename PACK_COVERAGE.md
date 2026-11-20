@@ -35,14 +35,15 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `ginkgo` (Ginkgo) | tree | - | yes | yes | - | - |
 | `apple_tree` (Apple Tree) | tree | - | yes | - | yes | - |
 | `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | - |
+| `cherry_blossom` (Cherry Blossom Tree (retired)) | tree | - | yes | - | - | - |
 | `shrine` (Shrine) | landmark | - | yes | yes | yes | - |
 | `pond` (Lily Pond) | landmark | - | yes | yes | yes | - |
 | `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | - |
 | `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | - |
 | `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
-| **Reskinned** | | | 17 of 17 | 10 of 17 | 9 of 17 | 1 of 17 |
+| **Reskinned** | | | 18 of 18 | 10 of 18 | 9 of 18 | 1 of 18 |
 | **Left out on purpose** | | | 0 | 6 | 2 | 0 |
-| **Gaps** | | | 0 | 1 | 6 | 16 |
+| **Gaps** | | | 0 | 2 | 7 | 17 |
 
 <!-- coverage:end -->
 

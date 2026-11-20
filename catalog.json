@@ -100,7 +100,11 @@
       "description": "A tied bundle of dry corn stalks, rustling softly where the harvest has been gathered.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 2,
       "season": "autumn", "tags": ["harvest", "thanksgiving"],
-      "window": { "start": "11-15", "end": "11-30" } }
+      "window": { "start": "11-15", "end": "11-30" } },
+    { "key": "cherry_blossom", "name": "Cherry Blossom Tree",
+      "description": "Pink blossoms gather in soft clusters along the cherry tree’s branches.",
+      "tokenPrice": 3, "startsUnlocked": false, "enabled": false, "spriteRevision": 1,
+      "tags": ["deciduous"] }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
