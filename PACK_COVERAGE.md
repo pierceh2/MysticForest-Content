@@ -10,8 +10,8 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | Pack | Name | Kind | Season | Window | Price | Revision | Tags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `default8bit` | Default 8-bit | default | - | always | 0 | - | - |
-| `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 3 | cosy, leaves |
-| `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 2 | autumn, harvest, cosy |
+| `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 4 | cosy, leaves |
+| `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 3 | autumn, harvest, cosy |
 | `winter` | Winter | seasonal | winter | always | 10 | 1 | - |
 
 <!-- packs:end -->
