@@ -12,7 +12,7 @@
       "tags": ["cosy", "leaves"],
       "tokenPrice": 10,
       "enabled": true,
-      "revision": 2,
+      "revision": 3,
       "ground": {
         "grassLight": "#9E8538",
         "grassDark": "#8A6E2E",
@@ -39,6 +39,16 @@
         "soilLeft": "#6A3A1E",
         "soilRight": "#512C16"
       }
+    },
+    {
+      "key": "winter",
+      "name": "Winter",
+      "description": "A quiet layer of snow settles across the forest.",
+      "kind": "seasonal",
+      "season": "winter",
+      "tokenPrice": 10,
+      "enabled": false,
+      "revision": 1
     }
   ],
   "trees": [
@@ -108,6 +118,22 @@
       "description": "A long table laid with pie, bread and candlelight, waiting for everyone to sit down.",
       "tokenPrice": 4, "footprint": [2, 2], "enabled": true, "spriteRevision": 1,
       "season": "thanksgiving", "tags": ["harvest", "autumn"],
-      "window": { "start": "11-15", "end": "11-30" } }
+      "window": { "start": "11-15", "end": "11-30" } },
+    {
+      "key": "village_hut",
+      "name": "Village Hut",
+      "description": "A small thatched home keeps a warm window lit beneath the forest canopy.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "tags": [
+        "housing",
+        "village"
+      ],
+      "spriteRevision": 1
+    }
   ]
 }

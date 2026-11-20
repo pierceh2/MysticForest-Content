@@ -10,8 +10,9 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | Pack | Name | Kind | Season | Window | Price | Revision | Tags |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `default8bit` | Default 8-bit | default | - | always | 0 | - | - |
-| `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 2 | cosy, leaves |
+| `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 3 | cosy, leaves |
 | `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 2 | autumn, harvest, cosy |
+| `winter` | Winter | seasonal | winter | always | 10 | 1 | - |
 
 <!-- packs:end -->
 
@@ -20,27 +21,28 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 `yes` means the pack has its own sprite for the item. `-` means a gap: nothing yet, so the default sprite shows. `excluded` means it was left out on purpose (see the table after the grid).
 
 <!-- coverage:start -->
-| Item | Type | Season | `default8bit` | `fall` | `thanksgiving_feast` |
-| --- | --- | --- | --- | --- | --- |
-| `oak` (Oak) | tree | - | yes | yes | yes |
-| `pine` (Pine) | tree | - | yes | yes | - |
-| `birch` (Birch) | tree | - | yes | yes | yes |
-| `willow` (Willow) | tree | - | yes | yes | - |
-| `pumpkin` (Pumpkin) | tree | autumn | yes | excluded | yes |
-| `jack_o_lantern` (Jack-o'-Lantern) | tree | autumn | yes | excluded | excluded |
-| `scarecrow` (Scarecrow) | tree | autumn | yes | excluded | yes |
-| `larch` (Larch) | tree | - | yes | yes | - |
-| `maple` (Maple) | tree | - | yes | yes | yes |
-| `ginkgo` (Ginkgo) | tree | - | yes | yes | - |
-| `apple_tree` (Apple Tree) | tree | - | yes | - | yes |
-| `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - |
-| `shrine` (Shrine) | landmark | - | yes | yes | yes |
-| `pond` (Lily Pond) | landmark | - | yes | yes | yes |
-| `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes |
-| `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded |
-| **Reskinned** | | | 16 of 16 | 9 of 16 | 9 of 16 |
-| **Left out on purpose** | | | 0 | 6 | 2 |
-| **Gaps** | | | 0 | 1 | 5 |
+| Item | Type | Season | `default8bit` | `fall` | `thanksgiving_feast` | `winter` |
+| --- | --- | --- | --- | --- | --- | --- |
+| `oak` (Oak) | tree | - | yes | yes | yes | - |
+| `pine` (Pine) | tree | - | yes | yes | - | - |
+| `birch` (Birch) | tree | - | yes | yes | yes | - |
+| `willow` (Willow) | tree | - | yes | yes | - | - |
+| `pumpkin` (Pumpkin) | tree | autumn | yes | excluded | yes | - |
+| `jack_o_lantern` (Jack-o'-Lantern) | tree | autumn | yes | excluded | excluded | - |
+| `scarecrow` (Scarecrow) | tree | autumn | yes | excluded | yes | - |
+| `larch` (Larch) | tree | - | yes | yes | - | - |
+| `maple` (Maple) | tree | - | yes | yes | yes | - |
+| `ginkgo` (Ginkgo) | tree | - | yes | yes | - | - |
+| `apple_tree` (Apple Tree) | tree | - | yes | - | yes | - |
+| `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | - |
+| `shrine` (Shrine) | landmark | - | yes | yes | yes | - |
+| `pond` (Lily Pond) | landmark | - | yes | yes | yes | - |
+| `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | - |
+| `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | - |
+| `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
+| **Reskinned** | | | 17 of 17 | 10 of 17 | 9 of 17 | 1 of 17 |
+| **Left out on purpose** | | | 0 | 6 | 2 | 0 |
+| **Gaps** | | | 0 | 1 | 6 | 16 |
 
 <!-- coverage:end -->
 
