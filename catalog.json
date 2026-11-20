@@ -134,6 +134,10 @@
         "village"
       ],
       "spriteRevision": 1
-    }
+    },
+    { "key": "gold_vein", "name": "Gold Vein",
+      "description": "A bright seam of gold runs through the dark stone.",
+      "tokenPrice": 4, "footprint": [2, 2], "enabled": false, "spriteRevision": 1,
+      "tags": ["monument", "ore"] }
   ]
 }
