@@ -1,0 +1,134 @@
+{
+  "purpose": "Debug contract proposal. Validate proposed type and catalog field names against the app before publication.",
+  "types": [
+    {
+      "typeID": "animal",
+      "sourceCollection": "animals",
+      "inventorySection": "Animals",
+      "storeSection": "Animals",
+      "placementLayer": "foreground"
+    },
+    {
+      "typeID": "ground",
+      "sourceCollection": "groundTiles",
+      "inventorySection": "Ground",
+      "storeSection": "Ground",
+      "placementLayer": "cellSurface",
+      "visibilityGate": {
+        "requiredSpellName": "Terraforming",
+        "spellStatus": "future feature",
+        "missingOrUnlearned": "hide Ground in both Inventory and Store",
+        "learned": "show eligible Ground options, subject to ordinary ownership and purchase rules",
+        "seasonalPackGrantsAccess": false,
+        "appliesTo": [
+          "Ground inventory and placement controls",
+          "Ground store and purchase controls"
+        ],
+        "existingPlacedSurfaces": "retain saved surface keys and render their resolved art on past and current plots"
+      }
+    }
+  ],
+  "debugItems": [
+    {
+      "collection": "groundTiles",
+      "typeID": "ground",
+      "key": "dirt_patch",
+      "name": "Dirt Patch",
+      "cellFootprint": [
+        1,
+        1
+      ],
+      "mergeGroup": "soil",
+      "seasonalLookSource": "effective art pack",
+      "debugOwned": true
+    },
+    {
+      "collection": "groundTiles",
+      "typeID": "ground",
+      "key": "dirt_rows",
+      "name": "Dirt Rows",
+      "cellFootprint": [
+        1,
+        1
+      ],
+      "mergeGroup": "soil",
+      "seasonalLookSource": "effective art pack",
+      "debugOwned": true
+    },
+    {
+      "collection": "groundTiles",
+      "typeID": "ground",
+      "key": "cobblestone_circle",
+      "name": "Cobblestone Circle",
+      "cellFootprint": [
+        1,
+        1
+      ],
+      "mergeGroup": "stone",
+      "seasonalLookSource": "base fallback in all current packs",
+      "debugOwned": true,
+      "artStage": "approved_base_art_for_staging"
+    }
+  ],
+  "savedDayExample": {
+    "description": "Illustrative records for one day. Keep the current tree/landmark save structure in the app. Ground uses a separate optional collection.",
+    "existingForeground": [
+      {
+        "typeID": "tree",
+        "itemKey": "oak",
+        "u": 2,
+        "v": 3
+      }
+    ],
+    "surfaces": [
+      {
+        "u": 2,
+        "v": 3,
+        "itemKey": "dirt_patch"
+      },
+      {
+        "u": 3,
+        "v": 3,
+        "itemKey": "dirt_rows"
+      },
+      {
+        "u": 2,
+        "v": 4,
+        "itemKey": "cobblestone_circle"
+      }
+    ],
+    "editExample": {
+      "replaceAt": [
+        2,
+        3
+      ],
+      "with": "dirt_rows",
+      "clearOperation": "remove only the surface at (2,3)",
+      "legacyDefault": "If surfaces is absent all cells show the existing monthly ground."
+    }
+  },
+  "productionPricing": "undecided",
+  "contentRelease": "after app and validator support for the new item types; player-facing Ground requires the implemented Terraforming spell",
+  "debugSpellFixtures": [
+    {
+      "terraforming": "missing_or_unlearned",
+      "ownedGroundItems": [
+        "dirt_patch",
+        "dirt_rows",
+        "cobblestone_circle"
+      ],
+      "expectedGroundInStore": false,
+      "expectedGroundInInventory": false
+    },
+    {
+      "terraforming": "learned",
+      "ownedGroundItems": [
+        "dirt_patch",
+        "dirt_rows",
+        "cobblestone_circle"
+      ],
+      "expectedGroundInStore": "eligible items under existing store rules",
+      "expectedGroundInInventory": "owned ground items"
+    }
+  ]
+}

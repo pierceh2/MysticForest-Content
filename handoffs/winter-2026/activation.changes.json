@@ -1,0 +1,26 @@
+{
+  "edit": {
+    "packs": [
+      {
+        "key": "winter",
+        "enabled": true
+      }
+    ],
+    "trees": [
+      {
+        "key": "snowman",
+        "enabled": true
+      },
+      {
+        "key": "winterberry_bush",
+        "enabled": true
+      }
+    ],
+    "landmarks": [
+      {
+        "key": "frost_obelisk",
+        "enabled": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "handoffSchemaVersion": 2,
+  "recordKind": "settings_future_features_handoff",
+  "destination": [
+    "Settings",
+    "Future Features"
+  ],
+  "updatedDate": "2026-11-27",
+  "repository": "pierceh2/MysticForest-Content",
+  "purpose": "Source copy and decision records for the existing native roadmap. This is not a runtime catalog schema, native feature-ID registry, unlock implementation or activation command.",
+  "sourceBasis": "Approved content PRs #3–7 and the current Winter approvals, reconciled into this content checkout. Native app implementation is unverified.",
+  "nativePorting": {
+    "stableHandoffKeys": "Retain these keys for mapping across handoffs; preserve existing native IDs and status conventions.",
+    "deduplication": "Match by native ID or meaning, update matching subjects and add missing subjects once. Existing combined rows may represent several subjects without duplicate entries.",
+    "displayFields": [
+      "title",
+      "playerSummary"
+    ],
+    "internalFields": "All other fields document implementation and decisions; do not show raw technical metadata in the player roadmap.",
+    "sideEffects": "Informational only. Opening the tab must not grant or activate content, change balances or mutate saved placements.",
+    "pendingImplementation": "Map the displayed native status to actual verified implementation; content approval is not completion."
+  },
+  "entries": [
+    {
+      "handoffKey": "forest.terraforming",
+      "title": "Terraforming",
+      "playerSummary": "A planned Terraforming spell will let you lay dirt patches, rows of soil, and cobblestone circles beneath your forest objects.",
+      "contentKeys": [
+        "dirt_patch",
+        "dirt_rows",
+        "cobblestone_circle"
+      ],
+      "currentState": "Approved ground artwork and pilot fixtures. Ground is not a supported production catalog class yet.",
+      "approvedDecisions": [
+        "Separate Ground Store and Inventory sections",
+        "Ground surfaces sit beneath foreground objects and use independent saved surface records",
+        "Terraforming is the future spell gate",
+        "Dirt Patch and Dirt Rows have base, autumn and winter art; Cobblestone Circle uses base art across packs"
+      ],
+      "proposedUnlock": "Learn the future Terraforming spell to reveal Ground sections and actions, subject to item ownership and acquisition.",
+      "unresolved": [
+        "Spell identifier and earning criteria",
+        "Individual surface acquisition and pricing"
+      ],
+      "nativeWork": [
+        "Reconcile the proposed ground type and groundTiles collection with the native model",
+        "Implement category gate, decoding, persistence, surface editing and same-day compatible-neighbor joins",
+        "Preserve monthly base floors and existing saved surfaces when the category is locked"
+      ],
+      "sources": [
+        "pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md",
+        "pilots/ground/OBJECT_TYPES.preview.json",
+        "pilots/ground/surfaces/atlas.json"
+      ]
+    },
+    {
+      "handoffKey": "forest.familiars",
+      "title": "Familiars",
+      "playerSummary": "A planned Familiars unlock will introduce forest animals, starting with a cow and a winter snow hare.",
+      "contentKeys": [
+        "cow",
+        "snow_hare"
+      ],
+      "currentState": "Cow base, autumn and winter art and Snow Hare base art are approved pilots. Animals and Familiars are not active production features.",
+      "approvedDecisions": [
+        "Separate Animals Store and Inventory sections",
+        "Hide the category and its actions while Familiars is undefined, unavailable or unearned",
+        "Snow Hare purchase and new placement are restricted to December 1–February 28 inclusive",
+        "Snow Hare has one base appearance and does not require the Winter reskin pack"
+      ],
+      "proposedUnlock": "Familiars opens Animals. Whether it is a spell or achievement remains undecided.",
+      "unresolved": [
+        "Spell or achievement",
+        "Stable requirement identifier and earning criteria",
+        "How Cow and Snow Hare are acquired after the category opens",
+        "Cow and Snow Hare prices"
+      ],
+      "nativeWork": [
+        "Implement and verify the animal type, collection, foreground placement, persistence and rendering",
+        "Retain existing saved animal placements when the category is locked",
+        "Use Debug entitlements only for development; do not grant production access"
+      ],
+      "sources": [
+        "pilots/animals/README.md",
+        "pilots/animals/COW.preview.json",
+        "pilots/winter_objects/manifest.json"
+      ]
+    },
+    {
+      "handoffKey": "forest.village-hut",
+      "title": "Village Hut",
+      "playerSummary": "A Village achievement is being considered for the hut. Once the hut is accessible, an eligible seasonal pack can change its appearance.",
+      "contentKeys": [
+        "village_hut"
+      ],
+      "currentState": "Disabled 2×2 landmark with approved base, autumn and winter artwork.",
+      "approvedDecisions": [
+        "Eligible owned packs may supply the hut appearance after object access",
+        "Appearance-pack ownership alone does not grant the hut"
+      ],
+      "proposedUnlock": "A Village achievement, provisionally named.",
+      "unresolved": [
+        "Achievement identifier and criteria",
+        "Whether the achievement awards the hut or reveals it for purchase"
+      ],
+      "nativeWork": [
+        "Implement the selected access gate only after its definition is settled",
+        "Verify base and seasonal appearance selection without granting object ownership"
+      ],
+      "sources": [
+        "catalog.json",
+        "sprites/default8bit/village_hut.png",
+        "sprites/fall/village_hut.png",
+        "sprites/winter/village_hut.png"
+      ]
+    },
+    {
+      "handoffKey": "forest.gold-vein",
+      "title": "Gold Vein",
+      "playerSummary": "A cluster of golden crystals is planned as a forest landmark. Its unlock is being considered as a spell or achievement.",
+      "contentKeys": [
+        "gold_vein"
+      ],
+      "currentState": "Approved base-only 2×2 landmark, staged disabled. No seasonal window is assigned.",
+      "approvedDecisions": [
+        "Use the same base artwork across appearance packs",
+        "Keep this vein's future unlock independent of the other veins"
+      ],
+      "proposedUnlock": "A separate Gold Vein spell or achievement.",
+      "unresolved": [
+        "Gate type, name, identifier and earning criteria",
+        "Direct reward or store availability after the unlock",
+        "Final acquisition and economy; the staged placement value does not establish a live release"
+      ],
+      "nativeWork": [
+        "Implement the selected gate and ownership behavior after its definition is settled",
+        "Verify 2×2 placement and pack fallback"
+      ],
+      "sources": [
+        "catalog.json",
+        "docs/mineral-veins/README.md",
+        "sprites/default8bit/gold_vein.png"
+      ]
+    },
+    {
+      "handoffKey": "forest.silver-vein",
+      "title": "Silver Vein",
+      "playerSummary": "A silver outcrop is planned as a year-round forest landmark, with its own spell or achievement under consideration.",
+      "contentKeys": [
+        "silver_vein"
+      ],
+      "currentState": "Approved base-only 2×2 landmark, staged disabled. No seasonal window is assigned.",
+      "approvedDecisions": [
+        "Use the same base artwork across appearance packs",
+        "Keep this vein's future unlock independent of the other veins"
+      ],
+      "proposedUnlock": "A separate Silver Vein spell or achievement.",
+      "unresolved": [
+        "Gate type, name, identifier and earning criteria",
+        "Direct reward or store availability after the unlock",
+        "Final acquisition and economy; the staged placement value does not establish a live release"
+      ],
+      "nativeWork": [
+        "Implement the selected gate and ownership behavior after its definition is settled",
+        "Verify 2×2 placement and pack fallback"
+      ],
+      "sources": [
+        "catalog.json",
+        "docs/mineral-veins/README.md",
+        "sprites/default8bit/silver_vein.png"
+      ]
+    },
+    {
+      "handoffKey": "forest.bronze-vein",
+      "title": "Bronze Vein",
+      "playerSummary": "A bronze outcrop is planned for the forest. Its own spell or achievement would give players access to the landmark.",
+      "contentKeys": [
+        "bronze_vein"
+      ],
+      "currentState": "Approved base-only 2×2 landmark, staged disabled. No seasonal window is assigned.",
+      "approvedDecisions": [
+        "Use the same base artwork across appearance packs",
+        "Keep this vein's future unlock independent of the other veins"
+      ],
+      "proposedUnlock": "A separate Bronze Vein spell or achievement.",
+      "unresolved": [
+        "Gate type, name, identifier and earning criteria",
+        "Direct reward or store availability after the unlock",
+        "Final acquisition and economy; the staged placement value does not establish a live release"
+      ],
+      "nativeWork": [
+        "Implement the selected gate and ownership behavior after its definition is settled",
+        "Verify 2×2 placement and pack fallback"
+      ],
+      "sources": [
+        "catalog.json",
+        "docs/mineral-veins/README.md",
+        "sprites/default8bit/bronze_vein.png"
+      ]
+    },
+    {
+      "handoffKey": "forest.cherry-blossom",
+      "title": "Cherry Blossom Tree",
+      "playerSummary": "A flowering cherry tree is planned for the forest, with an approved snowy winter appearance. How players will collect it is still open.",
+      "contentKeys": [
+        "cherry_blossom"
+      ],
+      "currentState": "Approved base and Winter art; tree staged disabled. Autumn art is not approved.",
+      "approvedDecisions": [
+        "Keep the same object key across base and Winter appearances",
+        "Use the Winter override through the appearance-pack resolver after object access"
+      ],
+      "proposedUnlock": null,
+      "unresolved": [
+        "Acquisition method, unlock criteria and availability",
+        "Final economy beyond the staged token value",
+        "Autumn artwork approval"
+      ],
+      "nativeWork": [
+        "Verify base and Winter sprite anchors, scaling and cache refresh",
+        "Implement release rules only after the remaining object decisions are settled"
+      ],
+      "sources": [
+        "catalog.json",
+        "sprites/default8bit/cherry_blossom.png",
+        "sprites/winter/cherry_blossom.png",
+        "deliveries/delivery-2026-11-27-winter-cherry/changes.json"
+      ]
+    },
+    {
+      "handoffKey": "forest.classic-retro",
+      "title": "Classic Retro Collection",
+      "playerSummary": "A planned Classic Retro appearance pack would bring back the original forest sprites. Its unlock timing is still open.",
+      "contentKeys": [
+        "classic_retro"
+      ],
+      "currentState": "All 34 original sprite files are archived. Refined remains the standard art. classic_retro is a proposed pack key, not an active catalog pack.",
+      "approvedDecisions": [
+        "Preserve the original sprites as a separate collection",
+        "Keep Refined as the standard appearance"
+      ],
+      "proposedUnlock": null,
+      "unresolved": [
+        "Pack unlock method and availability",
+        "How selection interacts with seasonal appearance packs",
+        "Retro art coverage for objects added after the original collection"
+      ],
+      "nativeWork": [
+        "Reconcile future pack selection with the app's one-pack-per-day resolver",
+        "Preserve saved placements and item keys while changing only appearance"
+      ],
+      "sources": [
+        "art-archive/classic-retro/sprites",
+        "catalog.json"
+      ]
+    },
+    {
+      "handoffKey": "forest.winter-pack",
+      "title": "Winter Art Pack",
+      "playerSummary": "A Winter appearance pack is planned with snowy looks for forest objects, available during the winter season.",
+      "contentKeys": [
+        "winter"
+      ],
+      "currentState": "Artwork, dates, price and ordinary seasonal acquisition are approved. The pack remains disabled pending native visual verification.",
+      "approvedDecisions": [
+        "Ordinary seasonal pack purchase",
+        "10 Forest tokens",
+        "December 1–February 28 inclusive; February 29 excluded",
+        "Ownership persists after the purchase window closes",
+        "Appearance ownership does not grant objects or bypass their placement windows"
+      ],
+      "approvedAcquisition": {
+        "method": "seasonal_pack_purchase",
+        "currency": "forest_tokens",
+        "purchasePrice": 10,
+        "window": {
+          "start": "12-01",
+          "end": "02-28",
+          "inclusive": true
+        },
+        "ownershipPersists": true
+      },
+      "proposedUnlock": null,
+      "unresolved": [],
+      "nativeWork": [
+        "Verify approved Winter artwork, full canvases, nearest-neighbor rendering, anchors and consistent Day/macro Forest scale",
+        "Verify cache revisions, missing-override fallback, pack resolution and existing saved forests",
+        "After passing the required native checks, activate under the existing approval without repeating date, price or acquisition approval"
+      ],
+      "sources": [
+        "catalog.json",
+        "PACK_COVERAGE.md",
+        "pilots/winter_objects/XCODE_HANDOFF.md",
+        "handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md"
+      ]
+    },
+    {
+      "handoffKey": "forest.winter-only-objects",
+      "title": "Winter Forest Objects",
+      "playerSummary": "A snowman, winterberry bush and frost obelisk are planned for winter purchases and placement. A snow hare will also depend on the future Familiars unlock.",
+      "contentKeys": [
+        "snowman",
+        "winterberry_bush",
+        "frost_obelisk",
+        "snow_hare"
+      ],
+      "currentState": "All four base sprites are approved. The three supported tree/landmark objects remain disabled pending native checks; Snow Hare remains an animal pilot with unresolved access and economics.",
+      "approvedDecisions": [
+        "Snowman and Winterberry Bush are ordinary seasonal purchases at 3 tokens to unlock and 1 per placement",
+        "Frost Obelisk is an ordinary seasonal purchase at 8 tokens to unlock and 4 per placement",
+        "No extra spell or achievement is required for the three supported objects",
+        "All four use December 1–February 28 inclusive for purchase and new placement",
+        "All four use base art and do not require the Winter appearance pack"
+      ],
+      "approvedAcquisition": [
+        {
+          "key": "snowman",
+          "method": "seasonal_item_purchase",
+          "currency": "forest_tokens",
+          "purchasePrice": 3,
+          "placementPrice": 1,
+          "additionalUnlock": null
+        },
+        {
+          "key": "winterberry_bush",
+          "method": "seasonal_item_purchase",
+          "currency": "forest_tokens",
+          "purchasePrice": 3,
+          "placementPrice": 1,
+          "additionalUnlock": null
+        },
+        {
+          "key": "frost_obelisk",
+          "method": "seasonal_item_purchase",
+          "currency": "forest_tokens",
+          "purchasePrice": 8,
+          "placementPrice": 4,
+          "additionalUnlock": null
+        }
+      ],
+      "approvedWindow": {
+        "start": "12-01",
+        "end": "02-28",
+        "inclusive": true
+      },
+      "proposedUnlock": "Snow Hare additionally depends on the unresolved Familiars category gate.",
+      "unresolved": [
+        "Snow Hare access and prices are tracked under forest.familiars"
+      ],
+      "nativeWork": [
+        "Verify supported object art and authoritative seasonal purchase/new-placement checks",
+        "Activate Snowman, Winterberry Bush and Frost Obelisk after the required checks under the existing approval; no repeated economy or acquisition approval",
+        "Do not enable Snow Hare as part of the supported-object activation"
+      ],
+      "sources": [
+        "catalog.json",
+        "pilots/winter_objects/manifest.json",
+        "pilots/winter_objects/XCODE_HANDOFF.md"
+      ]
+    },
+    {
+      "handoffKey": "forest.seasonal-placement",
+      "title": "Seasonal Placement",
+      "playerSummary": "Seasonal forest objects will follow their own purchase and planting dates. Owned objects remain in your collection, and objects already placed remain in the forest.",
+      "contentKeys": [
+        "pumpkin",
+        "jack_o_lantern",
+        "corn_stalks",
+        "scarecrow",
+        "apple_tree",
+        "harvest_table",
+        "hay_bales",
+        "snowman",
+        "winterberry_bush",
+        "frost_obelisk",
+        "snow_hare"
+      ],
+      "currentState": "The owner-approved policy covers seven existing seasonal objects and four Winter-only objects. Native enforcement and simulator verification remain pending.",
+      "approvedDecisions": [
+        "Restrict new purchases and new placements to each listed object's window, even when owned",
+        "Use the actual local device date; inclusive boundaries and year wrapping",
+        "Retain ownership and continue rendering existing saved placements",
+        "Historical plot dates, pack ownership and appearance choices do not bypass eligibility",
+        "February 29 is excluded from the approved Winter window"
+      ],
+      "approvedWindows": [
+        {
+          "key": "pumpkin",
+          "start": "10-01",
+          "end": "11-30"
+        },
+        {
+          "key": "jack_o_lantern",
+          "start": "10-01",
+          "end": "10-31"
+        },
+        {
+          "key": "corn_stalks",
+          "start": "11-15",
+          "end": "11-30"
+        },
+        {
+          "key": "scarecrow",
+          "start": "10-01",
+          "end": "11-30"
+        },
+        {
+          "key": "apple_tree",
+          "start": "10-01",
+          "end": "12-01"
+        },
+        {
+          "key": "harvest_table",
+          "start": "11-15",
+          "end": "11-30"
+        },
+        {
+          "key": "hay_bales",
+          "start": "10-01",
+          "end": "12-01"
+        },
+        {
+          "key": "snowman",
+          "start": "12-01",
+          "end": "02-28"
+        },
+        {
+          "key": "winterberry_bush",
+          "start": "12-01",
+          "end": "02-28"
+        },
+        {
+          "key": "frost_obelisk",
+          "start": "12-01",
+          "end": "02-28"
+        },
+        {
+          "key": "snow_hare",
+          "start": "12-01",
+          "end": "02-28"
+        }
+      ],
+      "proposedUnlock": null,
+      "unresolved": [],
+      "nativeWork": [
+        "Implement one shared eligibility service for Store, Inventory, previews and final mutation",
+        "Recheck before currency or occupancy changes; reject missing or invalid windows",
+        "Verify boundaries, leap day, midnight rollover, owned-item restrictions, 2×2 atomicity and existing saved forests",
+        "Add Snow Hare only through a supported animal model while keeping Familiars prerequisites separate"
+      ],
+      "sources": [
+        "handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md",
+        "catalog.json",
+        "pilots/winter_objects/manifest.json"
+      ]
+    }
+  ]
+}

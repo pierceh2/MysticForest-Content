@@ -33,7 +33,7 @@ Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled",
 
 Item seasons and tags are used for browsing only; they change no price or rule.
 
-An item with a `window` is hidden from the Store while outside that window if it is unowned. Owned items stay owned, remain in the Inventory, and can be planted all year. The app checks the device's local date. An unreadable window makes the item never buyable. Items without a window are buyable all year. `buyOnlyInSeason` is not allowed on items.
+An item with a `window` is hidden from the Store while outside that window if it is unowned. Under the owner's newer seasonal policy, the seven existing keys and four Winter keys listed in [the seasonal handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md) also reject every new placement outside their window, even when owned. Ownership and saved placements persist; existing forests keep drawing them. Use the actual local device date in the UI and final purchase/placement mutation. Native enforcement must be verified before activating the staged Winter objects; a content window alone does not prove that behavior exists in older app builds. An unreadable window makes the item never buyable and must reject new placement for these restricted keys. Items without a window retain their ordinary eligibility. `buyOnlyInSeason` is not allowed on items.
 
 Rules:
 - Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.

@@ -1,0 +1,156 @@
+{
+  "recordVersion": 1,
+  "runtimeInput": false,
+  "approvalDate": "2026-11-27",
+  "status": "business_decisions_approved_native_verification_pending",
+  "source": "Owner approved the Winter reskin pack, recommended dates, prices and acquisition, plus earlier table work; Familiars may remain pending.",
+  "winterPack": {
+    "key": "winter",
+    "tokenPrice": 10,
+    "window": {
+      "start": "12-01",
+      "end": "02-28"
+    },
+    "inclusive": true,
+    "annual": true,
+    "revision": 3,
+    "enabled": false,
+    "activationCondition": "native_visual_and_pack_behavior_checks_pass"
+  },
+  "ordinarySeasonalPurchases": [
+    {
+      "key": "snowman",
+      "collection": "trees",
+      "storePrice": 3,
+      "plantPrice": 1,
+      "tokenPrice": 3
+    },
+    {
+      "key": "winterberry_bush",
+      "collection": "trees",
+      "storePrice": 3,
+      "plantPrice": 1,
+      "tokenPrice": 3
+    },
+    {
+      "key": "frost_obelisk",
+      "collection": "landmarks",
+      "storePrice": 8,
+      "plantPrice": 4,
+      "tokenPrice": 4
+    }
+  ],
+  "objectPurchaseAndNewPlacementWindow": {
+    "start": "12-01",
+    "end": "02-28",
+    "inclusive": true,
+    "annual": true,
+    "evaluationDate": "actual_local_device_date",
+    "february29Included": false
+  },
+  "objectAcquisition": {
+    "kind": "ordinary_seasonal_purchase",
+    "additionalUnlockRequired": false,
+    "winterPackOwnershipRequired": false
+  },
+  "activation": {
+    "ownerApprovalComplete": true,
+    "repeatBusinessApprovalRequired": false,
+    "status": "pending_native_verification",
+    "changesFile": "activation.changes.json",
+    "allowedEnabledKeys": [
+      "winter",
+      "snowman",
+      "winterberry_bush",
+      "frost_obelisk"
+    ],
+    "preconditions": [
+      "Build and verify the current native ChronosKeep target; record the tested app revision.",
+      "Verify Refined and Winter PNG canvases, anchors, nearest-neighbor scale and Day/World rendering.",
+      "Verify Winter ownership, pack purchase dates, appearance selection and fallback behavior.",
+      "Enforce actual-local-date seasonal purchase and every-new-placement checks in UI and final mutations; test year wrap, endpoints, leap day and stale UI.",
+      "Preserve saved placements/ownership and reject out-of-window actions without spending tokens or reserving cells.",
+      "Verify prices of 3/1, 3/1 and 8/4; Winter unlock costs 10 Forest tokens.",
+      "Ensure the app version receiving this content supports these rules before enabling the shared main catalog; consider older installed app versions.",
+      "Apply the four enabled edits only; run repository validator and coverage check and confirm GitHub CI."
+    ]
+  },
+  "stillPending": {
+    "familiars": {
+      "kind": null,
+      "requirementID": null,
+      "earningCriteria": null,
+      "affectedAnimals": [
+        "cow",
+        "snow_hare"
+      ],
+      "prices": null
+    },
+    "terraforming": {
+      "kind": "future_spell",
+      "requirementID": null,
+      "earningCriteria": null,
+      "groundPrices": null
+    },
+    "mineralVeins": {
+      "keys": [
+        "gold_vein",
+        "silver_vein",
+        "bronze_vein"
+      ],
+      "eachUnlockKind": null,
+      "eachRequirementID": null,
+      "rewardVsPurchase": null,
+      "economy": "existing_placeholders_only"
+    },
+    "cherryBlossom": {
+      "enabled": false,
+      "economy": "existing_3_token_tree_placeholder",
+      "unlockAndAvailability": "undecided",
+      "autumnArt": "unapproved"
+    },
+    "villageHut": {
+      "enabled": false,
+      "plannedUnlock": "Village achievement",
+      "criteria": null
+    },
+    "classicRetro": {
+      "originalsPreserved": true,
+      "packUnlock": "undecided"
+    }
+  },
+  "approvedSourcePullRequests": [
+    {
+      "pullRequest": 3,
+      "head": "5556132d54038a172edcb6eb8277e4788bb6f222",
+      "branch": "feature/terraforming-ground-pilot"
+    },
+    {
+      "pullRequest": 4,
+      "head": "764692c918514e35b12283954088897357491ef4",
+      "branch": "feature/familiars-cow-base"
+    },
+    {
+      "pullRequest": 5,
+      "head": "aa5dd400c4e627a30da776255800b34a4a42bf8e",
+      "branch": "feature/cherry-blossom-base"
+    },
+    {
+      "pullRequest": 6,
+      "head": "228fcb6faa1103ae4edc27806fd070a801b27591",
+      "branch": "feature/gold-vein-base"
+    },
+    {
+      "pullRequest": 7,
+      "head": "b0a7bd33bd2b07eb2c2f5cd5c1d301428b645466",
+      "branch": "feature/silver-bronze-veins"
+    }
+  ],
+  "preservation": {
+    "existingCatalogKeysAndPrices": true,
+    "existingSpriteBytes": true,
+    "classicRetroArchive": true,
+    "sevenExistingSeasonalWindows": true,
+    "snowHarePilot": true
+  }
+}

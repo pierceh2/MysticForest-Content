@@ -46,10 +46,11 @@
       "description": "A quiet layer of snow settles across the forest.",
       "kind": "seasonal",
       "season": "winter",
+      "window": { "start": "12-01", "end": "02-28" },
       "tags": ["snow", "frost", "cosy"],
       "tokenPrice": 10,
       "enabled": false,
-      "revision": 2
+      "revision": 3
     }
   ],
   "trees": [
@@ -138,6 +139,18 @@
         "start": "12-01",
         "end": "02-28"
       }
+    },
+    {
+      "key": "cherry_blossom",
+      "name": "Cherry Blossom Tree",
+      "description": "Pink blossoms gather in soft clusters along the cherry tree’s branches.",
+      "tokenPrice": 3,
+      "startsUnlocked": false,
+      "enabled": false,
+      "spriteRevision": 1,
+      "tags": [
+        "deciduous"
+      ]
     }
   ],
   "landmarks": [
@@ -193,6 +206,54 @@
         "start": "12-01",
         "end": "02-28"
       }
+    },
+    {
+      "key": "gold_vein",
+      "name": "Gold Vein",
+      "description": "A bright seam of gold runs through the dark stone.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "tags": [
+        "monument",
+        "ore"
+      ]
+    },
+    {
+      "key": "silver_vein",
+      "name": "Silver Vein",
+      "description": "Bright silver blades rise from a shelf of dark stone.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "tags": [
+        "monument",
+        "ore"
+      ]
+    },
+    {
+      "key": "bronze_vein",
+      "name": "Bronze Vein",
+      "description": "Warm bronze nodules cluster along a low ridge of plum-brown rock.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "tags": [
+        "monument",
+        "ore"
+      ]
     }
   ]
 }

@@ -1,11 +1,11 @@
 {
   "manifestVersion": 1,
   "runtimeInput": false,
-  "scope": "Approved winter-only base artwork and disabled catalog registrations; animal pilot and native integration handoff.",
+  "scope": "Approved winter-only base artwork, approved seasonal purchase economy, disabled catalog registrations, animal pilot and native activation handoff.",
   "approval": {
     "status": "approved",
     "date": "2026-11-27",
-    "scope": "All four reviewed native sprites; owner requested publication to main. Final economy and runtime activation are separate."
+    "scope": "All four native sprites approved. Winter dates and the three supported objects' prices and ordinary seasonal acquisition are approved. Familiars and animal economy remain pending; native verification precedes activation."
   },
   "counts": {
     "approvedSprites": 4,
@@ -57,15 +57,18 @@
       "runtimeEnabled": false,
       "catalogStatus": "registered_disabled",
       "finalApprovedEconomy": {
-        "purchasePrice": null,
-        "placementCost": null
+        "purchasePrice": 3,
+        "placementCost": 1,
+        "currency": "forest_tokens",
+        "status": "owner_approved",
+        "date": "2026-11-27"
       },
       "stagingEconomy": {
         "tokenPrice": 3,
         "effectiveStorePrice": 3,
         "effectivePlantPrice": 1,
-        "status": "placeholder_not_final_price_approval",
-        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+        "status": "owner_approved_catalog_defaults",
+        "source": "Owner approval on 2026-11-27; existing catalog default pricing semantics."
       },
       "itemUnlockRule": null,
       "classVisibilityGate": null,
@@ -77,7 +80,7 @@
         "start": "12-01",
         "end": "02-28"
       },
-      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "availabilityStatus": "dates_approved_configured_disabled_pending_native_checks",
       "newPlacementEnforcement": "requires_native_implementation",
       "qa": {
         "canvasPx": [
@@ -105,7 +108,13 @@
         "repoFormatCheckScope": "PNG format validation only; native app verification pending",
         "ownerArtworkApproval": "approved",
         "nativeDayWorldVerification": "pending_app_integration"
-      }
+      },
+      "acquisition": {
+        "kind": "ordinary_seasonal_purchase",
+        "additionalUnlockRequired": false,
+        "status": "owner_approved"
+      },
+      "activationStatus": "authorized_after_native_checks_no_repeat_business_approval"
     },
     {
       "key": "snow_hare",
@@ -237,15 +246,18 @@
       "runtimeEnabled": false,
       "catalogStatus": "registered_disabled",
       "finalApprovedEconomy": {
-        "purchasePrice": null,
-        "placementCost": null
+        "purchasePrice": 8,
+        "placementCost": 4,
+        "currency": "forest_tokens",
+        "status": "owner_approved",
+        "date": "2026-11-27"
       },
       "stagingEconomy": {
         "tokenPrice": 4,
         "effectiveStorePrice": 8,
         "effectivePlantPrice": 4,
-        "status": "placeholder_not_final_price_approval",
-        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+        "status": "owner_approved_catalog_defaults",
+        "source": "Owner approval on 2026-11-27; existing catalog default pricing semantics."
       },
       "itemUnlockRule": null,
       "classVisibilityGate": null,
@@ -257,7 +269,7 @@
         "start": "12-01",
         "end": "02-28"
       },
-      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "availabilityStatus": "dates_approved_configured_disabled_pending_native_checks",
       "newPlacementEnforcement": "requires_native_implementation",
       "qa": {
         "canvasPx": [
@@ -285,7 +297,13 @@
         "repoFormatCheckScope": "PNG format validation only; native app verification pending",
         "ownerArtworkApproval": "approved",
         "nativeDayWorldVerification": "pending_app_integration"
-      }
+      },
+      "acquisition": {
+        "kind": "ordinary_seasonal_purchase",
+        "additionalUnlockRequired": false,
+        "status": "owner_approved"
+      },
+      "activationStatus": "authorized_after_native_checks_no_repeat_business_approval"
     },
     {
       "key": "snowman",
@@ -329,15 +347,18 @@
       "runtimeEnabled": false,
       "catalogStatus": "registered_disabled",
       "finalApprovedEconomy": {
-        "purchasePrice": null,
-        "placementCost": null
+        "purchasePrice": 3,
+        "placementCost": 1,
+        "currency": "forest_tokens",
+        "status": "owner_approved",
+        "date": "2026-11-27"
       },
       "stagingEconomy": {
         "tokenPrice": 3,
         "effectiveStorePrice": 3,
         "effectivePlantPrice": 1,
-        "status": "placeholder_not_final_price_approval",
-        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+        "status": "owner_approved_catalog_defaults",
+        "source": "Owner approval on 2026-11-27; existing catalog default pricing semantics."
       },
       "itemUnlockRule": null,
       "classVisibilityGate": null,
@@ -349,7 +370,7 @@
         "start": "12-01",
         "end": "02-28"
       },
-      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "availabilityStatus": "dates_approved_configured_disabled_pending_native_checks",
       "newPlacementEnforcement": "requires_native_implementation",
       "qa": {
         "canvasPx": [
@@ -377,7 +398,13 @@
         "repoFormatCheckScope": "PNG format validation only; native app verification pending",
         "ownerArtworkApproval": "approved",
         "nativeDayWorldVerification": "pending_app_integration"
-      }
+      },
+      "acquisition": {
+        "kind": "ordinary_seasonal_purchase",
+        "additionalUnlockRequired": false,
+        "status": "owner_approved"
+      },
+      "activationStatus": "authorized_after_native_checks_no_repeat_business_approval"
     }
   ],
   "availabilityPolicy": {
@@ -397,7 +424,7 @@
     "ownedItemsRemainSeasonRestrictedForNewPlacement": true,
     "preserveOwnership": true,
     "preserveExistingPlacements": true,
-    "leapDayPolicy": "February 29 is outside the exact planned February 28 endpoint.",
+    "leapDayPolicy": "February 29 is outside the approved February 28 endpoint.",
     "nativeStatus": "implementation_and_simulator_verification_pending"
   },
   "runtimeCatalogChange": {
@@ -414,11 +441,16 @@
     "packsChanged": []
   },
   "openDecisions": [
-    "Final purchase and placement prices",
-    "Additional acquisition requirements for Snowman, Winterberry Bush and Frost Obelisk, if any",
-    "Familiars spell versus achievement, identifier and earning criteria",
-    "Native integration and seasonal placement verification before activation"
+    "Snow Hare purchase and placement prices",
+    "Familiars spell versus achievement, stable identifier and earning criteria"
   ],
   "handoff": "pilots/winter_objects/XCODE_HANDOFF.md",
-  "delivery": "deliveries/delivery-2026-11-27-winter-objects"
+  "delivery": "deliveries/delivery-2026-11-27-winter-objects",
+  "requiredTechnicalWork": [
+    "Native Day and World visual/anchor verification",
+    "Native seasonal purchase and every-new-placement enforcement before supported-object activation",
+    "Separate Animals type, persistence and gate integration before any animal activation"
+  ],
+  "currentReleaseApproval": "../../handoffs/winter-2026/approval.json",
+  "authorizedActivationChanges": "../../handoffs/winter-2026/activation.changes.json"
 }
