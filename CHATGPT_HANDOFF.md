@@ -104,6 +104,8 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 
 ### Items
 
+Tree purchase windows in this table were updated on November 27, 2026. Pumpkin and Scarecrow run October 1 through November 30, Jack-o'-Lantern runs October 1 through October 31, and Apple Tree follows the Autumn Leaves purchase window of October 1 through December 1. End dates are inclusive. Owned items remain available for planting all year.
+
 `tokenPrice` is the unlock price for a tree (planting costs 1) and the per-placement price for a landmark (unlocking costs 8). No item sets `storePrice` or `plantPrice` yet.
 
 | Key | Name | Type | `tokenPrice` | Season | Window | Tags |
@@ -112,13 +114,13 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 | pine | Pine | tree | 0, starts unlocked | - | - | evergreen, conifer |
 | birch | Birch | tree | 3 | - | - | deciduous, slender |
 | willow | Willow | tree | 5 | - | - | deciduous, waterside |
-| pumpkin | Pumpkin | tree | 4 | autumn | 10-01 to 12-01 | halloween, pumpkin |
-| jack_o_lantern | Jack-o'-Lantern | tree | 4 | autumn | 10-01 to 12-01 | halloween, pumpkin |
-| scarecrow | Scarecrow | tree | 4 | autumn | 10-01 to 12-01 | halloween |
+| pumpkin | Pumpkin | tree | 4 | autumn | 10-01 to 11-30 | halloween, pumpkin |
+| jack_o_lantern | Jack-o'-Lantern | tree | 4 | autumn | 10-01 to 10-31 | halloween, pumpkin |
+| scarecrow | Scarecrow | tree | 4 | autumn | 10-01 to 11-30 | halloween |
 | larch | Larch | tree | 4 | - | - | conifer |
 | maple | Maple | tree | 4 | - | - | deciduous |
 | ginkgo | Ginkgo | tree | 4 | - | - | deciduous |
-| apple_tree | Apple Tree | tree | 4 | - | 11-15 to 11-30 | fruit, harvest |
+| apple_tree | Apple Tree | tree | 4 | - | 10-01 to 12-01 | fruit, harvest |
 | corn_stalks | Corn Stalks | tree | 4 | autumn | 11-15 to 11-30 | harvest, thanksgiving |
 | shrine | Shrine | landmark | 4 | - | - | stone, mossy |
 | pond | Lily Pond | landmark | 4 | - | - | water, waterside |
@@ -137,7 +139,7 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 ### Known issues and open points
 
 - **Pack sprites render at about one third of their size in the app** (seen on the `fall` pack). The PNGs are correct (same 32x48 / 64x96 canvases and drawn areas as the defaults); this is an app bug that was reported to the owner's Xcode agent. **Never "fix" it by making sprites bigger.** Ask the owner whether it has been fixed.
-- Item `window` dates duplicate their pack's dates. If a pack's window changes, the matching items' windows need the same change.
+- Item `window` dates are selected per item. Review related item windows when changing a pack window and preserve the owner's chosen dates.
 - Pack keys are permanent: `fall` stays `fall` (its season is `autumn`), and `thanksgiving_feast` stays as is.
 
 ### Tools in the repo

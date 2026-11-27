@@ -1,0 +1,60 @@
+{
+  "edit": {
+    "packs": [
+      {
+        "key": "winter",
+        "tags": [
+          "snow",
+          "frost",
+          "cosy"
+        ]
+      }
+    ]
+  },
+  "spritesChanged": [
+    {
+      "pack": "winter",
+      "key": "oak"
+    },
+    {
+      "pack": "winter",
+      "key": "pine"
+    },
+    {
+      "pack": "winter",
+      "key": "birch"
+    },
+    {
+      "pack": "winter",
+      "key": "willow"
+    },
+    {
+      "pack": "winter",
+      "key": "larch"
+    },
+    {
+      "pack": "winter",
+      "key": "maple"
+    },
+    {
+      "pack": "winter",
+      "key": "ginkgo"
+    },
+    {
+      "pack": "winter",
+      "key": "shrine"
+    },
+    {
+      "pack": "winter",
+      "key": "pond"
+    },
+    {
+      "pack": "winter",
+      "key": "apple_tree"
+    },
+    {
+      "pack": "winter",
+      "key": "hay_bales"
+    }
+  ]
+}
