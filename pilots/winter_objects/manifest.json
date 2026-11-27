@@ -1,0 +1,424 @@
+{
+  "manifestVersion": 1,
+  "runtimeInput": false,
+  "scope": "Approved winter-only base artwork and disabled catalog registrations; animal pilot and native integration handoff.",
+  "approval": {
+    "status": "approved",
+    "date": "2026-11-27",
+    "scope": "All four reviewed native sprites; owner requested publication to main. Final economy and runtime activation are separate."
+  },
+  "counts": {
+    "approvedSprites": 4,
+    "disabledRuntimeCatalogEntries": 3,
+    "animalPilots": 1,
+    "enabledNewObjects": 0
+  },
+  "items": [
+    {
+      "key": "winterberry_bush",
+      "name": "Winterberry Bush",
+      "designClass": "tree",
+      "runtimeCollection": "trees",
+      "proposedAnimalType": null,
+      "artApproval": "approved",
+      "publication": "included_in_this_delivery",
+      "spritePath": "sprites/default8bit/winterberry_bush.png",
+      "sha256": "5eaac5bb76269452f8cfcd7cd6e8951df63757988a1b74735819d0f17736aeab",
+      "canvasPx": [
+        32,
+        48
+      ],
+      "footprintCells": [
+        1,
+        1
+      ],
+      "appearance": "base",
+      "season": "winter",
+      "reskinPackRequired": false,
+      "catalogEntry": {
+        "key": "winterberry_bush",
+        "name": "Winterberry Bush",
+        "description": "Bright red berries rest on bare branches beneath a quiet dusting of snow.",
+        "tokenPrice": 3,
+        "startsUnlocked": false,
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "berries",
+          "shrub",
+          "snow"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      },
+      "runtimeEnabled": false,
+      "catalogStatus": "registered_disabled",
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null
+      },
+      "stagingEconomy": {
+        "tokenPrice": 3,
+        "effectiveStorePrice": 3,
+        "effectivePlantPrice": 1,
+        "status": "placeholder_not_final_price_approval",
+        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+      },
+      "itemUnlockRule": null,
+      "classVisibilityGate": null,
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindowPlan": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "newPlacementEnforcement": "requires_native_implementation",
+      "qa": {
+        "canvasPx": [
+          32,
+          48
+        ],
+        "opaqueBoundsPxExclusive": [
+          3,
+          20,
+          29,
+          41
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 14,
+        "lowestOpaqueRow": 40,
+        "connectedComponents8": [
+          317
+        ],
+        "sha256": "5eaac5bb76269452f8cfcd7cd6e8951df63757988a1b74735819d0f17736aeab",
+        "status": "format_pass_art_approved",
+        "repoFormatCheck": "passed",
+        "repoFormatCheckScope": "PNG format validation only; native app verification pending",
+        "ownerArtworkApproval": "approved",
+        "nativeDayWorldVerification": "pending_app_integration"
+      }
+    },
+    {
+      "key": "snow_hare",
+      "name": "Snow Hare",
+      "designClass": "animal",
+      "runtimeCollection": null,
+      "proposedAnimalType": "animal",
+      "artApproval": "approved",
+      "publication": "included_in_this_delivery",
+      "spritePath": "pilots/animals/sprites/default8bit/snow_hare.png",
+      "sha256": "66f227394e88a96f86f798a928ed94f9d9bf32336b64180f6e4d28bc3dd534c2",
+      "canvasPx": [
+        32,
+        48
+      ],
+      "footprintCells": [
+        1,
+        1
+      ],
+      "appearance": "base",
+      "season": "winter",
+      "reskinPackRequired": false,
+      "catalogEntry": null,
+      "runtimeEnabled": false,
+      "catalogStatus": "animal_pilot_only",
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null
+      },
+      "stagingEconomy": null,
+      "itemUnlockRule": null,
+      "classVisibilityGate": {
+        "name": "Familiars",
+        "kind": null,
+        "candidateKinds": [
+          "spell",
+          "achievement"
+        ],
+        "requirementID": null,
+        "earningCriteria": null,
+        "implementationStatus": "future_feature",
+        "inventorySection": "Animals",
+        "storeSection": "Animals",
+        "lockedBehavior": "Hide Animals sections and purchase/placement actions when Familiars is unavailable, unknown or unearned.",
+        "unlockedBehavior": "Show eligible animal options subject to ownership, the winter date window and ordinary purchase rules.",
+        "artPackGrantsAccess": false,
+        "savedPlacementsPersist": true
+      },
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindowPlan": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "availabilityStatus": "planned_animal_pilot",
+      "newPlacementEnforcement": "requires_native_implementation",
+      "qa": {
+        "canvasPx": [
+          32,
+          48
+        ],
+        "opaqueBoundsPxExclusive": [
+          6,
+          16,
+          26,
+          41
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 14,
+        "lowestOpaqueRow": 40,
+        "connectedComponents8": [
+          313
+        ],
+        "sha256": "66f227394e88a96f86f798a928ed94f9d9bf32336b64180f6e4d28bc3dd534c2",
+        "status": "format_pass_art_approved",
+        "repoFormatCheck": "passed",
+        "repoFormatCheckScope": "PNG format validation only; native app verification pending",
+        "ownerArtworkApproval": "approved",
+        "nativeDayWorldVerification": "pending_app_integration"
+      }
+    },
+    {
+      "key": "frost_obelisk",
+      "name": "Frost Obelisk",
+      "designClass": "monument",
+      "runtimeCollection": "landmarks",
+      "proposedAnimalType": null,
+      "artApproval": "approved",
+      "publication": "included_in_this_delivery",
+      "spritePath": "sprites/default8bit/frost_obelisk.png",
+      "sha256": "f03392f31d409e55ba26d7d7bb09a40c001fcd1301ac273872b6939377591bb6",
+      "canvasPx": [
+        64,
+        96
+      ],
+      "footprintCells": [
+        2,
+        2
+      ],
+      "appearance": "base",
+      "season": "winter",
+      "reskinPackRequired": false,
+      "catalogEntry": {
+        "key": "frost_obelisk",
+        "name": "Frost Obelisk",
+        "description": "A pale rune glimmers within a tall pillar of ice at the forest's edge.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "ice",
+          "magic"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      },
+      "runtimeEnabled": false,
+      "catalogStatus": "registered_disabled",
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null
+      },
+      "stagingEconomy": {
+        "tokenPrice": 4,
+        "effectiveStorePrice": 8,
+        "effectivePlantPrice": 4,
+        "status": "placeholder_not_final_price_approval",
+        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+      },
+      "itemUnlockRule": null,
+      "classVisibilityGate": null,
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindowPlan": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "newPlacementEnforcement": "requires_native_implementation",
+      "qa": {
+        "canvasPx": [
+          64,
+          96
+        ],
+        "opaqueBoundsPxExclusive": [
+          16,
+          19,
+          47,
+          95
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 15,
+        "lowestOpaqueRow": 94,
+        "connectedComponents8": [
+          1460
+        ],
+        "sha256": "f03392f31d409e55ba26d7d7bb09a40c001fcd1301ac273872b6939377591bb6",
+        "status": "format_pass_art_approved",
+        "repoFormatCheck": "passed",
+        "repoFormatCheckScope": "PNG format validation only; native app verification pending",
+        "ownerArtworkApproval": "approved",
+        "nativeDayWorldVerification": "pending_app_integration"
+      }
+    },
+    {
+      "key": "snowman",
+      "name": "Snowman",
+      "designClass": "decoration",
+      "runtimeCollection": "trees",
+      "proposedAnimalType": null,
+      "artApproval": "approved",
+      "publication": "included_in_this_delivery",
+      "spritePath": "sprites/default8bit/snowman.png",
+      "sha256": "465c50d756eff7e0fc3b462148e4e1c788abffd550338beba39c8dac4cbb7c2a",
+      "canvasPx": [
+        32,
+        48
+      ],
+      "footprintCells": [
+        1,
+        1
+      ],
+      "appearance": "base",
+      "season": "winter",
+      "reskinPackRequired": false,
+      "catalogEntry": {
+        "key": "snowman",
+        "name": "Snowman",
+        "description": "A cheerful snowman keeps watch with twig arms, a warm scarf and a carrot nose.",
+        "tokenPrice": 3,
+        "startsUnlocked": false,
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "snow",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      },
+      "runtimeEnabled": false,
+      "catalogStatus": "registered_disabled",
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null
+      },
+      "stagingEconomy": {
+        "tokenPrice": 3,
+        "effectiveStorePrice": 3,
+        "effectivePlantPrice": 1,
+        "status": "placeholder_not_final_price_approval",
+        "source": "CHATGPT_HANDOFF.md sections 3 and 8; existing catalog default pricing semantics"
+      },
+      "itemUnlockRule": null,
+      "classVisibilityGate": null,
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindowPlan": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "availabilityStatus": "configured_on_disabled_catalog_entry",
+      "newPlacementEnforcement": "requires_native_implementation",
+      "qa": {
+        "canvasPx": [
+          32,
+          48
+        ],
+        "opaqueBoundsPxExclusive": [
+          5,
+          3,
+          27,
+          41
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 16,
+        "lowestOpaqueRow": 40,
+        "connectedComponents8": [
+          523
+        ],
+        "sha256": "465c50d756eff7e0fc3b462148e4e1c788abffd550338beba39c8dac4cbb7c2a",
+        "status": "format_pass_art_approved",
+        "repoFormatCheck": "passed",
+        "repoFormatCheckScope": "PNG format validation only; native app verification pending",
+        "ownerArtworkApproval": "approved",
+        "nativeDayWorldVerification": "pending_app_integration"
+      }
+    }
+  ],
+  "availabilityPolicy": {
+    "purchaseWindow": {
+      "start": "12-01",
+      "end": "02-28"
+    },
+    "newPlacementWindow": {
+      "start": "12-01",
+      "end": "02-28"
+    },
+    "inclusive": true,
+    "annual": true,
+    "evaluationDate": "actual_local_device_date",
+    "artPackOwnershipRequired": false,
+    "activePackAffectsEligibility": false,
+    "ownedItemsRemainSeasonRestrictedForNewPlacement": true,
+    "preserveOwnership": true,
+    "preserveExistingPlacements": true,
+    "leapDayPolicy": "February 29 is outside the exact planned February 28 endpoint.",
+    "nativeStatus": "implementation_and_simulator_verification_pending"
+  },
+  "runtimeCatalogChange": {
+    "treesAdded": [
+      "snowman",
+      "winterberry_bush"
+    ],
+    "landmarksAdded": [
+      "frost_obelisk"
+    ],
+    "allAddedEntriesDisabled": true,
+    "spriteRevisionForEachNewEntry": 1,
+    "existingEntriesChanged": [],
+    "packsChanged": []
+  },
+  "openDecisions": [
+    "Final purchase and placement prices",
+    "Additional acquisition requirements for Snowman, Winterberry Bush and Frost Obelisk, if any",
+    "Familiars spell versus achievement, identifier and earning criteria",
+    "Native integration and seasonal placement verification before activation"
+  ],
+  "handoff": "pilots/winter_objects/XCODE_HANDOFF.md",
+  "delivery": "deliveries/delivery-2026-11-27-winter-objects"
+}
