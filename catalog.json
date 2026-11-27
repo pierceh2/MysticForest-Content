@@ -46,9 +46,10 @@
       "description": "A quiet layer of snow settles across the forest.",
       "kind": "seasonal",
       "season": "winter",
+      "tags": ["snow", "frost", "cosy"],
       "tokenPrice": 10,
       "enabled": false,
-      "revision": 1
+      "revision": 2
     }
   ],
   "trees": [
