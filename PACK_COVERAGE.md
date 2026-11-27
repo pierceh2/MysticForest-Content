@@ -12,7 +12,7 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `default8bit` | Default 8-bit | default | - | always | 0 | - | - |
 | `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 4 | cosy, leaves |
 | `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 3 | autumn, harvest, cosy |
-| `winter` | Winter | seasonal | winter | always | 10 | 2 | snow, frost, cosy |
+| `winter` | Winter | seasonal | winter | 12-01 to 02-28 | 10 | 3 | snow, frost, cosy |
 
 <!-- packs:end -->
 
@@ -37,15 +37,19 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | excluded |
 | `snowman` (Snowman (retired)) | tree | winter | yes | excluded | excluded | excluded |
 | `winterberry_bush` (Winterberry Bush (retired)) | tree | winter | yes | excluded | excluded | excluded |
+| `cherry_blossom` (Cherry Blossom Tree (retired)) | tree | - | yes | - | - | yes |
 | `shrine` (Shrine) | landmark | - | yes | yes | yes | yes |
 | `pond` (Lily Pond) | landmark | - | yes | yes | yes | yes |
 | `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | yes |
 | `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | excluded |
 | `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
 | `frost_obelisk` (Frost Obelisk (retired)) | landmark | winter | yes | excluded | excluded | excluded |
-| **Reskinned** | | | 20 of 20 | 10 of 20 | 9 of 20 | 12 of 20 |
-| **Left out on purpose** | | | 0 | 9 | 5 | 8 |
-| **Gaps** | | | 0 | 1 | 6 | 0 |
+| `gold_vein` (Gold Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
+| `silver_vein` (Silver Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
+| `bronze_vein` (Bronze Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
+| **Reskinned** | | | 24 of 24 | 10 of 24 | 9 of 24 | 13 of 24 |
+| **Left out on purpose** | | | 0 | 12 | 8 | 11 |
+| **Gaps** | | | 0 | 2 | 7 | 0 |
 
 <!-- coverage:end -->
 
@@ -78,6 +82,15 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `winter` | `snowman` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
 | `winter` | `winterberry_bush` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
 | `winter` | `frost_obelisk` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `fall` | `gold_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `fall` | `silver_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `fall` | `bronze_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `thanksgiving_feast` | `gold_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `thanksgiving_feast` | `silver_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `thanksgiving_feast` | `bronze_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `winter` | `gold_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `winter` | `silver_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `winter` | `bronze_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
 <!-- excluded:end -->
 
 ## How to use this when planning a pack
@@ -89,14 +102,28 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 
 ## Winter release status
 
-The approved Winter artwork is staged with pack revision 2. `winter` remains disabled and has no configured purchase/appearance window. The generated Packs table shows `always` for an unset window; it does not indicate that this disabled pack is available in the Store.
+Winter revision **3** includes the approved Cherry Blossom override alongside the 12 previously staged sprites. Its **December 1–February 28** inclusive window and **10-token** unlock price are owner-approved. It remains disabled until the native visual and pack checks pass. See the [approved release and activation patch](handoffs/winter-2026/README.md); no repeat approval of these business decisions is required.
 
-Apple Tree and Hay Bale Stack preserve their October 1-December 1 purchase and approved new-placement windows, inclusive. Their Winter overrides cover the December 1 overlap if the Winter season is configured to begin December 1. The artwork does not extend either item's availability.
+Apple Tree and Hay Bale Stack retain October 1–December 1 purchase and new-placement windows. Their Winter overrides cover December 1 without extending availability. Harvest Table remains November 15–November 30 and has no Winter override. Existing ownership and saved placements are retained on all dates.
 
-The seasonal placement restrictions require native app enforcement. Existing saved objects and ownership are retained. Village Hut remains disabled behind its proposed Village achievement. Cherry Blossom, Cow and the ground pilots remain coordinated with their separate draft work and are not activated by this delivery.
+The generated grid calls any disabled entry “retired.” Village Hut, Cherry Blossom, the three veins and the new winter-only objects are staged entries awaiting their distinct release conditions, not deleted content.
 
 ## Approved winter-only objects
 
-Snowman, Winterberry Bush and Frost Obelisk now have approved default sprites and disabled catalog entries, each at spriteRevision 1. The generated table uses “retired” for any disabled entry; these three are new objects awaiting activation, not removed content. Snow Hare is approved at `pilots/animals/sprites/default8bit/snow_hare.png` and is outside the current tree/landmark coverage grid.
+Snowman, Winterberry Bush and Frost Obelisk have approved default sprites and disabled catalog entries at spriteRevision 1. Their approved unlock/placement prices are respectively **3/1, 3/1 and 8/4 Forest tokens**. They are ordinary seasonal purchases, December 1–February 28 inclusive, with the same limits on every new placement. Native verification precedes activation. They do not require the Winter pack and need no seasonal overrides.
 
-All four use one snowy base appearance. Winter-pack ownership is not required, and no Autumn, Thanksgiving or Winter override is needed. Purchase/new-placement intent is December 1 through February 28 inclusive; native enforcement remains required before activation. The three catalog entries carry the documented new-item price placeholders, not final price approval. See [winter object manifest](pilots/winter_objects/manifest.json) and [Xcode handoff](pilots/winter_objects/XCODE_HANDOFF.md).
+Snow Hare uses `pilots/animals/sprites/default8bit/snow_hare.png`; it remains outside the runtime coverage grid. Its art and winter-only direction are approved, but Familiars, Animal support and animal economy remain pending.
+
+## Approved pilot coverage
+
+These files are included in the repository but are not live catalog entries. Seasonal pack ownership changes appearance only; it does not grant Terraforming or Familiars.
+
+| Pilot item | Base | Autumn Leaves | Winter | Production condition |
+| --- | --- | --- | --- | --- |
+| Cow | Approved | Approved | Approved | Animals type; unresolved Familiars and economy |
+| Snow Hare | Approved snowy base | Base fallback | Base fallback | Animals type; unresolved Familiars and economy; winter-only placement |
+| Dirt Patch | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
+| Dirt Rows | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
+| Cobblestone Circle | Approved atlas | Base fallback | Base fallback | Same Ground prerequisites; seasonal artwork deferred |
+
+The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) covers all 16 edge masks and placement under existing objects. The [Cow handoff](pilots/animals/README.md) covers stable identity and all three appearances. Cherry Blossom's Autumn and Thanksgiving columns remain actual gaps; Autumn art still needs its separate visual approval.

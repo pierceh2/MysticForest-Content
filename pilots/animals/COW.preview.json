@@ -1,0 +1,37 @@
+{
+  "purpose": "Debug catalog proposal for the cow and its approved seasonal appearances",
+  "types": [
+    {
+      "typeID": "animal",
+      "sourceCollection": "animals",
+      "inventorySection": "Animals",
+      "storeSection": "Animals",
+      "placementLayer": "foreground",
+      "visibilityGate": {
+        "requiredUnlockName": "Familiars",
+        "unlockKind": null,
+        "unlockKindOptions": ["spell", "achievement"],
+        "missingOrUnearned": "hide both sections and their item actions",
+        "earned": "apply ordinary item ownership and purchase rules",
+        "seasonalPackGrantsAccess": false
+      }
+    }
+  ],
+  "debugItems": [
+    {
+      "collection": "animals",
+      "typeID": "animal",
+      "key": "cow",
+      "name": "Cow",
+      "cellFootprint": [1, 1],
+      "pose": "static",
+      "nativeCanvasPx": [32, 48],
+      "spritesByPack": {
+        "default8bit": "sprites/default8bit/cow.png",
+        "fall": "sprites/fall/cow.png",
+        "winter": "sprites/winter/cow.png"
+      }
+    }
+  ],
+  "productionPricing": "undecided"
+}

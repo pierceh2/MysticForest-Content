@@ -6,15 +6,23 @@ This document hands the Mystic Forest art-and-content work to ChatGPT. It explai
 
 **For ChatGPT:** read this whole file first, then read `CLAUDE.md` from the repo ZIP. `CLAUDE.md` is the source of truth for every rule. If this file and `CLAUDE.md` ever disagree, follow `CLAUDE.md` and tell the owner about the difference.
 
-## Current winter-only object delivery — November 27, 2026
+## Current approved integration — November 27, 2026
 
-The owner approved Snowman, Winterberry Bush, Snow Hare and Frost Obelisk and requested main publication. See [the delivery](deliveries/delivery-2026-11-27-winter-objects/README.md), [structured object record](pilots/winter_objects/manifest.json) and [Xcode next steps](pilots/winter_objects/XCODE_HANDOFF.md). Three supported-class entries are registered but disabled; Snow Hare remains an animal pilot. New tree tokenPrice 3 and landmark tokenPrice 4 are the section 8 placeholders, not final owner-approved prices. Existing catalog entries and pack settings are unchanged.
+The owner approved the Winter reskin pack for **December 1–February 28 at 10 Forest tokens**, plus ordinary seasonal acquisition for **Snowman 3/1, Winterberry Bush 3/1 and Frost Obelisk 8/4** (one-time unlock / per-placement tokens). The dates and economy no longer need approval. Winter is revision 3 with its window configured. Winter and the three objects remain disabled until native checks pass; the [release record and authorized activation patch](handoffs/winter-2026/README.md) specify that next step without repeat business approval.
 
-The newer seasonal-placement instructions in that Xcode handoff supersede the historical all-year-owned-placement description below for the seven specified existing seasonal keys and these four winter-only objects. Runtime enforcement must be implemented in the app; content labels alone do not enforce it.
+This integration includes earlier approved PRs #3–#7: Ground atlases, Cow base/Autumn/Winter, Cherry Blossom base/Winter, and Gold/Silver/Bronze base sprites. All approved PNG bytes and the Classic Retro originals are preserved. Cherry and the veins are disabled catalog registrations; Ground, Cow and Snow Hare remain pilots. Familiars is still undecided, as the owner requested.
+
+Use the [current seasonal-placement handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md) for the seven existing restricted objects and four Winter-only objects. Dates restrict purchases and every new placement while preserving ownership and saved forests. This needs native enforcement. Update the existing Settings → Future Features screen using the [current roadmap handoff](handoffs/rewards-collections/FUTURE_FEATURES_HANDOFF.md).
+
+### Ground and Animals for Xcode
+
+Dirt Patch and Dirt Rows have approved base, Autumn Leaves and Winter atlases. Cobblestone Circle has approved base art and joins neighboring stone cells; soil and stone retain their distinct boundaries. Ground gets its own type, Store and Inventory sections and saved cell-surface layer beneath existing trees, animals and landmarks. The planned **Terraforming** spell gates both menus and actions. Surface prices and spell acquisition remain pending. The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) and [Debug contract](pilots/ground/OBJECT_TYPES.preview.json) cover placement, adjacency, persistence and legacy saves. Monthly floors remain visible independently of this gate.
+
+Cow has approved base, Autumn Leaves and Winter sprites; Snow Hare has approved winter-only base art. Both belong to the future Animals type and separate Store/Inventory sections. **Familiars** remains undecided between a spell and achievement, with no earning condition or production economy set. Hide Animals actions while the gate is absent or unearned; preserve saved animals' rendering. See the [Cow handoff](pilots/animals/README.md) and [Winter object handoff](pilots/winter_objects/XCODE_HANDOFF.md). The current live catalog still supports only trees and landmarks.
 
 ---
 
-Snapshot date: 2026-11-19 (repo `main` at the commit that added this file).
+Current inventory snapshot: 2026-11-27. Historical art-generation guidance later in this file remains reference material; consult the current catalog and coverage before new work.
 
 ---
 
@@ -54,11 +62,11 @@ If your Python sandbox has no internet, work from the repo ZIP. Never guess what
 | `storePrice` / `plantPrice` | Optional. Only write them when they differ from the defaults: tree store = `tokenPrice`, tree plant = 1; landmark store = 8, landmark plant = `tokenPrice` |
 | `startsUnlocked` | Trees only. `tokenPrice` 0 only when this is true |
 | `footprint` | Landmarks only, always `[2, 2]` |
-| `enabled` | `false` retires an item (hidden from the inventory, still drawn in old forests). Never delete |
+| `enabled` | `false` hides an item for staging or retirement (still drawn in saved forests). Never delete |
 | `spriteRevision` | Starts at 1; +1 whenever the item's **default-pack** PNG changes |
 | `season` | Optional season id, browsing only: `winter`, `spring`, `summer`, `autumn`, or a holiday id such as `halloween`, `thanksgiving`. **Never "fall"** |
 | `tags` | Optional, up to 12 lowercase labels, browsing only. Never repeat the item's season in its tags |
-| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, inclusive, repeats yearly, may cross the new year. Outside it an unowned item is hidden from the Store; owned items stay usable all year. Never add `buyOnlyInSeason` to an item. A bad date makes the item never buyable, so check month lengths |
+| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, inclusive, repeats yearly, may cross the new year. Outside it an unowned item is hidden from the Store. The specified seasonal keys also reject new placement even when owned; ownership and saved placements persist. See the current seasonal handoff. Never add `buyOnlyInSeason` to an item. A bad date makes the item never buyable, so check month lengths |
 
 **Packs** (in `catalog.json` under `packs`): `key` (permanent, also the folder name), `name`, `description`, `kind` (`seasonal`/`holiday`), `season`, `window`, `tags`, `tokenPrice`, `enabled`, `revision` (+1 once per delivery whenever any of the pack's art changes; a new pack starts at 1), optional `ground` colours (`grassLight`, `grassDark`, `margin`, `soilLeft`, `soilRight`, as `#RRGGBB`). A pack may cover only some items; missing ones fall back to `default8bit`, which must have every enabled item.
 
@@ -100,55 +108,32 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 | Water, lily | `#4a9aa3`, `#33788a`, `#245c72`, `#a9d9d8`; lily `#d98aa6` |
 | Reds (maple, apples) | `#f2603a`, `#e0402f`, `#c42f2c`, `#9a2328`, `#6e1a22` |
 
-## 5. What exists today (2026-11-19)
+## 5. Current content (2026-11-27)
 
-### Packs
+The catalog contains **15 trees and 9 landmarks**, including disabled staging entries. The current pack table and item-by-pack grid are in [PACK_COVERAGE.md](PACK_COVERAGE.md). Refined art is the default under the existing permanent item keys; original Classic Retro sprites remain in `art-archive/classic-retro/` for the future separate pack.
 
-| Key | Name | Season | Window | Price | Revision | Covers |
-| --- | --- | --- | --- | --- | --- | --- |
-| `default8bit` | Default 8-bit | - | always | 0 | - | all 16 items |
-| `fall` | Autumn Leaves | autumn | 10-01 to 12-01 | 10 | 2 | 9 items |
-| `thanksgiving_feast` | Thanksgiving Feast | thanksgiving | 11-15 to 11-30 | 10 | 2 | 9 items |
+| Pack | Window | Unlock tokens | Revision | Direct sprite coverage | Release state |
+| --- | --- | ---: | ---: | --- | --- |
+| Default 8-bit / Refined (`default8bit`) | Always | 0 | Item revisions | 24 of 24 | Existing default |
+| Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 24 | Enabled |
+| Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 24 | Enabled |
+| Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 24 | Approved; disabled until native checks |
 
-### Items
+Missing overrides use the default sprite. Mineral veins and intrinsically winter-only base objects intentionally need no seasonal overrides. The Ground and Animal pilot sprites are counted separately from the runtime tree/landmark grid.
 
-Tree purchase windows in this table were updated on November 27, 2026. Pumpkin and Scarecrow run October 1 through November 30, Jack-o'-Lantern runs October 1 through October 31, and Apple Tree follows the Autumn Leaves purchase window of October 1 through December 1. End dates are inclusive. Owned items remain available for planting all year.
+`tokenPrice` is the default tree unlock price (placement 1) and landmark placement cost (unlock 8). No item overrides storePrice or plantPrice. Winter, Snowman, Winterberry Bush and Frost Obelisk have approved prices. Cherry Blossom and vein tokenPrice values remain staging placeholders. Ground and Animal prices are unresolved.
 
-`tokenPrice` is the unlock price for a tree (planting costs 1) and the per-placement price for a landmark (unlocking costs 8). No item sets `storePrice` or `plantPrice` yet.
+The exact current purchase/new-placement windows are recorded in [the seasonal handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md). Apple Tree and Hay Bale Stack remain October 1–December 1 inclusive, so their approved Winter art covers the December 1 overlap. Harvest Table is November 15–November 30 only. Seasonal artwork does not widen an item's window.
 
-| Key | Name | Type | `tokenPrice` | Season | Window | Tags |
-| --- | --- | --- | --- | --- | --- | --- |
-| oak | Oak | tree | 0, starts unlocked | - | - | deciduous, classic |
-| pine | Pine | tree | 0, starts unlocked | - | - | evergreen, conifer |
-| birch | Birch | tree | 3 | - | - | deciduous, slender |
-| willow | Willow | tree | 5 | - | - | deciduous, waterside |
-| pumpkin | Pumpkin | tree | 4 | autumn | 10-01 to 11-30 | halloween, pumpkin |
-| jack_o_lantern | Jack-o'-Lantern | tree | 4 | autumn | 10-01 to 10-31 | halloween, pumpkin |
-| scarecrow | Scarecrow | tree | 4 | autumn | 10-01 to 11-30 | halloween |
-| larch | Larch | tree | 4 | - | - | conifer |
-| maple | Maple | tree | 4 | - | - | deciduous |
-| ginkgo | Ginkgo | tree | 4 | - | - | deciduous |
-| apple_tree | Apple Tree | tree | 4 | - | 10-01 to 12-01 | fruit, harvest |
-| corn_stalks | Corn Stalks | tree | 4 | autumn | 11-15 to 11-30 | harvest, thanksgiving |
-| shrine | Shrine | landmark | 4 | - | - | stone, mossy |
-| pond | Lily Pond | landmark | 4 | - | - | water, waterside |
-| hay_bales | Hay Bale Stack | landmark | 4 | autumn | 10-01 to 12-01 | harvest |
-| harvest_table | Harvest Table | landmark | 4 | thanksgiving | 11-15 to 11-30 | harvest, autumn |
+### Remaining release and implementation work
 
-### Which items each pack covers
+- Verify Refined/default and Winter sprite scale in the native app. An older report described pack sprites appearing undersized; use full PNG canvases and check Day/World anchors instead of enlarging art to compensate. This content integration does not verify the reported app behavior.
+- Complete native seasonal enforcement and visual checks, then apply the already-authorized Winter/three-object activation patch.
+- Keep Familiars, Terraforming, Village, individual vein unlocks and Classic Retro pack availability separate from art-pack ownership. Their unresolved conditions are documented in Future Features.
+- Cherry Blossom base/Winter art is approved; its release economy and availability remain pending. Autumn Cherry remains a separate visual decision.
+- Keep pack keys permanent: `fall` remains the folder/key for season `autumn`.
 
-`PACK_COVERAGE.md` in the repo is the running record: a grid of every item against every pack (`yes`, `-` for a gap, `excluded` for left out on purpose), generated by `tools/make_pack_coverage.py`, plus a hand-kept "Left out on purpose" table. Today:
-
-- `fall` gaps: apple_tree. Left out on purpose: pumpkin, jack_o_lantern, scarecrow, hay_bales, corn_stalks, harvest_table (already autumn-themed).
-- `thanksgiving_feast` gaps: pine, willow, larch, ginkgo, corn_stalks. Left out on purpose: jack_o_lantern (Halloween), harvest_table (already the Thanksgiving look).
-
-**Read `PACK_COVERAGE.md` before planning a pack or adding an item**, and refresh it after every change (section 8).
-
-### Known issues and open points
-
-- **Pack sprites render at about one third of their size in the app** (seen on the `fall` pack). The PNGs are correct (same 32x48 / 64x96 canvases and drawn areas as the defaults); this is an app bug that was reported to the owner's Xcode agent. **Never "fix" it by making sprites bigger.** Ask the owner whether it has been fixed.
-- Item `window` dates are selected per item. Review related item windows when changing a pack window and preserve the owner's chosen dates.
-- Pack keys are permanent: `fall` stays `fall` (its season is `autumn`), and `thanksgiving_feast` stays as is.
+Read and regenerate `PACK_COVERAGE.md` after content additions. Do not turn an intentionally excluded appearance into an accidental gap.
 
 ### Tools in the repo
 
