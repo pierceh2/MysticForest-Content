@@ -33,7 +33,9 @@ Landmark: `{ "key", "name", "description", "tokenPrice", "footprint", "enabled",
 
 Item seasons and tags are used for browsing only; they change no price or rule.
 
-An item with a `window` is hidden from the Store while outside that window if it is unowned. Owned items stay owned, remain in the Inventory, and can be planted all year. The app checks the device's local date. An unreadable window makes the item never buyable. Items without a window are buyable all year. `buyOnlyInSeason` is not allowed on items.
+An item with a `window` is hidden from the Store while outside that window if it is unowned. Ownership persists across seasons. The app checks the device's local date. An unreadable window makes the item never buyable. Items without a window are buyable all year. `buyOnlyInSeason` is not allowed on items.
+
+The owner approved a seasonal planting requirement on November 27, 2026 for `pumpkin`, `jack_o_lantern`, `corn_stalks`, `scarecrow` and `apple_tree`. Each must also pass its current catalog `window` when adding a new placement, including when already owned. Use the same local-date check as Store purchases. Existing saved objects continue to render, and ownership persists across calendar years. Native app implementation is pending. Follow [the seasonal planting handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md).
 
 Rules:
 - Never delete an item, rename a key, or reuse a key. To retire an item set `"enabled": false` and keep its PNG.

@@ -50,7 +50,7 @@ If your Python sandbox has no internet, work from the repo ZIP. Never guess what
 | `spriteRevision` | Starts at 1; +1 whenever the item's **default-pack** PNG changes |
 | `season` | Optional season id, browsing only: `winter`, `spring`, `summer`, `autumn`, or a holiday id such as `halloween`, `thanksgiving`. **Never "fall"** |
 | `tags` | Optional, up to 12 lowercase labels, browsing only. Never repeat the item's season in its tags |
-| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, inclusive, repeats yearly, may cross the new year. Outside it an unowned item is hidden from the Store; owned items stay usable all year. Never add `buyOnlyInSeason` to an item. A bad date makes the item never buyable, so check month lengths |
+| `window` | Optional `{ "start": "MM-DD", "end": "MM-DD" }`, inclusive and recurring yearly. Controls Store purchases. The five-item seasonal planting requirement below also uses this window and requires native app integration. Check month lengths. |
 
 **Packs** (in `catalog.json` under `packs`): `key` (permanent, also the folder name), `name`, `description`, `kind` (`seasonal`/`holiday`), `season`, `window`, `tags`, `tokenPrice`, `enabled`, `revision` (+1 once per delivery whenever any of the pack's art changes; a new pack starts at 1), optional `ground` colours (`grassLight`, `grassDark`, `margin`, `soilLeft`, `soilRight`, as `#RRGGBB`). A pack may cover only some items; missing ones fall back to `default8bit`, which must have every enabled item.
 
@@ -104,7 +104,7 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 
 ### Items
 
-Tree purchase windows in this table were updated on November 27, 2026. Pumpkin and Scarecrow run October 1 through November 30, Jack-o'-Lantern runs October 1 through October 31, and Apple Tree follows the Autumn Leaves purchase window of October 1 through December 1. End dates are inclusive. Owned items remain available for planting all year.
+Tree purchase windows in this table were updated on November 27, 2026. Pumpkin and Scarecrow run October 1 through November 30, Jack-o'-Lantern runs October 1 through October 31, and Apple Tree follows the Autumn Leaves purchase window of October 1 through December 1. End dates are inclusive. The owner also approved restricting new planting of Pumpkin, Jack-o'-Lantern, Corn Stalks, Scarecrow and Apple Tree to each item's purchase window, including when owned. Ownership persists between seasons, and saved placements continue to render. Implement the shared native check described in [the seasonal planting handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md). App integration and simulator verification are pending.
 
 `tokenPrice` is the unlock price for a tree (planting costs 1) and the per-placement price for a landmark (unlocking costs 8). No item sets `storePrice` or `plantPrice` yet.
 
