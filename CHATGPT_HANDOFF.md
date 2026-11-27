@@ -6,6 +6,14 @@ This document hands the Mystic Forest art-and-content work to ChatGPT. It explai
 
 **For ChatGPT:** read this whole file first, then read `CLAUDE.md` from the repo ZIP. `CLAUDE.md` is the source of truth for every rule. If this file and `CLAUDE.md` ever disagree, follow `CLAUDE.md` and tell the owner about the difference.
 
+## Current winter-only object delivery — November 27, 2026
+
+The owner approved Snowman, Winterberry Bush, Snow Hare and Frost Obelisk and requested main publication. See [the delivery](deliveries/delivery-2026-11-27-winter-objects/README.md), [structured object record](pilots/winter_objects/manifest.json) and [Xcode next steps](pilots/winter_objects/XCODE_HANDOFF.md). Three supported-class entries are registered but disabled; Snow Hare remains an animal pilot. New tree tokenPrice 3 and landmark tokenPrice 4 are the section 8 placeholders, not final owner-approved prices. Existing catalog entries and pack settings are unchanged.
+
+The newer seasonal-placement instructions in that Xcode handoff supersede the historical all-year-owned-placement description below for the seven specified existing seasonal keys and these four winter-only objects. Runtime enforcement must be implemented in the app; content labels alone do not enforce it.
+
+---
+
 Snapshot date: 2026-11-19 (repo `main` at the commit that added this file).
 
 ---

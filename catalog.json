@@ -101,7 +101,44 @@
       "description": "A tied bundle of dry corn stalks, rustling softly where the harvest has been gathered.",
       "tokenPrice": 4, "startsUnlocked": false, "enabled": true, "spriteRevision": 2,
       "season": "autumn", "tags": ["harvest", "thanksgiving"],
-      "window": { "start": "11-15", "end": "11-30" } }
+      "window": { "start": "11-15", "end": "11-30" } },
+    {
+      "key": "snowman",
+      "name": "Snowman",
+      "description": "A cheerful snowman keeps watch with twig arms, a warm scarf and a carrot nose.",
+      "tokenPrice": 3,
+      "startsUnlocked": false,
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "winter",
+      "tags": [
+        "snow",
+        "decoration"
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
+    },
+    {
+      "key": "winterberry_bush",
+      "name": "Winterberry Bush",
+      "description": "Bright red berries rest on bare branches beneath a quiet dusting of snow.",
+      "tokenPrice": 3,
+      "startsUnlocked": false,
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "winter",
+      "tags": [
+        "berries",
+        "shrub",
+        "snow"
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
+    }
   ],
   "landmarks": [
     { "key": "shrine", "name": "Shrine", "description": "A mossy shrine where the forest keeps its secrets.",
@@ -135,6 +172,27 @@
         "village"
       ],
       "spriteRevision": 1
+    },
+    {
+      "key": "frost_obelisk",
+      "name": "Frost Obelisk",
+      "description": "A pale rune glimmers within a tall pillar of ice at the forest's edge.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "winter",
+      "tags": [
+        "ice",
+        "magic"
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
     }
   ]
 }

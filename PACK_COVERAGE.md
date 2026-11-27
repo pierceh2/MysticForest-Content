@@ -35,13 +35,16 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `ginkgo` (Ginkgo) | tree | - | yes | yes | - | yes |
 | `apple_tree` (Apple Tree) | tree | - | yes | - | yes | yes |
 | `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | excluded |
+| `snowman` (Snowman (retired)) | tree | winter | yes | excluded | excluded | excluded |
+| `winterberry_bush` (Winterberry Bush (retired)) | tree | winter | yes | excluded | excluded | excluded |
 | `shrine` (Shrine) | landmark | - | yes | yes | yes | yes |
 | `pond` (Lily Pond) | landmark | - | yes | yes | yes | yes |
 | `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | yes |
 | `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | excluded |
 | `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
-| **Reskinned** | | | 17 of 17 | 10 of 17 | 9 of 17 | 12 of 17 |
-| **Left out on purpose** | | | 0 | 6 | 2 | 5 |
+| `frost_obelisk` (Frost Obelisk (retired)) | landmark | winter | yes | excluded | excluded | excluded |
+| **Reskinned** | | | 20 of 20 | 10 of 20 | 9 of 20 | 12 of 20 |
+| **Left out on purpose** | | | 0 | 9 | 5 | 8 |
 | **Gaps** | | | 0 | 1 | 6 | 0 |
 
 <!-- coverage:end -->
@@ -66,6 +69,15 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `winter` | `scarecrow` | Approved purchase-and-new-placement window is October 1-November 30; no Winter appearance. |
 | `winter` | `corn_stalks` | Approved purchase-and-new-placement window is November 15-November 30; no Winter appearance. |
 | `winter` | `harvest_table` | Thanksgiving-only new placement, November 15-November 30; excluded by the owner's latest instruction. |
+| `fall` | `snowman` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `fall` | `winterberry_bush` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `fall` | `frost_obelisk` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `thanksgiving_feast` | `snowman` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `thanksgiving_feast` | `winterberry_bush` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `thanksgiving_feast` | `frost_obelisk` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `winter` | `snowman` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `winter` | `winterberry_bush` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
+| `winter` | `frost_obelisk` | Intrinsically winter base art; this winter-only object uses its default appearance and needs no separate seasonal override. |
 <!-- excluded:end -->
 
 ## How to use this when planning a pack
@@ -82,3 +94,9 @@ The approved Winter artwork is staged with pack revision 2. `winter` remains dis
 Apple Tree and Hay Bale Stack preserve their October 1-December 1 purchase and approved new-placement windows, inclusive. Their Winter overrides cover the December 1 overlap if the Winter season is configured to begin December 1. The artwork does not extend either item's availability.
 
 The seasonal placement restrictions require native app enforcement. Existing saved objects and ownership are retained. Village Hut remains disabled behind its proposed Village achievement. Cherry Blossom, Cow and the ground pilots remain coordinated with their separate draft work and are not activated by this delivery.
+
+## Approved winter-only objects
+
+Snowman, Winterberry Bush and Frost Obelisk now have approved default sprites and disabled catalog entries, each at spriteRevision 1. The generated table uses “retired” for any disabled entry; these three are new objects awaiting activation, not removed content. Snow Hare is approved at `pilots/animals/sprites/default8bit/snow_hare.png` and is outside the current tree/landmark coverage grid.
+
+All four use one snowy base appearance. Winter-pack ownership is not required, and no Autumn, Thanksgiving or Winter override is needed. Purchase/new-placement intent is December 1 through February 28 inclusive; native enforcement remains required before activation. The three catalog entries carry the documented new-item price placeholders, not final price approval. See [winter object manifest](pilots/winter_objects/manifest.json) and [Xcode handoff](pilots/winter_objects/XCODE_HANDOFF.md).
