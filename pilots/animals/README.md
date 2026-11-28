@@ -28,3 +28,9 @@ The approved snowy-base Hare is preserved at `sprites/default8bit/snow_hare.png`
 ## Arctic Fox approved base pilot
 
 Arctic Fox now has approved base art at `sprites/default8bit/arctic_fox.png` in this pilot folder. It shares the future Animals model and unresolved Familiars gate. Its prices, acquisition and exact dates remain undecided; December 1–February 28 is only a proposal. There is no runtime animal catalog entry. See the [Winter Wave 2 manifest](../winter_objects_wave2/manifest.json) and [handoff](../winter_objects_wave2/XCODE_HANDOFF.md).
+
+## Approved Christmas Animal artwork
+
+Christmas Fox and Hare skins are approved at `sprites/christmas/arctic_fox.png` and `sprites/christmas/snow_hare.png`. `sprites/christmas/cow.png` is a byte-identical copy of the approved Winter Cow because appearance fallback goes to base, not Winter. `sprites/default8bit/reindeer.png` is a new approved one-cell Animal pilot with intrinsic Christmas art. Reindeer is not a tree or live catalog entry, and owning the Christmas pack does not grant any animal or Familiars.
+
+Reindeer purchase and every-new-placement dates are approved as December 15–30 inclusive, closing December 31 at 00:00 local time. Acquisition and prices remain unset; Familiars and native Animals support remain required. Snow Hare keeps its approved December 1–February 28 rule; Fox retains its pending base dates. All Animals still depend on native Animal support and unresolved Familiars. Preserve ownership and old animal rendering outside windows or while menus are hidden. See the [Christmas approval](../../handoffs/christmas-2026/approval.json) and [Xcode calendar/gate handoff](../../handoffs/christmas-2026/XCODE_HANDOFF.md).

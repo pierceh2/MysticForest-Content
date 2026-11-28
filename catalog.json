@@ -51,6 +51,26 @@
       "tokenPrice": 10,
       "enabled": false,
       "revision": 3
+    },
+    {
+      "key": "christmas",
+      "name": "Christmas",
+      "description": "Warm lights and evergreen garlands brighten the quiet snowy forest.",
+      "kind": "holiday",
+      "season": "christmas",
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "tags": [
+        "festive",
+        "lights",
+        "cosy"
+      ],
+      "tokenPrice": 10,
+      "enabled": false,
+      "revision": 1,
+      "buyOnlyInSeason": true
     }
   ],
   "trees": [
@@ -165,7 +185,11 @@
         "ice",
         "flowers",
         "magic"
-      ]
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
     }
   ],
   "landmarks": [
@@ -286,7 +310,74 @@
         "snow",
         "lanterns",
         "cosy"
-      ]
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
+    },
+    {
+      "key": "present_pile",
+      "name": "Present Pile",
+      "description": "Snow-dusted parcels gather beneath bright ribbons for a generous winter visit.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "christmas",
+      "tags": [
+        "festive",
+        "decoration"
+      ],
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      }
+    },
+    {
+      "key": "santa_chimney",
+      "name": "Santa Chimney",
+      "description": "A snowy brick chimney waits with a warm hearth and a little evergreen trim.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "christmas",
+      "tags": [
+        "festive",
+        "decoration"
+      ],
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      }
+    },
+    {
+      "key": "santa_sleigh",
+      "name": "Santa Sleigh",
+      "description": "A red wooden sleigh rests on golden runners with a few carefully wrapped gifts.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "christmas",
+      "tags": [
+        "festive",
+        "decoration"
+      ],
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      }
     }
   ]
 }

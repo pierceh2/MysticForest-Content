@@ -74,3 +74,19 @@ Record the app commit/build, tested dates, simulator captures, check results and
 - [Winter objects and activation status](../../pilots/winter_objects/XCODE_HANDOFF.md)
 - [Settings → Future Features](../rewards-collections/FUTURE_FEATURES_HANDOFF.md)
 - [Runtime catalog](../../catalog.json)
+
+## Approved Christmas window — December 15–30
+
+The owner selected December 15–30 inclusive for the Christmas pack and Christmas-season items. This extends the native eligibility contract to Present Pile, Santa Chimney, Santa Sleigh and the Reindeer Animal pilot. Purchase and every new placement, including already-owned objects, require the actual local device date within that window. Christmas pack purchase and automatic appearance use the same window. The first closed day is December 31 at 00:00 local time.
+
+Keep all existing windows unchanged. Apple Tree and Hay Bales still end December 1 and have no eligibility overlap with Christmas; their unchanged Christmas sprites support saved/manual rendering only. Winter remains December 1–February 28, excluding February 29. Preserve ownership and saved placements after any window closes.
+
+The Christmas pack and three monuments remain disabled pending native verification; their prices and ordinary seasonal acquisition are now approved. Reindeer remains gated by future Animals/Familiars support and unresolved economy. See the [current date decision](../christmas-2026/date-decision.json) and [Christmas Xcode handoff](../christmas-2026/XCODE_HANDOFF.md). Test December 14, 15, 30 and 31 at UI and final mutation; no rejected action may change balances or occupancy.
+
+## Approved Frostbloom and Snow Lantern winter eligibility
+
+Add `frostbloom_tree` and `snow_lantern_circle` to the authoritative seasonal eligibility key set. Both use December 1–February 28 inclusive, every year, for purchases and **every new placement, even when owned**. Their ordinary seasonal-store prices are approved at 3 unlock / 1 placement and 8 unlock / 4 placement respectively, with no extra achievement/spell. February 29 remains outside the window.
+
+Recheck the actual local device date in Store, Inventory, preview and final mutation, including historical-plot editing, offline reload, midnight/time-zone change and foreground return. Test November 30, December 1, February 28, February 29 and March 1. Reject without token/occupancy changes; keep ownership and saved placements.
+
+Both supported entries stay disabled until native verification passes. Arctic Fox is not included: its Animal dates, economy, acquisition and Familiars remain deferred. Christmas pack/monument prices and ordinary seasonal acquisition are also now approved under the [six-key release record](../forest-release-2026/approval.json); Christmas dates remain December 15–30. The older Winter activation patch stays unchanged.

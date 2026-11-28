@@ -1,0 +1,53 @@
+{
+  "edit": {
+    "packs": [
+      {
+        "key": "christmas",
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
+    ],
+    "trees": [
+      {
+        "key": "frostbloom_tree",
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      }
+    ],
+    "landmarks": [
+      {
+        "key": "present_pile",
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      },
+      {
+        "key": "santa_chimney",
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      },
+      {
+        "key": "santa_sleigh",
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      },
+      {
+        "key": "snow_lantern_circle",
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      }
+    ]
+  },
+  "spritesChanged": []
+}

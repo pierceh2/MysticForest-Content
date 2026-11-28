@@ -5,10 +5,10 @@
     "Settings",
     "Future Features"
   ],
-  "updatedDate": "2026-11-27",
+  "updatedDate": "2026-11-28",
   "repository": "pierceh2/MysticForest-Content",
   "purpose": "Source copy and decision records for the existing native roadmap. This is not a runtime catalog schema, native feature-ID registry, unlock implementation or activation command.",
-  "sourceBasis": "Approved content PRs #3–7, current Winter approvals and approved Winter Wave 2 artwork. Native app implementation is unverified.",
+  "sourceBasis": "Approved content PRs #3–7, current Winter approvals and approved Winter Wave 2 artwork. Native app implementation is unverified. All Christmas artwork approved November 28, 2026; Christmas release configuration remains pending. The later explicit Christmas date decision approves December 15–30 inclusive; prices/acquisition/native activation remain pending. Later owner approval completes Christmas supported prices/acquisition and Frostbloom/Snow Lantern Winter dates/prices/acquisition; Animals stay deferred.",
   "nativePorting": {
     "stableHandoffKeys": "Retain these keys for mapping across handoffs; preserve existing native IDs and status conventions.",
     "deduplication": "Match by native ID or meaning, update matching subjects and add missing subjects once. Existing combined rows may represent several subjects without duplicate entries.",
@@ -56,18 +56,20 @@
     {
       "handoffKey": "forest.familiars",
       "title": "Familiars",
-      "playerSummary": "A planned Familiars unlock will introduce forest animals, including a cow, snow hare and arctic fox.",
+      "playerSummary": "A planned Familiars unlock will introduce forest animals, including a cow, snow hare, arctic fox and holiday reindeer.",
       "contentKeys": [
         "cow",
         "snow_hare",
-        "arctic_fox"
+        "arctic_fox",
+        "reindeer"
       ],
-      "currentState": "Cow base, autumn and winter art, Snow Hare base art and Arctic Fox base art are approved pilots. Animals and Familiars are not active production features.",
+      "currentState": "Cow base/Autumn/Winter and Christmas copy, Hare/Fox base and Christmas skins, and Reindeer base artwork are approved Animal pilots. Animals and Familiars are not active production features.",
       "approvedDecisions": [
         "Separate Animals Store and Inventory sections",
         "Hide the category and its actions while Familiars is undefined, unavailable or unearned",
         "Snow Hare purchase and new placement are restricted to December 1–February 28 inclusive",
-        "Snow Hare has one base appearance and does not require the Winter reskin pack"
+        "Snow Hare has one base appearance and does not require the Winter reskin pack",
+        "Reindeer purchases and every new placement, including owned animals, are limited to December 15–30 inclusive; close December 31 at 00:00 local time"
       ],
       "proposedUnlock": "Familiars opens Animals. Whether it is a spell or achievement remains undecided.",
       "unresolved": [
@@ -75,7 +77,8 @@
         "Stable requirement identifier and earning criteria",
         "How Cow and Snow Hare are acquired after the category opens",
         "Cow and Snow Hare prices",
-        "Arctic Fox acquisition, prices and exact purchase/new-placement window"
+        "Arctic Fox acquisition, prices and exact purchase/new-placement window",
+        "Reindeer acquisition and economy; its December 15–30 purchase/new-placement window is approved"
       ],
       "nativeWork": [
         "Implement and verify the animal type, collection, foreground placement, persistence and rendering",
@@ -86,7 +89,9 @@
         "pilots/animals/README.md",
         "pilots/animals/COW.preview.json",
         "pilots/winter_objects/manifest.json",
-        "pilots/winter_objects_wave2/manifest.json"
+        "pilots/winter_objects_wave2/manifest.json",
+        "handoffs/christmas-2026/XCODE_HANDOFF.md",
+        "handoffs/christmas-2026/date-decision.json"
       ]
     },
     {
@@ -376,15 +381,23 @@
         "snowman",
         "winterberry_bush",
         "frost_obelisk",
-        "snow_hare"
+        "snow_hare",
+        "present_pile",
+        "santa_chimney",
+        "santa_sleigh",
+        "reindeer",
+        "frostbloom_tree",
+        "snow_lantern_circle"
       ],
-      "currentState": "The owner-approved policy covers seven existing seasonal objects and four Winter-only objects. Native enforcement and simulator verification remain pending.",
+      "currentState": "Approved seasonal policy includes the seven existing autumn/holiday keys, four earlier Winter keys, Frostbloom and Snow Lantern Circle, and the three Christmas monuments plus Reindeer. Native enforcement remains pending; Animal release conditions remain deferred.",
       "approvedDecisions": [
         "Restrict new purchases and new placements to each listed object's window, even when owned",
         "Use the actual local device date; inclusive boundaries and year wrapping",
         "Retain ownership and continue rendering existing saved placements",
         "Historical plot dates, pack ownership and appearance choices do not bypass eligibility",
-        "February 29 is excluded from the approved Winter window"
+        "February 29 is excluded from the approved Winter window",
+        "The Christmas monuments and Reindeer use December 15–30 inclusive for purchase and every new placement, including when owned",
+        "Frostbloom and Snow Lantern Circle use the approved December 1–February 28 window for purchase and every new placement, including when owned"
       ],
       "approvedWindows": [
         {
@@ -441,6 +454,36 @@
           "key": "snow_hare",
           "start": "12-01",
           "end": "02-28"
+        },
+        {
+          "key": "present_pile",
+          "start": "12-15",
+          "end": "12-30"
+        },
+        {
+          "key": "santa_chimney",
+          "start": "12-15",
+          "end": "12-30"
+        },
+        {
+          "key": "santa_sleigh",
+          "start": "12-15",
+          "end": "12-30"
+        },
+        {
+          "key": "reindeer",
+          "start": "12-15",
+          "end": "12-30"
+        },
+        {
+          "key": "frostbloom_tree",
+          "start": "12-01",
+          "end": "02-28"
+        },
+        {
+          "key": "snow_lantern_circle",
+          "start": "12-01",
+          "end": "02-28"
         }
       ],
       "proposedUnlock": null,
@@ -454,36 +497,183 @@
       "sources": [
         "handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md",
         "catalog.json",
-        "pilots/winter_objects/manifest.json"
+        "pilots/winter_objects/manifest.json",
+        "handoffs/christmas-2026/date-decision.json",
+        "handoffs/forest-release-2026/approval.json"
       ]
     },
     {
       "handoffKey": "forest.winter-wave-two",
       "title": "Frostbloom and Snow Lanterns",
-      "playerSummary": "Icy blossoms and a circle of warm snow lanterns are planned for the forest. Their collection rules are still being decided.",
+      "playerSummary": "Icy blossoms and a circle of warm snow lanterns are planned as winter forest objects, available through the seasonal store.",
       "contentKeys": [
         "frostbloom_tree",
         "snow_lantern_circle"
       ],
-      "currentState": "Approved base artwork, registered disabled with placeholder prices and no configured dates.",
+      "currentState": "Frostbloom and Snow Lantern Circle artwork, December 1–February 28 purchase/every-new-placement dates, 3/1 and 8/4 prices, and ordinary seasonal-store acquisition are approved. Both remain disabled pending native verification. Arctic Fox is excluded from this supported-object approval.",
       "approvedDecisions": [
         "Use the original pointed blue-white Frostbloom blossoms",
-        "Use the base sprites independently of Winter appearance-pack ownership"
+        "Use the base sprites independently of Winter appearance-pack ownership",
+        "December 1–February 28 inclusive for purchase and every new placement, including owned items; February 29 excluded",
+        "Frostbloom ordinary seasonal-store price 3 unlock / 1 placement",
+        "Snow Lantern Circle ordinary seasonal-store price 8 unlock / 4 placement",
+        "No additional spell or achievement required for these two supported objects"
       ],
       "proposedUnlock": null,
-      "unresolved": [
-        "Final acquisition and prices",
-        "Exact purchase and new-placement windows; December 1–February 28 remains a proposal"
-      ],
+      "unresolved": [],
       "nativeWork": [
-        "Verify full native canvases, anchors and pixel readability in Day and World",
-        "Apply approved date and acquisition rules before activation; keep separate from the earlier Winter four-key activation"
+        "Verify full native canvases, anchors, pixel readability and caches in Day and World",
+        "Include both keys in shared final purchase/new-placement eligibility checks, including owned items and Winter date boundaries",
+        "Keep disabled until native checks pass; do not repeat approved business decisions or activate deferred Animals"
       ],
       "sources": [
         "catalog.json",
         "pilots/winter_objects_wave2/manifest.json",
-        "pilots/winter_objects_wave2/XCODE_HANDOFF.md"
+        "pilots/winter_objects_wave2/XCODE_HANDOFF.md",
+        "handoffs/christmas-2026/approval.json",
+        "handoffs/forest-release-2026/approval.json"
+      ],
+      "approvedWindow": {
+        "start": "12-01",
+        "end": "02-28",
+        "inclusive": true,
+        "annual": true
+      },
+      "approvedAcquisition": [
+        {
+          "key": "frostbloom_tree",
+          "method": "ordinary_seasonal_store_purchase",
+          "currency": "forest_tokens",
+          "purchasePrice": 3,
+          "placementPrice": 1,
+          "additionalUnlock": null
+        },
+        {
+          "key": "snow_lantern_circle",
+          "method": "ordinary_seasonal_store_purchase",
+          "currency": "forest_tokens",
+          "purchasePrice": 8,
+          "placementPrice": 4,
+          "additionalUnlock": null
+        }
+      ],
+      "releaseSettingsApproved": true,
+      "releaseApprovalScopeKeys": [
+        "frostbloom_tree",
+        "snow_lantern_circle"
       ]
+    },
+    {
+      "handoffKey": "forest.christmas-pack",
+      "title": "Christmas Art Pack",
+      "playerSummary": "Festive ribbons, warm lanterns and little gifts are planned for the snowy forest.",
+      "contentKeys": [
+        "christmas"
+      ],
+      "currentState": "Artwork, December 15–30 dates, prices and ordinary seasonal acquisition are owner-approved for supported catalog entries. These entries remain disabled pending native verification. Animal release is excluded.",
+      "approvedDecisions": [
+        "Include skins for multiple new winter objects, including Snowman",
+        "Include small presents at the base of the Christmas Pine within its existing one-cell footprint",
+        "All selected Christmas artwork approved on November 28, 2026",
+        "December 15–30 inclusive, annual; close December 31 at 00:00 local time",
+        "Christmas pack 10 tokens once; each supported Christmas monument 8 unlock / 4 placement; ordinary seasonal purchase"
+      ],
+      "proposedUnlock": null,
+      "unresolved": [],
+      "nativeWork": [
+        "Verify owned/enabled holiday priority over Winter and the existing manual/saved-day behavior",
+        "Use explicit Winter baseline copies because missing overrides fall back to default8bit",
+        "Preserve all object windows, ownership and separate category gates",
+        "Keep the quiet monthly ground and macro-plot edge continuity",
+        "Keep disabled until native acceptance passes; supported business decisions are approved and need no repeat approval. Keep Animals separate."
+      ],
+      "sources": [
+        "handoffs/christmas-2026/approval.json",
+        "handoffs/christmas-2026/release-configuration.json",
+        "handoffs/christmas-2026/XCODE_HANDOFF.md",
+        "handoffs/christmas-2026/date-decision.json",
+        "handoffs/forest-release-2026/approval.json"
+      ],
+      "artworkApproved": true,
+      "releaseSettingsApproved": true,
+      "datesApproved": true,
+      "approvedWindow": {
+        "start": "12-15",
+        "end": "12-30",
+        "inclusive": true,
+        "annual": true
+      },
+      "releaseApprovalScopeKeys": [
+        "christmas"
+      ],
+      "approvedAcquisition": {
+        "method": "seasonal_pack_purchase",
+        "purchasePrice": 10,
+        "currency": "forest_tokens",
+        "approved": true,
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
+    },
+    {
+      "handoffKey": "forest.christmas-objects",
+      "title": "Christmas Monuments",
+      "playerSummary": "A pile of presents, a chimney and a sleigh are planned as holiday forest decorations.",
+      "contentKeys": [
+        "present_pile",
+        "santa_chimney",
+        "santa_sleigh"
+      ],
+      "currentState": "Artwork, December 15–30 dates, prices and ordinary seasonal acquisition are owner-approved for supported catalog entries. These entries remain disabled pending native verification. Animal release is excluded.",
+      "approvedDecisions": [
+        "Create a Present Pile, Santa Chimney and Santa Sleigh as purchasable Christmas monument concepts",
+        "Keep small Pine-skin gifts separate from the substantial Present Pile monument",
+        "All selected Christmas artwork approved on November 28, 2026",
+        "December 15–30 inclusive, annual; close December 31 at 00:00 local time",
+        "Christmas pack 10 tokens once; each supported Christmas monument 8 unlock / 4 placement; ordinary seasonal purchase"
+      ],
+      "proposedUnlock": null,
+      "unresolved": [],
+      "nativeWork": [
+        "Require correct two-by-two occupancy before token or placement mutations",
+        "Preserve owned objects and saved placements after the holiday closes",
+        "Keep the intrinsically Christmas default art independent of appearance-pack ownership",
+        "Keep disabled until native acceptance passes; supported business decisions are approved and need no repeat approval. Keep Animals separate."
+      ],
+      "sources": [
+        "handoffs/christmas-2026/approval.json",
+        "handoffs/christmas-2026/release-configuration.json",
+        "handoffs/christmas-2026/XCODE_HANDOFF.md",
+        "handoffs/christmas-2026/date-decision.json",
+        "handoffs/forest-release-2026/approval.json"
+      ],
+      "artworkApproved": true,
+      "releaseSettingsApproved": true,
+      "datesApproved": true,
+      "approvedWindow": {
+        "start": "12-15",
+        "end": "12-30",
+        "inclusive": true,
+        "annual": true
+      },
+      "releaseApprovalScopeKeys": [
+        "present_pile",
+        "santa_chimney",
+        "santa_sleigh"
+      ],
+      "approvedAcquisition": {
+        "method": "ordinary_christmas_item_purchase",
+        "currency": "forest_tokens",
+        "storePrice": 8,
+        "plantPrice": 4,
+        "approved": true,
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
     }
   ]
 }

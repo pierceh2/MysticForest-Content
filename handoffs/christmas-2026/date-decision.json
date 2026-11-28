@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "runtimeInput": false,
+  "decisionDate": "2026-11-28",
+  "ownerStatement": "I think the christmas pack and the christmas season items should appear Dec 15th-30th.",
+  "dateApprovalStatus": "approved",
+  "datesApproved": true,
+  "artworkApproved": true,
+  "pricesApproved": false,
+  "acquisitionApproved": false,
+  "releaseSettingsApproved": false,
+  "productionActivationAuthorized": false,
+  "window": {
+    "start": "12-15",
+    "end": "12-30"
+  },
+  "annual": true,
+  "inclusive": true,
+  "opens": "December 15 at 00:00 local time",
+  "lastEligibleDay": "December 30",
+  "firstClosedDay": "December 31",
+  "closes": "December 31 at 00:00 local time",
+  "evaluationDate": "actual local device date at final purchase/placement mutation",
+  "scope": {
+    "pack": {
+      "key": "christmas",
+      "purchaseWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "automaticAppearanceWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      }
+    },
+    "monuments": [
+      {
+        "key": "present_pile",
+        "purchaseWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "everyNewPlacementWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "appliesWhenAlreadyOwned": true
+      },
+      {
+        "key": "santa_chimney",
+        "purchaseWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "everyNewPlacementWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "appliesWhenAlreadyOwned": true
+      },
+      {
+        "key": "santa_sleigh",
+        "purchaseWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "everyNewPlacementWindow": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "appliesWhenAlreadyOwned": true
+      }
+    ],
+    "reindeer": {
+      "status": "animal_pilot",
+      "purchaseWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "everyNewPlacementWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "appliesWhenAlreadyOwned": true,
+      "familiars": "unresolved"
+    }
+  },
+  "supersededProposal": {
+    "window": {
+      "start": "12-01",
+      "end": "12-25"
+    },
+    "status": "historical_only_not_current_eligibility"
+  },
+  "preserved": [
+    "All artwork bytes and item/pack revisions",
+    "All prices and acquisition requirements",
+    "All enabled flags remain false for the Christmas pack and three monuments",
+    "All non-Christmas windows including Winter December 1–February 28 and Apple/Hay October 1–December 1",
+    "Ownership and already-saved placements",
+    "Original artwork approval and source receipts"
+  ],
+  "appleHayChristmasEligibility": "There is no overlap. Unchanged Christmas copies support saved/manual rendering only; new placement still ends December 1.",
+  "nativeAppVerification": "not_performed"
+}
