@@ -2,14 +2,14 @@
 
 Updated November 27, 2026 with the owner's Winter economy, acquisition and publication approvals.
 
-This is the current source handoff for the existing ChronosKeep **Settings → Future Features** tab. The [companion JSON](MysticForest-FutureFeatures.json) contains eleven subjects: the nine stable records from the earlier rewards handoff, plus Winter Objects and Seasonal Placement. Its keys identify handoff records, not app model IDs. Neither file is a runtime catalog schema, unlock implementation or evidence that the native Settings tab has changed.
+This is the current source handoff for the existing ChronosKeep **Settings → Future Features** tab. The [companion JSON](MysticForest-FutureFeatures.json) contains twelve subjects: the earlier eleven records plus Frostbloom and Snow Lanterns. Its keys identify handoff records, not app model IDs. Neither file is a runtime catalog schema, unlock implementation or evidence that the native Settings tab has changed.
 
 ## Current decisions and remaining work
 
 | Settings subject | Approved content or decision | Remaining work |
 | --- | --- | --- |
 | Terraforming | Dirt Patch and Dirt Rows each have base, autumn and winter art; Cobblestone Circle has base art. Ground is a separate category and surface layer beneath foreground objects. | Implement the future Terraforming spell, its earning criteria, Ground type, Store/Inventory sections, persistence and joins. Individual surface acquisition and prices remain undecided. |
-| Familiars | Cow has approved base, autumn and winter art. Snow Hare has approved base art and a December 1–February 28 purchase/new-placement window. | Choose spell or achievement, stable requirement ID and criteria. Implement Animals as a separate type and sections. Cow/Hare acquisition and prices remain undecided. |
+| Familiars | Cow has approved base, autumn and winter art. Snow Hare has approved base art and a December 1–February 28 purchase/new-placement window. Arctic Fox has approved base art with its dates still pending. | Choose spell or achievement, stable requirement ID and criteria. Implement Animals as a separate type and sections. Cow/Hare/Fox acquisition and prices remain undecided; Arctic Fox exact dates remain a proposal. |
 | Village Hut | Disabled 2×2 landmark with base, autumn and winter art. A Village achievement is proposed. | Define achievement ID and criteria, and whether it grants the hut or reveals a purchase. |
 | Gold Vein | Approved base-only 2×2 landmark, staged disabled. Uses its base appearance across packs. | Define its own spell or achievement, criteria and grant-versus-purchase behavior. |
 | Silver Vein | Approved base-only 2×2 landmark, staged disabled. Uses its base appearance across packs. | Define its own spell or achievement, criteria and grant-versus-purchase behavior. |
@@ -18,6 +18,7 @@ This is the current source handoff for the existing ChronosKeep **Settings → F
 | Classic Retro Collection | All 34 original sprite files remain archived. Refined is the standard appearance. A separate Classic Retro appearance pack is planned. | Decide unlock and availability, then define its selection alongside seasonal appearances. |
 | Winter Art Pack | **10 Forest tokens; December 1–February 28 inclusive; ordinary seasonal pack purchase.** Approval is complete. Ownership persists. The pack remains disabled pending native visual verification. | Verify art, cache revisions, pack resolution and existing saved forests in the app, then activate under the existing approval. No repeat economy or date approval is required. |
 | Winter Forest Objects | Snowman and Winterberry Bush: **3 tokens to unlock, 1 per placement**. Frost Obelisk: **8 to unlock, 4 per placement**. Ordinary seasonal purchases, **December 1–February 28 inclusive**, with no extra achievement/spell requirement. | Keep these three disabled until native visual and seasonal purchase/new-placement checks pass, then activate under the existing approval. Snow Hare remains separately behind undecided Familiars access and economics. |
+| Frostbloom and Snow Lanterns | Original Frostbloom and Snow Lantern Circle base artwork approved; two disabled catalog registrations. | Set final acquisition, prices and exact dates, then verify native visuals and eligibility before activation. Current prices are placeholders. |
 | Seasonal Placement | Seven existing seasonal objects and four Winter objects may be purchased and newly placed only in their individual windows, including when owned. | Implement and verify the shared native check at Store, Inventory, preview and final mutation. Preserve ownership and all previously saved placements. |
 
 The exact Winter endpoint is February 28; February 29 is outside the approved window. See the [current seasonal planting handoff](../seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md) for all eleven keys and date-boundary acceptance checks.
@@ -27,7 +28,7 @@ The exact Winter endpoint is February 28; February 29 is outside the approved wi
 1. Locate the app's existing Future Features view, backing model, localization and status conventions. Match rows by existing native ID or meaning; update matching rows and add each missing subject once. Preserve unrelated entries and their native IDs. A combined existing row may represent multiple handoff subjects without duplication.
 2. Use `title` and `playerSummary` as display copy. Map `handoffKey` to an existing or newly assigned native ID through the app's established mechanism. Keep technical metadata, source paths, staging prices, approval history and unresolved design questions out of player-facing copy.
 3. Map the native status from the actual implementation. Content approval or presence in this repository does not mean the feature is available in the app. Keep the informational roadmap visible even when players have not earned a future unlock; visiting it must not grant anything.
-4. Build and inspect the existing tab in a simulator. Verify all eleven subjects are represented once, prior unrelated entries remain, localization and scrolling work, and opening/reopening Settings does not change inventory, balances, ownership, spells, achievements or placements. Record the build, simulator evidence and any remaining gaps in the app handoff.
+4. Build and inspect the existing tab in a simulator. Verify all twelve subjects are represented once, prior unrelated entries remain, localization and scrolling work, and opening/reopening Settings does not change inventory, balances, ownership, spells, achievements or placements. Record the build, simulator evidence and any remaining gaps in the app handoff.
 
 ## Boundaries for implementation
 

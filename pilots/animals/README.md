@@ -24,3 +24,7 @@ Persist one `cow` placement per cow using the save model's ordinary animal ident
 ## Snow Hare shares the future Animal category
 
 The approved snowy-base Hare is preserved at `sprites/default8bit/snow_hare.png` in this pilot directory. It shares the unresolved Familiars gate, but its planned purchases and every new placement are limited to December 1–February 28 inclusive. Neither Cow nor Hare has approved production prices or a live animal catalog entry. See [the Winter object manifest](../winter_objects/manifest.json) for Hare's exact sprite and native checks. Familiars may remain pending while ordinary seasonal Winter items are verified.
+
+## Arctic Fox approved base pilot
+
+Arctic Fox now has approved base art at `sprites/default8bit/arctic_fox.png` in this pilot folder. It shares the future Animals model and unresolved Familiars gate. Its prices, acquisition and exact dates remain undecided; December 1–February 28 is only a proposal. There is no runtime animal catalog entry. See the [Winter Wave 2 manifest](../winter_objects_wave2/manifest.json) and [handoff](../winter_objects_wave2/XCODE_HANDOFF.md).

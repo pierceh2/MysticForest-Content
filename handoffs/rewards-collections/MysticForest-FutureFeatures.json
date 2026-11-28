@@ -8,7 +8,7 @@
   "updatedDate": "2026-11-27",
   "repository": "pierceh2/MysticForest-Content",
   "purpose": "Source copy and decision records for the existing native roadmap. This is not a runtime catalog schema, native feature-ID registry, unlock implementation or activation command.",
-  "sourceBasis": "Approved content PRs #3–7 and the current Winter approvals, reconciled into this content checkout. Native app implementation is unverified.",
+  "sourceBasis": "Approved content PRs #3–7, current Winter approvals and approved Winter Wave 2 artwork. Native app implementation is unverified.",
   "nativePorting": {
     "stableHandoffKeys": "Retain these keys for mapping across handoffs; preserve existing native IDs and status conventions.",
     "deduplication": "Match by native ID or meaning, update matching subjects and add missing subjects once. Existing combined rows may represent several subjects without duplicate entries.",
@@ -56,12 +56,13 @@
     {
       "handoffKey": "forest.familiars",
       "title": "Familiars",
-      "playerSummary": "A planned Familiars unlock will introduce forest animals, starting with a cow and a winter snow hare.",
+      "playerSummary": "A planned Familiars unlock will introduce forest animals, including a cow, snow hare and arctic fox.",
       "contentKeys": [
         "cow",
-        "snow_hare"
+        "snow_hare",
+        "arctic_fox"
       ],
-      "currentState": "Cow base, autumn and winter art and Snow Hare base art are approved pilots. Animals and Familiars are not active production features.",
+      "currentState": "Cow base, autumn and winter art, Snow Hare base art and Arctic Fox base art are approved pilots. Animals and Familiars are not active production features.",
       "approvedDecisions": [
         "Separate Animals Store and Inventory sections",
         "Hide the category and its actions while Familiars is undefined, unavailable or unearned",
@@ -73,7 +74,8 @@
         "Spell or achievement",
         "Stable requirement identifier and earning criteria",
         "How Cow and Snow Hare are acquired after the category opens",
-        "Cow and Snow Hare prices"
+        "Cow and Snow Hare prices",
+        "Arctic Fox acquisition, prices and exact purchase/new-placement window"
       ],
       "nativeWork": [
         "Implement and verify the animal type, collection, foreground placement, persistence and rendering",
@@ -83,7 +85,8 @@
       "sources": [
         "pilots/animals/README.md",
         "pilots/animals/COW.preview.json",
-        "pilots/winter_objects/manifest.json"
+        "pilots/winter_objects/manifest.json",
+        "pilots/winter_objects_wave2/manifest.json"
       ]
     },
     {
@@ -452,6 +455,34 @@
         "handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md",
         "catalog.json",
         "pilots/winter_objects/manifest.json"
+      ]
+    },
+    {
+      "handoffKey": "forest.winter-wave-two",
+      "title": "Frostbloom and Snow Lanterns",
+      "playerSummary": "Icy blossoms and a circle of warm snow lanterns are planned for the forest. Their collection rules are still being decided.",
+      "contentKeys": [
+        "frostbloom_tree",
+        "snow_lantern_circle"
+      ],
+      "currentState": "Approved base artwork, registered disabled with placeholder prices and no configured dates.",
+      "approvedDecisions": [
+        "Use the original pointed blue-white Frostbloom blossoms",
+        "Use the base sprites independently of Winter appearance-pack ownership"
+      ],
+      "proposedUnlock": null,
+      "unresolved": [
+        "Final acquisition and prices",
+        "Exact purchase and new-placement windows; December 1–February 28 remains a proposal"
+      ],
+      "nativeWork": [
+        "Verify full native canvases, anchors and pixel readability in Day and World",
+        "Apply approved date and acquisition rules before activation; keep separate from the earlier Winter four-key activation"
+      ],
+      "sources": [
+        "catalog.json",
+        "pilots/winter_objects_wave2/manifest.json",
+        "pilots/winter_objects_wave2/XCODE_HANDOFF.md"
       ]
     }
   ]

@@ -38,6 +38,7 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `snowman` (Snowman (retired)) | tree | winter | yes | excluded | excluded | excluded |
 | `winterberry_bush` (Winterberry Bush (retired)) | tree | winter | yes | excluded | excluded | excluded |
 | `cherry_blossom` (Cherry Blossom Tree (retired)) | tree | - | yes | - | - | yes |
+| `frostbloom_tree` (Frostbloom Tree (retired)) | tree | winter | yes | excluded | excluded | excluded |
 | `shrine` (Shrine) | landmark | - | yes | yes | yes | yes |
 | `pond` (Lily Pond) | landmark | - | yes | yes | yes | yes |
 | `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | yes |
@@ -47,8 +48,9 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `gold_vein` (Gold Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
 | `silver_vein` (Silver Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
 | `bronze_vein` (Bronze Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
-| **Reskinned** | | | 24 of 24 | 10 of 24 | 9 of 24 | 13 of 24 |
-| **Left out on purpose** | | | 0 | 12 | 8 | 11 |
+| `snow_lantern_circle` (Snow Lantern Circle (retired)) | landmark | winter | yes | excluded | excluded | excluded |
+| **Reskinned** | | | 26 of 26 | 10 of 26 | 9 of 26 | 13 of 26 |
+| **Left out on purpose** | | | 0 | 14 | 10 | 13 |
 | **Gaps** | | | 0 | 2 | 7 | 0 |
 
 <!-- coverage:end -->
@@ -91,6 +93,12 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `winter` | `gold_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
 | `winter` | `silver_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
 | `winter` | `bronze_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
+| `fall` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `fall` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `thanksgiving_feast` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `thanksgiving_feast` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `winter` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `winter` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
 <!-- excluded:end -->
 
 ## How to use this when planning a pack
@@ -122,8 +130,13 @@ These files are included in the repository but are not live catalog entries. Sea
 | --- | --- | --- | --- | --- |
 | Cow | Approved | Approved | Approved | Animals type; unresolved Familiars and economy |
 | Snow Hare | Approved snowy base | Base fallback | Base fallback | Animals type; unresolved Familiars and economy; winter-only placement |
+| Arctic Fox | Approved snowy base | Base fallback | Base fallback | Animals type; unresolved Familiars, economy and exact dates |
 | Dirt Patch | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
 | Dirt Rows | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
 | Cobblestone Circle | Approved atlas | Base fallback | Base fallback | Same Ground prerequisites; seasonal artwork deferred |
 
 The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) covers all 16 edge masks and placement under existing objects. The [Cow handoff](pilots/animals/README.md) covers stable identity and all three appearances. Cherry Blossom's Autumn and Thanksgiving columns remain actual gaps; Autumn art still needs its separate visual approval.
+
+## Approved Winter Wave 2 staging
+
+Frostbloom Tree and Snow Lantern Circle add two approved base sprites and disabled catalog entries. Their prices are repository placeholders and their purchase/placement windows are not configured. Arctic Fox is an approved 32×48 Animals pilot outside the runtime matrix. See the [manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). No pack art or revision changes in this delivery.
