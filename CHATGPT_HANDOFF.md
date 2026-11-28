@@ -16,7 +16,13 @@ Use the [current seasonal-placement handoff](handoffs/seasonal-planting/SEASONAL
 
 ### Approved Winter Wave 2 artwork
 
-The original icy-blossom Frostbloom Tree, Snow Lantern Circle and Arctic Fox are approved. The first two are disabled catalog registrations with section 8 price placeholders and no configured purchase/placement window. Arctic Fox remains an Animals pilot behind unresolved Familiars. Exact dates, prices and acquisition remain pending for these three; they do not join the earlier four-key activation approval. See the [Wave 2 manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). New Christmas artwork is a separate review phase.
+The original icy-blossom Frostbloom Tree, Snow Lantern Circle and Arctic Fox are approved. The first two are disabled catalog registrations with section 8 price placeholders and no configured purchase/placement window. Arctic Fox remains an Animals pilot behind unresolved Familiars. Exact dates, prices and acquisition remain pending for these three; they do not join the earlier four-key activation approval. See the [Wave 2 manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). Christmas artwork is now separately approved; its release settings remain pending as recorded below.
+
+### Approved Christmas artwork — November 28, 2026
+
+All 25 selected native files are approved: eighteen Christmas runtime overrides, three intrinsic holiday monument bases and four Animal pilots. The new `christmas` pack and Present Pile/Santa Chimney/Santa Sleigh registrations are disabled. Their configured December 1–25 windows and standard placeholder prices (pack 10, monuments 8 unlock / 4 placement) are proposals; artwork approval does not authorize release. Reindeer remains an Animal pilot with pending Familiars, dates and economy.
+
+The [approval record](handoffs/christmas-2026/approval.json) preserves every approved hash. The [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md) records purchase and every-new-placement checks, the December 26 candidate close, unchanged base windows, class gates and native acceptance. This draft stacks on unmerged PR14; merge that dependency first and retarget the Christmas draft before merge. Follow the owner's standing feature-branch + draft-PR workflow; the owner handles main merges. No earlier release approval or activation patch changes.
 
 ### Ground and Animals for Xcode
 
@@ -114,14 +120,15 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 
 ## 5. Current content (2026-11-27)
 
-The catalog contains **16 trees and 10 landmarks**, including disabled staging entries. The current pack table and item-by-pack grid are in [PACK_COVERAGE.md](PACK_COVERAGE.md). Refined art is the default under the existing permanent item keys; original Classic Retro sprites remain in `art-archive/classic-retro/` for the future separate pack.
+The catalog contains **16 trees and 13 landmarks**, including disabled staging entries. The current pack table and item-by-pack grid are in [PACK_COVERAGE.md](PACK_COVERAGE.md). Refined art is the default under the existing permanent item keys; original Classic Retro sprites remain in `art-archive/classic-retro/` for the future separate pack.
 
 | Pack | Window | Unlock tokens | Revision | Direct sprite coverage | Release state |
 | --- | --- | ---: | ---: | --- | --- |
-| Default 8-bit / Refined (`default8bit`) | Always | 0 | Item revisions | 26 of 26 | Existing default |
-| Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 26 | Enabled |
-| Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 26 | Enabled |
-| Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 26 | Approved; disabled until native checks |
+| Default 8-bit / Refined (`default8bit`) | Always | 0 | Item revisions | 29 of 29 | Existing default |
+| Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 29 | Enabled |
+| Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 29 | Enabled |
+| Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 29 | Approved; disabled until native checks |
+| Christmas (`christmas`) | December 1–December 25 (proposal) | 10 (placeholder) | 1 | 18 of 29 | Art approved; disabled, release settings pending |
 
 Missing overrides use the default sprite. Mineral veins and intrinsically winter-only base objects intentionally need no seasonal overrides. The Ground and Animal pilot sprites are counted separately from the runtime tree/landmark grid.
 

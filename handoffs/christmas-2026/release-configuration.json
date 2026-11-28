@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "runtimeInput": false,
+  "artworkApproved": true,
+  "releaseSettingsApproved": false,
+  "productionActivationAuthorized": false,
+  "calendar": {
+    "annual": true,
+    "inclusiveEndpoints": true,
+    "clock": "actual local device date at final mutation",
+    "opens": "December 1 at 00:00 local time",
+    "lastEligibleDay": "December 25",
+    "closes": "December 26 at 00:00 local time"
+  },
+  "pack": {
+    "key": "christmas",
+    "catalogEntry": {
+      "key": "christmas",
+      "name": "Christmas",
+      "description": "Warm lights and evergreen garlands brighten the quiet snowy forest.",
+      "kind": "holiday",
+      "season": "christmas",
+      "window": {
+        "start": "12-01",
+        "end": "12-25"
+      },
+      "tags": [
+        "festive",
+        "lights",
+        "cosy"
+      ],
+      "tokenPrice": 10,
+      "enabled": false,
+      "revision": 1,
+      "buyOnlyInSeason": true
+    },
+    "configuredPurchaseWindowStatus": "proposal_placeholder",
+    "configuredAutomaticAppearanceWindowStatus": "proposal_placeholder",
+    "priceStatus": "repository_standard_placeholder",
+    "ownershipPersists": true,
+    "grantsUnderlyingObjects": false
+  },
+  "monuments": [
+    {
+      "key": "present_pile",
+      "catalogEntry": {
+        "key": "present_pile",
+        "name": "Present Pile",
+        "description": "Snow-dusted parcels gather beneath bright ribbons for a generous winter visit.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      },
+      "configuredWindowStatus": "proposal_placeholder",
+      "intendedWindowScope": [
+        "purchase",
+        "every_new_placement_even_when_owned"
+      ],
+      "stagingEconomy": {
+        "currency": "forest_tokens",
+        "effectiveUnlockPrice": 8,
+        "effectivePlacementPrice": 4,
+        "status": "placeholder_not_final_price_approval"
+      },
+      "requiresChristmasPack": false,
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true
+    },
+    {
+      "key": "santa_chimney",
+      "catalogEntry": {
+        "key": "santa_chimney",
+        "name": "Santa Chimney",
+        "description": "A snowy brick chimney waits with a warm hearth and a little evergreen trim.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      },
+      "configuredWindowStatus": "proposal_placeholder",
+      "intendedWindowScope": [
+        "purchase",
+        "every_new_placement_even_when_owned"
+      ],
+      "stagingEconomy": {
+        "currency": "forest_tokens",
+        "effectiveUnlockPrice": 8,
+        "effectivePlacementPrice": 4,
+        "status": "placeholder_not_final_price_approval"
+      },
+      "requiresChristmasPack": false,
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true
+    },
+    {
+      "key": "santa_sleigh",
+      "catalogEntry": {
+        "key": "santa_sleigh",
+        "name": "Santa Sleigh",
+        "description": "A red wooden sleigh rests on golden runners with a few carefully wrapped gifts.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      },
+      "configuredWindowStatus": "proposal_placeholder",
+      "intendedWindowScope": [
+        "purchase",
+        "every_new_placement_even_when_owned"
+      ],
+      "stagingEconomy": {
+        "currency": "forest_tokens",
+        "effectiveUnlockPrice": 8,
+        "effectivePlacementPrice": 4,
+        "status": "placeholder_not_final_price_approval"
+      },
+      "requiresChristmasPack": false,
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true
+    }
+  ],
+  "reindeer": {
+    "runtimeCatalogEntry": null,
+    "typeStatus": "animal_pilot",
+    "artworkApproved": true,
+    "proposedPurchaseWindow": {
+      "start": "12-01",
+      "end": "12-25"
+    },
+    "proposedNewPlacementWindow": {
+      "start": "12-01",
+      "end": "12-25"
+    },
+    "windowApproved": false,
+    "purchasePrice": null,
+    "placementPrice": null,
+    "classGate": "Familiars",
+    "gateType": null,
+    "gateCondition": null,
+    "requiresChristmasPack": false
+  },
+  "existingObjectPolicy": "A Christmas override changes appearance only. It never changes the base object purchase/new-placement window, enabled state, entitlement or acquisition gate.",
+  "winterWaveTwoUnchanged": {
+    "keys": [
+      "frostbloom_tree",
+      "snow_lantern_circle",
+      "arctic_fox"
+    ],
+    "proposalOnlyWindow": {
+      "start": "12-01",
+      "end": "02-28"
+    },
+    "approvedWindow": null,
+    "catalogWindow": null,
+    "activationAuthorized": false
+  },
+  "nativeWork": [
+    "Share eligibility between Store, Inventory, placement preview and final mutation.",
+    "Recheck actual local date, enabled state, category gate, ownership and footprint before tokens or occupancy change.",
+    "Reject unavailable, invalid or closed windows atomically.",
+    "Keep old ownership and saved placements when the season ends.",
+    "Verify saved-day/manual appearance behavior and eligible owned holiday priority over Winter."
+  ]
+}

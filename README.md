@@ -26,3 +26,7 @@ Run `python3 scripts/validate.py` and `python3 tools/make_pack_coverage.py --che
 ## Approved Winter Wave 2
 
 The approved original Frostbloom Tree and Snow Lantern Circle are staged as disabled catalog entries; Arctic Fox is a separate Animals pilot. Final acquisition, economy and exact dates remain pending. The [Wave 2 handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md) records these boundaries and the native visual checks. This batch does not change the earlier Winter release approval or add Christmas artwork.
+
+## Approved Christmas artwork
+
+The approved Christmas art is staged in a disabled pack plus three disabled holiday landmarks and four Animal pilot files. See the [Christmas approval and calendar handoff](handoffs/christmas-2026/README.md). The recorded December 1–25 dates and prices remain release proposals. This draft depends on unmerged PR14; merge the dependency first, then retarget and recheck. Existing artwork, windows, ownership rules and earlier Winter activation approval are preserved.

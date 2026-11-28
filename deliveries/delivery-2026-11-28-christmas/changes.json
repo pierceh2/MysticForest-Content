@@ -1,0 +1,173 @@
+{
+  "add": {
+    "packs": [
+      {
+        "key": "christmas",
+        "name": "Christmas",
+        "description": "Warm lights and evergreen garlands brighten the quiet snowy forest.",
+        "kind": "holiday",
+        "season": "christmas",
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        },
+        "tags": [
+          "festive",
+          "lights",
+          "cosy"
+        ],
+        "tokenPrice": 10,
+        "enabled": false,
+        "buyOnlyInSeason": true
+      }
+    ],
+    "landmarks": [
+      {
+        "key": "present_pile",
+        "name": "Present Pile",
+        "description": "Snow-dusted parcels gather beneath bright ribbons for a generous winter visit.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      },
+      {
+        "key": "santa_chimney",
+        "name": "Santa Chimney",
+        "description": "A snowy brick chimney waits with a warm hearth and a little evergreen trim.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      },
+      {
+        "key": "santa_sleigh",
+        "name": "Santa Sleigh",
+        "description": "A red wooden sleigh rests on golden runners with a few carefully wrapped gifts.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "12-25"
+        }
+      }
+    ]
+  },
+  "spritesChanged": [
+    {
+      "pack": "christmas",
+      "key": "pine"
+    },
+    {
+      "pack": "christmas",
+      "key": "snowman"
+    },
+    {
+      "pack": "christmas",
+      "key": "oak"
+    },
+    {
+      "pack": "christmas",
+      "key": "birch"
+    },
+    {
+      "pack": "christmas",
+      "key": "shrine"
+    },
+    {
+      "pack": "christmas",
+      "key": "pond"
+    },
+    {
+      "pack": "christmas",
+      "key": "village_hut"
+    },
+    {
+      "pack": "christmas",
+      "key": "winterberry_bush"
+    },
+    {
+      "pack": "christmas",
+      "key": "frost_obelisk"
+    },
+    {
+      "pack": "christmas",
+      "key": "frostbloom_tree"
+    },
+    {
+      "pack": "christmas",
+      "key": "snow_lantern_circle"
+    },
+    {
+      "pack": "default8bit",
+      "key": "present_pile"
+    },
+    {
+      "pack": "default8bit",
+      "key": "santa_chimney"
+    },
+    {
+      "pack": "default8bit",
+      "key": "santa_sleigh"
+    },
+    {
+      "pack": "christmas",
+      "key": "willow"
+    },
+    {
+      "pack": "christmas",
+      "key": "larch"
+    },
+    {
+      "pack": "christmas",
+      "key": "maple"
+    },
+    {
+      "pack": "christmas",
+      "key": "ginkgo"
+    },
+    {
+      "pack": "christmas",
+      "key": "apple_tree"
+    },
+    {
+      "pack": "christmas",
+      "key": "cherry_blossom"
+    },
+    {
+      "pack": "christmas",
+      "key": "hay_bales"
+    }
+  ]
+}

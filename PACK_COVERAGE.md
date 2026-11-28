@@ -13,6 +13,7 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 4 | cosy, leaves |
 | `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 3 | autumn, harvest, cosy |
 | `winter` | Winter | seasonal | winter | 12-01 to 02-28 | 10 | 3 | snow, frost, cosy |
+| `christmas` | Christmas | holiday | christmas | 12-01 to 12-25 | 10 | 1 | festive, lights, cosy |
 
 <!-- packs:end -->
 
@@ -21,37 +22,40 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 `yes` means the pack has its own sprite for the item. `-` means a gap: nothing yet, so the default sprite shows. `excluded` means it was left out on purpose (see the table after the grid).
 
 <!-- coverage:start -->
-| Item | Type | Season | `default8bit` | `fall` | `thanksgiving_feast` | `winter` |
-| --- | --- | --- | --- | --- | --- | --- |
-| `oak` (Oak) | tree | - | yes | yes | yes | yes |
-| `pine` (Pine) | tree | - | yes | yes | - | yes |
-| `birch` (Birch) | tree | - | yes | yes | yes | yes |
-| `willow` (Willow) | tree | - | yes | yes | - | yes |
-| `pumpkin` (Pumpkin) | tree | autumn | yes | excluded | yes | excluded |
-| `jack_o_lantern` (Jack-o'-Lantern) | tree | autumn | yes | excluded | excluded | excluded |
-| `scarecrow` (Scarecrow) | tree | autumn | yes | excluded | yes | excluded |
-| `larch` (Larch) | tree | - | yes | yes | - | yes |
-| `maple` (Maple) | tree | - | yes | yes | yes | yes |
-| `ginkgo` (Ginkgo) | tree | - | yes | yes | - | yes |
-| `apple_tree` (Apple Tree) | tree | - | yes | - | yes | yes |
-| `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | excluded |
-| `snowman` (Snowman (retired)) | tree | winter | yes | excluded | excluded | excluded |
-| `winterberry_bush` (Winterberry Bush (retired)) | tree | winter | yes | excluded | excluded | excluded |
-| `cherry_blossom` (Cherry Blossom Tree (retired)) | tree | - | yes | - | - | yes |
-| `frostbloom_tree` (Frostbloom Tree (retired)) | tree | winter | yes | excluded | excluded | excluded |
-| `shrine` (Shrine) | landmark | - | yes | yes | yes | yes |
-| `pond` (Lily Pond) | landmark | - | yes | yes | yes | yes |
-| `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | yes |
-| `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | excluded |
-| `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes |
-| `frost_obelisk` (Frost Obelisk (retired)) | landmark | winter | yes | excluded | excluded | excluded |
-| `gold_vein` (Gold Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
-| `silver_vein` (Silver Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
-| `bronze_vein` (Bronze Vein (retired)) | landmark | - | yes | excluded | excluded | excluded |
-| `snow_lantern_circle` (Snow Lantern Circle (retired)) | landmark | winter | yes | excluded | excluded | excluded |
-| **Reskinned** | | | 26 of 26 | 10 of 26 | 9 of 26 | 13 of 26 |
-| **Left out on purpose** | | | 0 | 14 | 10 | 13 |
-| **Gaps** | | | 0 | 2 | 7 | 0 |
+| Item | Type | Season | `default8bit` | `fall` | `thanksgiving_feast` | `winter` | `christmas` |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `oak` (Oak) | tree | - | yes | yes | yes | yes | yes |
+| `pine` (Pine) | tree | - | yes | yes | - | yes | yes |
+| `birch` (Birch) | tree | - | yes | yes | yes | yes | yes |
+| `willow` (Willow) | tree | - | yes | yes | - | yes | yes |
+| `pumpkin` (Pumpkin) | tree | autumn | yes | excluded | yes | excluded | excluded |
+| `jack_o_lantern` (Jack-o'-Lantern) | tree | autumn | yes | excluded | excluded | excluded | excluded |
+| `scarecrow` (Scarecrow) | tree | autumn | yes | excluded | yes | excluded | excluded |
+| `larch` (Larch) | tree | - | yes | yes | - | yes | yes |
+| `maple` (Maple) | tree | - | yes | yes | yes | yes | yes |
+| `ginkgo` (Ginkgo) | tree | - | yes | yes | - | yes | yes |
+| `apple_tree` (Apple Tree) | tree | - | yes | - | yes | yes | yes |
+| `corn_stalks` (Corn Stalks) | tree | autumn | yes | excluded | - | excluded | excluded |
+| `snowman` (Snowman (retired)) | tree | winter | yes | excluded | excluded | excluded | yes |
+| `winterberry_bush` (Winterberry Bush (retired)) | tree | winter | yes | excluded | excluded | excluded | yes |
+| `cherry_blossom` (Cherry Blossom Tree (retired)) | tree | - | yes | - | - | yes | yes |
+| `frostbloom_tree` (Frostbloom Tree (retired)) | tree | winter | yes | excluded | excluded | excluded | yes |
+| `shrine` (Shrine) | landmark | - | yes | yes | yes | yes | yes |
+| `pond` (Lily Pond) | landmark | - | yes | yes | yes | yes | yes |
+| `hay_bales` (Hay Bale Stack) | landmark | autumn | yes | excluded | yes | yes | yes |
+| `harvest_table` (Harvest Table) | landmark | thanksgiving | yes | excluded | excluded | excluded | excluded |
+| `village_hut` (Village Hut (retired)) | landmark | - | yes | yes | - | yes | yes |
+| `frost_obelisk` (Frost Obelisk (retired)) | landmark | winter | yes | excluded | excluded | excluded | yes |
+| `gold_vein` (Gold Vein (retired)) | landmark | - | yes | excluded | excluded | excluded | excluded |
+| `silver_vein` (Silver Vein (retired)) | landmark | - | yes | excluded | excluded | excluded | excluded |
+| `bronze_vein` (Bronze Vein (retired)) | landmark | - | yes | excluded | excluded | excluded | excluded |
+| `snow_lantern_circle` (Snow Lantern Circle (retired)) | landmark | winter | yes | excluded | excluded | excluded | yes |
+| `present_pile` (Present Pile (retired)) | landmark | christmas | yes | excluded | excluded | excluded | excluded |
+| `santa_chimney` (Santa Chimney (retired)) | landmark | christmas | yes | excluded | excluded | excluded | excluded |
+| `santa_sleigh` (Santa Sleigh (retired)) | landmark | christmas | yes | excluded | excluded | excluded | excluded |
+| **Reskinned** | | | 29 of 29 | 10 of 29 | 9 of 29 | 13 of 29 | 18 of 29 |
+| **Left out on purpose** | | | 0 | 17 | 13 | 16 | 11 |
+| **Gaps** | | | 0 | 2 | 7 | 0 | 0 |
 
 <!-- coverage:end -->
 
@@ -99,6 +103,26 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `thanksgiving_feast` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
 | `winter` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
 | `winter` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `christmas` | `pumpkin` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
+| `christmas` | `jack_o_lantern` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
+| `christmas` | `scarecrow` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
+| `christmas` | `corn_stalks` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
+| `christmas` | `harvest_table` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
+| `christmas` | `gold_vein` | Approved base-only vein appearance; no seasonal override or unlock granted. |
+| `christmas` | `silver_vein` | Approved base-only vein appearance; no seasonal override or unlock granted. |
+| `christmas` | `bronze_vein` | Approved base-only vein appearance; no seasonal override or unlock granted. |
+| `fall` | `present_pile` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `fall` | `santa_chimney` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `fall` | `santa_sleigh` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `thanksgiving_feast` | `present_pile` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `thanksgiving_feast` | `santa_chimney` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `thanksgiving_feast` | `santa_sleigh` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `winter` | `present_pile` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `winter` | `santa_chimney` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `winter` | `santa_sleigh` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `christmas` | `present_pile` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `christmas` | `santa_chimney` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
+| `christmas` | `santa_sleigh` | Intrinsic Christmas default artwork supplies the appearance; disabled release staging does not need another override. |
 <!-- excluded:end -->
 
 ## How to use this when planning a pack
@@ -118,7 +142,7 @@ The generated grid calls any disabled entry “retired.” Village Hut, Cherry B
 
 ## Approved winter-only objects
 
-Snowman, Winterberry Bush and Frost Obelisk have approved default sprites and disabled catalog entries at spriteRevision 1. Their approved unlock/placement prices are respectively **3/1, 3/1 and 8/4 Forest tokens**. They are ordinary seasonal purchases, December 1–February 28 inclusive, with the same limits on every new placement. Native verification precedes activation. They do not require the Winter pack and need no seasonal overrides.
+Snowman, Winterberry Bush and Frost Obelisk have approved default sprites and disabled catalog entries at spriteRevision 1. Their approved unlock/placement prices are respectively **3/1, 3/1 and 8/4 Forest tokens**. They are ordinary seasonal purchases, December 1–February 28 inclusive, with the same limits on every new placement. Native verification precedes activation. They do not require the Winter pack and need no separate Winter overrides. Their approved Christmas appearances do not change their base availability.
 
 Snow Hare uses `pilots/animals/sprites/default8bit/snow_hare.png`; it remains outside the runtime coverage grid. Its art and winter-only direction are approved, but Familiars, Animal support and animal economy remain pending.
 
@@ -126,17 +150,24 @@ Snow Hare uses `pilots/animals/sprites/default8bit/snow_hare.png`; it remains ou
 
 These files are included in the repository but are not live catalog entries. Seasonal pack ownership changes appearance only; it does not grant Terraforming or Familiars.
 
-| Pilot item | Base | Autumn Leaves | Winter | Production condition |
-| --- | --- | --- | --- | --- |
-| Cow | Approved | Approved | Approved | Animals type; unresolved Familiars and economy |
-| Snow Hare | Approved snowy base | Base fallback | Base fallback | Animals type; unresolved Familiars and economy; winter-only placement |
-| Arctic Fox | Approved snowy base | Base fallback | Base fallback | Animals type; unresolved Familiars, economy and exact dates |
-| Dirt Patch | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
-| Dirt Rows | Approved atlas | Approved atlas | Approved atlas | Ground type; future Terraforming; economy |
-| Cobblestone Circle | Approved atlas | Base fallback | Base fallback | Same Ground prerequisites; seasonal artwork deferred |
+| Pilot item | Base | Autumn Leaves | Winter | Christmas | Production condition |
+| --- | --- | --- | --- | --- | --- |
+| Cow | Approved | Approved | Approved | Exact Winter copy | Animals type; unresolved Familiars and economy |
+| Snow Hare | Approved snowy base | Base fallback | Base fallback | Approved festive skin | Animals type; unresolved Familiars and economy; winter-only placement |
+| Arctic Fox | Approved snowy base | Base fallback | Base fallback | Approved festive skin | Animals type; unresolved Familiars, economy and exact dates |
+| Reindeer | Approved holiday base | Base fallback | Base fallback | Intrinsic base | Animals type; Familiars, acquisition, price and exact dates pending |
+| Dirt Patch | Approved atlas | Approved atlas | Approved atlas | No new override | Ground type; future Terraforming; economy |
+| Dirt Rows | Approved atlas | Approved atlas | Approved atlas | No new override | Ground type; future Terraforming; economy |
+| Cobblestone Circle | Approved atlas | Base fallback | Base fallback | No new override | Same Ground prerequisites; seasonal artwork deferred |
 
 The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) covers all 16 edge masks and placement under existing objects. The [Cow handoff](pilots/animals/README.md) covers stable identity and all three appearances. Cherry Blossom's Autumn and Thanksgiving columns remain actual gaps; Autumn art still needs its separate visual approval.
 
 ## Approved Winter Wave 2 staging
 
 Frostbloom Tree and Snow Lantern Circle add two approved base sprites and disabled catalog entries. Their prices are repository placeholders and their purchase/placement windows are not configured. Arctic Fox is an approved 32×48 Animals pilot outside the runtime matrix. See the [manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). No pack art or revision changes in this delivery.
+
+## Approved Christmas artwork staging
+
+Christmas is a new disabled pack at revision 1. It has eighteen runtime overrides: eleven festive designs and seven exact Winter copies. Three new disabled landmarks bring the branch to 29 runtime items. The Christmas candidate window is December 1–25 inclusive; pack price 10 and monument prices 8 unlock / 4 placement are documented placeholders, not approved release settings. No earlier catalog settings or PNG bytes change. The generated table's “retired” label still means disabled staging for these additions.
+
+Christmas Animal coverage consists of Fox/Hare reskins and a copied Winter Cow, plus the Reindeer intrinsic base pilot; none creates a live Animals catalog entry. See the [approval receipt](handoffs/christmas-2026/approval.json), [release settings](handoffs/christmas-2026/release-configuration.json) and [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md). Appearance ownership never extends base eligibility. Apple Tree and Hay Bales keep their December 1 endpoint.
