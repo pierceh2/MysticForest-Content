@@ -1,0 +1,380 @@
+{
+  "schemaVersion": 1,
+  "runtimeInput": false,
+  "decisionDate": "2026-11-28",
+  "ownerStatement": "Go ahead and approve",
+  "approvalContext": "Approval of the four-row recommendation: Christmas pack 10 once; each Christmas monument 8 unlock/4 placement; Frostbloom ordinary winter store December 1–February 28 at 3/1; Snow Lantern Circle ordinary winter store December 1–February 28 at 8/4. The recommendation keeps Animals deferred.",
+  "approvedScopeKeys": [
+    "christmas",
+    "present_pile",
+    "santa_chimney",
+    "santa_sleigh",
+    "frostbloom_tree",
+    "snow_lantern_circle"
+  ],
+  "supportedRuntimeBusinessApprovalComplete": true,
+  "scopeExcludesAnimalRelease": true,
+  "productionActivationPerformed": false,
+  "productionEnabled": false,
+  "nativeVerificationStatus": "not_performed",
+  "approvedEntries": [
+    {
+      "key": "christmas",
+      "runtimeCollection": "packs",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 10,
+      "placementPrice": null,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_pack_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "automatic_appearance"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "christmas",
+        "name": "Christmas",
+        "description": "Warm lights and evergreen garlands brighten the quiet snowy forest.",
+        "kind": "holiday",
+        "season": "christmas",
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        },
+        "tags": [
+          "festive",
+          "lights",
+          "cosy"
+        ],
+        "tokenPrice": 10,
+        "enabled": false,
+        "revision": 1,
+        "buyOnlyInSeason": true
+      }
+    },
+    {
+      "key": "present_pile",
+      "runtimeCollection": "landmarks",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 8,
+      "placementPrice": 4,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "every_new_placement_including_owned"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "present_pile",
+        "name": "Present Pile",
+        "description": "Snow-dusted parcels gather beneath bright ribbons for a generous winter visit.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
+    },
+    {
+      "key": "santa_chimney",
+      "runtimeCollection": "landmarks",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 8,
+      "placementPrice": 4,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "every_new_placement_including_owned"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "santa_chimney",
+        "name": "Santa Chimney",
+        "description": "A snowy brick chimney waits with a warm hearth and a little evergreen trim.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
+    },
+    {
+      "key": "santa_sleigh",
+      "runtimeCollection": "landmarks",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 8,
+      "placementPrice": 4,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "every_new_placement_including_owned"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "santa_sleigh",
+        "name": "Santa Sleigh",
+        "description": "A red wooden sleigh rests on golden runners with a few carefully wrapped gifts.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "christmas",
+        "tags": [
+          "festive",
+          "decoration"
+        ],
+        "window": {
+          "start": "12-15",
+          "end": "12-30"
+        }
+      }
+    },
+    {
+      "key": "frostbloom_tree",
+      "runtimeCollection": "trees",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 3,
+      "placementPrice": 1,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "every_new_placement_including_owned"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "frostbloom_tree",
+        "name": "Frostbloom Tree",
+        "description": "Pale icy blossoms gather at the tips of snow-dusted branches.",
+        "tokenPrice": 3,
+        "startsUnlocked": false,
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "ice",
+          "flowers",
+          "magic"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      }
+    },
+    {
+      "key": "snow_lantern_circle",
+      "runtimeCollection": "landmarks",
+      "artworkApproved": true,
+      "datesApproved": true,
+      "pricesApproved": true,
+      "acquisitionApproved": true,
+      "releaseSettingsApproved": true,
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "inclusive": true,
+      "annual": true,
+      "purchasePrice": 8,
+      "placementPrice": 4,
+      "currency": "forest_tokens",
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "additionalUnlockRequired": false,
+      "windowScope": [
+        "purchase",
+        "every_new_placement_including_owned"
+      ],
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "runtimeEnabled": false,
+      "nativeVerificationRequired": true,
+      "catalogEntry": {
+        "key": "snow_lantern_circle",
+        "name": "Snow Lantern Circle",
+        "description": "Four snow lanterns shelter warm candlelight around a quiet circle.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "snow",
+          "lanterns",
+          "cosy"
+        ],
+        "window": {
+          "start": "12-01",
+          "end": "02-28"
+        }
+      }
+    }
+  ],
+  "animalDeferral": {
+    "keys": [
+      "cow",
+      "snow_hare",
+      "arctic_fox",
+      "reindeer"
+    ],
+    "releaseSettingsApproved": false,
+    "pricesApproved": false,
+    "acquisitionApproved": false,
+    "familiars": {
+      "kind": null,
+      "earningCondition": null,
+      "status": "deferred"
+    },
+    "arcticFox": {
+      "datesApproved": false,
+      "approvedWindow": null,
+      "proposedWindowOnly": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "purchasePrice": null,
+      "placementPrice": null
+    },
+    "reindeer": {
+      "datesApprovedPreviously": true,
+      "approvedWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "purchasePrice": null,
+      "placementPrice": null
+    },
+    "snowHare": {
+      "datesApprovedPreviously": true,
+      "approvedWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "purchasePrice": null,
+      "placementPrice": null
+    },
+    "productionCatalogCollectionAdded": false
+  },
+  "calendar": {
+    "evaluationDate": "actual local device date at final mutation",
+    "christmasOpens": "December 15 at 00:00 local time",
+    "christmasLastIncludedDay": "December 30",
+    "christmasCloses": "December 31 at 00:00 local time",
+    "winterLastIncludedDay": "February 28",
+    "winterLeapDayIncluded": false
+  },
+  "nativeReleaseGate": "Keep all six entries disabled until native calendar, visual, cache and persistence checks pass. Their business decisions need no repeat approval. Do not include Animals in supported-content activation.",
+  "publicationWorkflow": "One metadata commit on existing draft PR15; PR14 remains the base dependency. No main merge or activation is part of this change.",
+  "historicalReceipts": [
+    "handoffs/christmas-2026/approval.json",
+    "handoffs/christmas-2026/date-decision.json"
+  ],
+  "preserved": [
+    "All PNG bytes and sprite/pack revisions",
+    "All existing prices and enabled flags",
+    "All unrelated availability windows and unlock gates",
+    "The original artwork/date decision receipts",
+    "The earlier authorized Winter activation patch"
+  ]
+}

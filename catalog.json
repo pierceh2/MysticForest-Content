@@ -59,8 +59,8 @@
       "kind": "holiday",
       "season": "christmas",
       "window": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "tags": [
         "festive",
@@ -185,7 +185,11 @@
         "ice",
         "flowers",
         "magic"
-      ]
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
     }
   ],
   "landmarks": [
@@ -306,7 +310,11 @@
         "snow",
         "lanterns",
         "cosy"
-      ]
+      ],
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
     },
     {
       "key": "present_pile",
@@ -325,8 +333,8 @@
         "decoration"
       ],
       "window": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       }
     },
     {
@@ -346,8 +354,8 @@
         "decoration"
       ],
       "window": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       }
     },
     {
@@ -367,8 +375,8 @@
         "decoration"
       ],
       "window": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       }
     }
   ]

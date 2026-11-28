@@ -16,13 +16,13 @@ Use the [current seasonal-placement handoff](handoffs/seasonal-planting/SEASONAL
 
 ### Approved Winter Wave 2 artwork
 
-The original icy-blossom Frostbloom Tree, Snow Lantern Circle and Arctic Fox are approved. The first two are disabled catalog registrations with section 8 price placeholders and no configured purchase/placement window. Arctic Fox remains an Animals pilot behind unresolved Familiars. Exact dates, prices and acquisition remain pending for these three; they do not join the earlier four-key activation approval. See the [Wave 2 manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). Christmas artwork is now separately approved; its release settings remain pending as recorded below.
+The original icy-blossom Frostbloom Tree, Snow Lantern Circle and Arctic Fox are approved. Frostbloom and Snow Lantern Circle now have approved ordinary seasonal-store acquisition, December 1–February 28 purchase/every-new-placement windows and 3/1 and 8/4 token prices. They remain disabled pending native checks, separate from the older four-key activation patch. Arctic Fox remains an Animal pilot; its exact dates, prices, acquisition and Familiars remain deferred. See the [Wave 2 manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). Christmas artwork and the supported release settings are approved as recorded below; Animal release remains separate.
 
 ### Approved Christmas artwork — November 28, 2026
 
-All 25 selected native files are approved: eighteen Christmas runtime overrides, three intrinsic holiday monument bases and four Animal pilots. The new `christmas` pack and Present Pile/Santa Chimney/Santa Sleigh registrations are disabled. Their configured December 1–25 windows and standard placeholder prices (pack 10, monuments 8 unlock / 4 placement) are proposals; artwork approval does not authorize release. Reindeer remains an Animal pilot with pending Familiars, dates and economy.
+All 25 selected native files are approved: eighteen Christmas runtime overrides, three intrinsic holiday monument bases and four Animal pilots. The new `christmas` pack and Present Pile/Santa Chimney/Santa Sleigh registrations are disabled. Their annual inclusive December 15–30 windows are owner-approved; pack price 10 and monument prices 8 unlock / 4 placement through ordinary seasonal acquisition are also approved. Native verification and activation remain pending. Reindeer has the same approved date window but remains an Animal pilot with unresolved Familiars and economy.
 
-The [approval record](handoffs/christmas-2026/approval.json) preserves every approved hash. The [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md) records purchase and every-new-placement checks, the December 26 candidate close, unchanged base windows, class gates and native acceptance. This draft stacks on unmerged PR14; merge that dependency first and retarget the Christmas draft before merge. Follow the owner's standing feature-branch + draft-PR workflow; the owner handles main merges. No earlier release approval or activation patch changes.
+The [approval record](handoffs/christmas-2026/approval.json) preserves every approved hash. The [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md) records purchase and every-new-placement checks, the approved December 31 close at 00:00 local time, unchanged base windows, class gates and native acceptance. This draft stacks on unmerged PR14; merge that dependency first and retarget the Christmas draft before merge. Follow the owner's standing feature-branch + draft-PR workflow; the owner handles main merges. No earlier release approval or activation patch changes.
 
 ### Ground and Animals for Xcode
 
@@ -128,7 +128,7 @@ The catalog contains **16 trees and 13 landmarks**, including disabled staging e
 | Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 29 | Enabled |
 | Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 29 | Enabled |
 | Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 29 | Approved; disabled until native checks |
-| Christmas (`christmas`) | December 1–December 25 (proposal) | 10 (placeholder) | 1 | 18 of 29 | Art approved; disabled, release settings pending |
+| Christmas (`christmas`) | December 15–December 30 (approved) | 10 (approved) | 1 | 18 of 29 | Supported business decisions approved; disabled until native checks |
 
 Missing overrides use the default sprite. Mineral veins and intrinsically winter-only base objects intentionally need no seasonal overrides. The Ground and Animal pilot sprites are counted separately from the runtime tree/landmark grid.
 
@@ -404,3 +404,7 @@ Look at what exists and tell me what is weak or inconsistent. (No delivery neede
 ```
 
 **Suggested first job:** "Task: improve existing sprites. Items: jack_o_lantern, corn_stalks, harvest_table. Route: A for each. One delivery." That tests the whole pipeline on the three weakest sprites.
+
+The current [Christmas date decision](handoffs/christmas-2026/date-decision.json) approves December 15–30 for pack purchases/automatic appearance and Christmas-item purchases/every new placement. Apple Tree and Hay Bales have no overlap with that window; their Christmas copies remain for saved/manual rendering. The historical artwork receipt remains unchanged, and all non-Christmas dates are preserved.
+
+The [current six-key release approval](handoffs/forest-release-2026/approval.json) completes Christmas pack/monument and Frostbloom/Lantern dates, prices and ordinary seasonal acquisition. Animals remain deferred; Arctic Fox dates are not approved. Keep all six supported entries disabled pending native verification, preserve the earlier Winter activation patch, and avoid repeat business approval for these decisions.

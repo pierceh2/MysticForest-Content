@@ -13,7 +13,7 @@ The two tables below are **generated** from `catalog.json` and the `sprites/` fo
 | `fall` | Autumn Leaves | seasonal | autumn | 10-01 to 12-01 | 10 | 4 | cosy, leaves |
 | `thanksgiving_feast` | Thanksgiving Feast | holiday | thanksgiving | 11-15 to 11-30 | 10 | 3 | autumn, harvest, cosy |
 | `winter` | Winter | seasonal | winter | 12-01 to 02-28 | 10 | 3 | snow, frost, cosy |
-| `christmas` | Christmas | holiday | christmas | 12-01 to 12-25 | 10 | 1 | festive, lights, cosy |
+| `christmas` | Christmas | holiday | christmas | 12-15 to 12-30 | 10 | 1 | festive, lights, cosy |
 
 <!-- packs:end -->
 
@@ -97,12 +97,12 @@ Add a row here when an item should not get a reskin in a pack, with the reason, 
 | `winter` | `gold_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
 | `winter` | `silver_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
 | `winter` | `bronze_vein` | Mineral veins intentionally use the approved base appearance in every pack. |
-| `fall` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
-| `fall` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
-| `thanksgiving_feast` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
-| `thanksgiving_feast` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
-| `winter` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
-| `winter` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; release dates and acquisition remain pending on the disabled entry. |
+| `fall` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
+| `fall` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
+| `thanksgiving_feast` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
+| `thanksgiving_feast` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
+| `winter` | `frostbloom_tree` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
+| `winter` | `snow_lantern_circle` | Intrinsic snowy base artwork supplies this appearance; approved December 1–February 28 seasonal-store release remains disabled pending native checks. |
 | `christmas` | `pumpkin` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
 | `christmas` | `jack_o_lantern` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
 | `christmas` | `scarecrow` | Existing purchase/new-placement window closes before Christmas; saved placements use the default sprite. |
@@ -155,7 +155,7 @@ These files are included in the repository but are not live catalog entries. Sea
 | Cow | Approved | Approved | Approved | Exact Winter copy | Animals type; unresolved Familiars and economy |
 | Snow Hare | Approved snowy base | Base fallback | Base fallback | Approved festive skin | Animals type; unresolved Familiars and economy; winter-only placement |
 | Arctic Fox | Approved snowy base | Base fallback | Base fallback | Approved festive skin | Animals type; unresolved Familiars, economy and exact dates |
-| Reindeer | Approved holiday base | Base fallback | Base fallback | Intrinsic base | Animals type; Familiars, acquisition, price and exact dates pending |
+| Reindeer | Approved holiday base | Base fallback | Base fallback | Intrinsic base | December 15–30 dates approved; Animals type, Familiars, acquisition and price pending |
 | Dirt Patch | Approved atlas | Approved atlas | Approved atlas | No new override | Ground type; future Terraforming; economy |
 | Dirt Rows | Approved atlas | Approved atlas | Approved atlas | No new override | Ground type; future Terraforming; economy |
 | Cobblestone Circle | Approved atlas | Base fallback | Base fallback | No new override | Same Ground prerequisites; seasonal artwork deferred |
@@ -164,10 +164,10 @@ The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) covers 
 
 ## Approved Winter Wave 2 staging
 
-Frostbloom Tree and Snow Lantern Circle add two approved base sprites and disabled catalog entries. Their prices are repository placeholders and their purchase/placement windows are not configured. Arctic Fox is an approved 32×48 Animals pilot outside the runtime matrix. See the [manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). No pack art or revision changes in this delivery.
+Frostbloom Tree and Snow Lantern Circle have approved base sprites and disabled catalog entries, approved December 1–February 28 purchase/every-new-placement windows, and ordinary seasonal-store prices of 3/1 and 8/4. Arctic Fox is an approved 32×48 Animals pilot outside the runtime matrix. See the [manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). No pack art or revision changes in this delivery.
 
 ## Approved Christmas artwork staging
 
-Christmas is a new disabled pack at revision 1. It has eighteen runtime overrides: eleven festive designs and seven exact Winter copies. Three new disabled landmarks bring the branch to 29 runtime items. The Christmas candidate window is December 1–25 inclusive; pack price 10 and monument prices 8 unlock / 4 placement are documented placeholders, not approved release settings. No earlier catalog settings or PNG bytes change. The generated table's “retired” label still means disabled staging for these additions.
+Christmas is a new disabled pack at revision 1. It has eighteen runtime overrides: eleven festive designs and seven exact Winter copies. Three new disabled landmarks bring the branch to 29 runtime items. The Christmas window is approved as December 15–30 inclusive. Pack price 10 and monument prices 8 unlock / 4 placement through ordinary seasonal acquisition are approved; native activation remains pending. No earlier catalog settings or PNG bytes change. The generated table's “retired” label still means disabled staging for these additions.
 
-Christmas Animal coverage consists of Fox/Hare reskins and a copied Winter Cow, plus the Reindeer intrinsic base pilot; none creates a live Animals catalog entry. See the [approval receipt](handoffs/christmas-2026/approval.json), [release settings](handoffs/christmas-2026/release-configuration.json) and [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md). Appearance ownership never extends base eligibility. Apple Tree and Hay Bales keep their December 1 endpoint.
+Christmas Animal coverage consists of Fox/Hare reskins and a copied Winter Cow, plus the Reindeer intrinsic base pilot; none creates a live Animals catalog entry. See the [approval receipt](handoffs/christmas-2026/approval.json), [release settings](handoffs/christmas-2026/release-configuration.json) and [Xcode handoff](handoffs/christmas-2026/XCODE_HANDOFF.md). Appearance ownership never extends base eligibility. Apple Tree and Hay Bales keep their December 1 endpoint, with no eligibility overlap with Christmas. Their unchanged Christmas copies support saved/manual rendering only.

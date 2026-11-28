@@ -2,15 +2,21 @@
   "schemaVersion": 1,
   "runtimeInput": false,
   "artworkApproved": true,
-  "releaseSettingsApproved": false,
+  "releaseSettingsApproved": true,
   "productionActivationAuthorized": false,
   "calendar": {
     "annual": true,
     "inclusiveEndpoints": true,
     "clock": "actual local device date at final mutation",
-    "opens": "December 1 at 00:00 local time",
-    "lastEligibleDay": "December 25",
-    "closes": "December 26 at 00:00 local time"
+    "opens": "December 15 at 00:00 local time",
+    "lastEligibleDay": "December 30",
+    "closes": "December 31 at 00:00 local time",
+    "firstClosedDay": "December 31",
+    "window": {
+      "start": "12-15",
+      "end": "12-30"
+    },
+    "dateApprovalStatus": "approved"
   },
   "pack": {
     "key": "christmas",
@@ -21,8 +27,8 @@
       "kind": "holiday",
       "season": "christmas",
       "window": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "tags": [
         "festive",
@@ -34,11 +40,17 @@
       "revision": 1,
       "buyOnlyInSeason": true
     },
-    "configuredPurchaseWindowStatus": "proposal_placeholder",
-    "configuredAutomaticAppearanceWindowStatus": "proposal_placeholder",
-    "priceStatus": "repository_standard_placeholder",
+    "configuredPurchaseWindowStatus": "approved",
+    "configuredAutomaticAppearanceWindowStatus": "approved",
+    "priceStatus": "owner_approved",
     "ownershipPersists": true,
-    "grantsUnderlyingObjects": false
+    "grantsUnderlyingObjects": false,
+    "datesApproved": true,
+    "acquisition": {
+      "method": "ordinary_seasonal_pack_purchase",
+      "approved": true
+    },
+    "releaseSettingsApproved": true
   },
   "monuments": [
     {
@@ -60,11 +72,11 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       },
-      "configuredWindowStatus": "proposal_placeholder",
+      "configuredWindowStatus": "approved",
       "intendedWindowScope": [
         "purchase",
         "every_new_placement_even_when_owned"
@@ -73,11 +85,18 @@
         "currency": "forest_tokens",
         "effectiveUnlockPrice": 8,
         "effectivePlacementPrice": 4,
-        "status": "placeholder_not_final_price_approval"
+        "status": "owner_approved"
       },
       "requiresChristmasPack": false,
       "ownershipPersists": true,
-      "savedPlacementsPersist": true
+      "savedPlacementsPersist": true,
+      "datesApproved": true,
+      "releaseSettingsApproved": true,
+      "acquisition": {
+        "method": "ordinary_seasonal_store_purchase",
+        "approved": true,
+        "additionalUnlockRequired": false
+      }
     },
     {
       "key": "santa_chimney",
@@ -98,11 +117,11 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       },
-      "configuredWindowStatus": "proposal_placeholder",
+      "configuredWindowStatus": "approved",
       "intendedWindowScope": [
         "purchase",
         "every_new_placement_even_when_owned"
@@ -111,11 +130,18 @@
         "currency": "forest_tokens",
         "effectiveUnlockPrice": 8,
         "effectivePlacementPrice": 4,
-        "status": "placeholder_not_final_price_approval"
+        "status": "owner_approved"
       },
       "requiresChristmasPack": false,
       "ownershipPersists": true,
-      "savedPlacementsPersist": true
+      "savedPlacementsPersist": true,
+      "datesApproved": true,
+      "releaseSettingsApproved": true,
+      "acquisition": {
+        "method": "ordinary_seasonal_store_purchase",
+        "approved": true,
+        "additionalUnlockRequired": false
+      }
     },
     {
       "key": "santa_sleigh",
@@ -136,11 +162,11 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       },
-      "configuredWindowStatus": "proposal_placeholder",
+      "configuredWindowStatus": "approved",
       "intendedWindowScope": [
         "purchase",
         "every_new_placement_even_when_owned"
@@ -149,53 +175,87 @@
         "currency": "forest_tokens",
         "effectiveUnlockPrice": 8,
         "effectivePlacementPrice": 4,
-        "status": "placeholder_not_final_price_approval"
+        "status": "owner_approved"
       },
       "requiresChristmasPack": false,
       "ownershipPersists": true,
-      "savedPlacementsPersist": true
+      "savedPlacementsPersist": true,
+      "datesApproved": true,
+      "releaseSettingsApproved": true,
+      "acquisition": {
+        "method": "ordinary_seasonal_store_purchase",
+        "approved": true,
+        "additionalUnlockRequired": false
+      }
     }
   ],
   "reindeer": {
     "runtimeCatalogEntry": null,
     "typeStatus": "animal_pilot",
     "artworkApproved": true,
-    "proposedPurchaseWindow": {
-      "start": "12-01",
-      "end": "12-25"
-    },
-    "proposedNewPlacementWindow": {
-      "start": "12-01",
-      "end": "12-25"
-    },
-    "windowApproved": false,
+    "windowApproved": true,
     "purchasePrice": null,
     "placementPrice": null,
     "classGate": "Familiars",
     "gateType": null,
     "gateCondition": null,
-    "requiresChristmasPack": false
+    "requiresChristmasPack": false,
+    "purchaseWindow": {
+      "start": "12-15",
+      "end": "12-30"
+    },
+    "newPlacementWindow": {
+      "start": "12-15",
+      "end": "12-30"
+    },
+    "releaseSettingsApproved": false,
+    "pricesApproved": false,
+    "acquisitionApproved": false
   },
   "existingObjectPolicy": "A Christmas override changes appearance only. It never changes the base object purchase/new-placement window, enabled state, entitlement or acquisition gate.",
-  "winterWaveTwoUnchanged": {
-    "keys": [
-      "frostbloom_tree",
-      "snow_lantern_circle",
-      "arctic_fox"
-    ],
-    "proposalOnlyWindow": {
-      "start": "12-01",
-      "end": "02-28"
-    },
-    "approvedWindow": null,
-    "catalogWindow": null,
-    "activationAuthorized": false
-  },
   "nativeWork": [
     "Share eligibility between Store, Inventory, placement preview and final mutation.",
     "Recheck actual local date, enabled state, category gate, ownership and footprint before tokens or occupancy change.",
     "Reject unavailable, invalid or closed windows atomically.",
     "Keep old ownership and saved placements when the season ends.",
     "Verify saved-day/manual appearance behavior and eligible owned holiday priority over Winter."
-  ]
+  ],
+  "datesApproved": true,
+  "pricesApproved": true,
+  "acquisitionApproved": true,
+  "dateDecision": "handoffs/christmas-2026/date-decision.json",
+  "appleHayChristmasEligibility": "There is no overlap. Unchanged Christmas copies support saved/manual rendering only; new placement still ends December 1.",
+  "releaseSettingsApprovalScope": [
+    "christmas",
+    "present_pile",
+    "santa_chimney",
+    "santa_sleigh"
+  ],
+  "currentBusinessApprovalRecord": "handoffs/forest-release-2026/approval.json",
+  "winterWaveTwoCurrent": {
+    "approvedSupportedKeys": [
+      "frostbloom_tree",
+      "snow_lantern_circle"
+    ],
+    "approvedWindow": {
+      "start": "12-01",
+      "end": "02-28"
+    },
+    "prices": {
+      "frostbloom_tree": {
+        "unlock": 3,
+        "placement": 1
+      },
+      "snow_lantern_circle": {
+        "unlock": 8,
+        "placement": 4
+      }
+    },
+    "acquisition": "ordinary_seasonal_store_purchase",
+    "arcticFoxDateApproval": false,
+    "arcticFoxApprovedWindow": null,
+    "arcticFoxRelease": "deferred_animal",
+    "runtimeEnabled": false,
+    "nativeVerificationRequired": true
+  }
 }

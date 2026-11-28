@@ -1,11 +1,104 @@
 {
-  "auditVersion": 1,
+  "auditVersion": 4,
   "runtimeInput": false,
-  "scope": "Read-only date and availability audit; canonical files untouched by this audit.",
-  "ownerLatestApproval": "Christmas artwork approved in current user message; no date or price approval inferred.",
-  "auditedSourceMainCommit": "1d7b0fe0af5df0f9469e3dfd3ab83b9b7b793dc6",
-  "auditedWinterWave2DraftHead": "99ad32feac650a009e13a0bacf2039fc514c4c57",
-  "newChristmasDraftExpectedTreatment": "Recorded proposals may be staged in disabled supported catalog entries; this audit does not certify a future draft publication.",
+  "scope": "Current approved release settings for the Christmas pack and five supported objects; animal release remains deferred.",
+  "ownerApprovalScope": {
+    "recommendationRowsApproved": 4,
+    "supportedReleaseKeys": [
+      "christmas",
+      "present_pile",
+      "santa_chimney",
+      "santa_sleigh",
+      "frostbloom_tree",
+      "snow_lantern_circle"
+    ],
+    "artworkAlreadyApproved": true,
+    "datesApproved": true,
+    "economyApproved": true,
+    "acquisitionApproved": true,
+    "animalReleaseDeferred": true,
+    "productionEnabledBeforeNativeChecks": false,
+    "mergePerformed": false
+  },
+  "approvedSupportedSettings": [
+    {
+      "key": "christmas",
+      "role": "appearance_pack",
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "storePrice": 10,
+      "plantPrice": null,
+      "acquisition": "ordinary_seasonal_appearance_pack_purchase"
+    },
+    {
+      "key": "present_pile",
+      "role": "landmark",
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "storePrice": 8,
+      "plantPrice": 4,
+      "acquisition": "ordinary_seasonal_store_purchase"
+    },
+    {
+      "key": "santa_chimney",
+      "role": "landmark",
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "storePrice": 8,
+      "plantPrice": 4,
+      "acquisition": "ordinary_seasonal_store_purchase"
+    },
+    {
+      "key": "santa_sleigh",
+      "role": "landmark",
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "storePrice": 8,
+      "plantPrice": 4,
+      "acquisition": "ordinary_seasonal_store_purchase"
+    },
+    {
+      "key": "frostbloom_tree",
+      "role": "tree",
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "storePrice": 3,
+      "plantPrice": 1,
+      "acquisition": "ordinary_seasonal_store_purchase"
+    },
+    {
+      "key": "snow_lantern_circle",
+      "role": "landmark",
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "storePrice": 8,
+      "plantPrice": 4,
+      "acquisition": "ordinary_seasonal_store_purchase"
+    }
+  ],
+  "publicationStatus": "new_consolidated_PR15_receipt_pending_at_audit_preparation",
+  "publicationRule": "Use the separate final publication receipt for actual remote head/CI status; this audit specifies the approved intended content and performs no external mutation.",
+  "historicalStatus": {
+    "priorLocalPublicationHold": "superseded_by_current_authorized_release_settings_update",
+    "olderFalseBusinessApprovalFlags": "historical evidence only, superseded for these six supported keys",
+    "olderChristmasDateProposal": {
+      "start": "12-01",
+      "end": "12-25",
+      "status": "superseded"
+    }
+  },
   "rules": {
     "inclusive": true,
     "annual": true,
@@ -16,7 +109,7 @@
     "savedPlacementsPersist": true,
     "newPlacementUsesCurrentLocalDateEvenForOwnedItems": true,
     "packOwnershipDoesNotBypassObjectWindowsOrGates": true,
-    "packAutomaticFallbackAfterChristmas": "Owned/enabled eligible Winter, otherwise existing default/monthly appearance; preserve saved-day and manual/Chronoshift behavior.",
+    "packAutomaticFallbackAfterChristmas": "Beginning December31, use eligible owned/enabled Winter, otherwise existing default/monthly appearance; preserve saved-day/manual/Chronoshift behavior.",
     "nativeEnforcementVerified": false,
     "unsupportedRuntimeMetadata": [
       "restrictEveryNewPlacement",
@@ -27,8 +120,75 @@
     "runtimeWindowFields": [
       "start",
       "end"
-    ]
+    ],
+    "inclusiveEndMeansEntireLocalDay": true,
+    "refreshEligibilityOnLocalMidnight": true,
+    "refreshEligibilityOnForegroundReturn": true,
+    "refreshEligibilityOnTimeZoneChange": true,
+    "finalMutationRechecksEligibility": true,
+    "historicalPlotDateDoesNotOverrideCurrentEligibilityDate": true,
+    "holidayClosureDoesNotRewriteSavedDayAppearance": true,
+    "holidayPriorityWindow": {
+      "start": "12-15",
+      "end": "12-30"
+    },
+    "firstChristmasClosedLocalDate": "12-31",
+    "forestResolverUsesApprovedCatalogWindow": true,
+    "otherAppRoomDatesUnchanged": true,
+    "winterWave2SupportedObjectsNowRestricted": true
   },
+  "christmasBoundaryChecks": [
+    {
+      "localMonthDay": "12-14",
+      "eligibleByDate": false
+    },
+    {
+      "localMonthDay": "12-15",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "12-26",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "12-30",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "12-31",
+      "eligibleByDate": false
+    }
+  ],
+  "winterBoundaryChecks": [
+    {
+      "localMonthDay": "11-30",
+      "eligibleByDate": false
+    },
+    {
+      "localMonthDay": "12-01",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "12-31",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "01-01",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "02-28",
+      "eligibleByDate": true
+    },
+    {
+      "localMonthDay": "02-29",
+      "eligibleByDate": false
+    },
+    {
+      "localMonthDay": "03-01",
+      "eligibleByDate": false
+    }
+  ],
   "rows": [
     {
       "keys": [
@@ -36,24 +196,44 @@
       ],
       "role": "appearance_pack",
       "purchaseWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "automaticAppearanceWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "newPlacementRule": "Follow each underlying object window; the pack does not grant placement eligibility.",
-      "lastIncludedDate": "12-25",
-      "firstFollowingDateOutside": "12-26",
-      "approvalStatus": "proposed_not_approved",
+      "lastIncludedDate": "12-30",
+      "firstFollowingDateOutside": "12-31",
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "sourceLocation": "Christmas-Content-Proposal.json#/packProposal",
-      "catalogStateAtAudit": "candidate_only_not_in_audited_catalog",
-      "candidateCatalogWindow": {
-        "start": "12-01",
-        "end": "12-25"
+      "nativeEnforcement": "not_verified",
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "dateApproval": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "economyApproved": true,
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_appearance_pack_purchase",
+      "approvedEconomy": {
+        "storePrice": 10,
+        "plantPrice": null,
+        "currency": "forest_tokens",
+        "approved": true
       },
-      "nativeEnforcement": "not_verified"
+      "businessSettingsApproved": true,
+      "expectedCatalogWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false
     },
     {
       "keys": [
@@ -61,25 +241,46 @@
       ],
       "role": "monument",
       "purchaseWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "newPlacementWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
-      "lastIncludedDate": "12-25",
-      "firstFollowingDateOutside": "12-26",
-      "approvalStatus": "proposed_not_approved",
+      "lastIncludedDate": "12-30",
+      "firstFollowingDateOutside": "12-31",
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "sourceLocation": "Christmas-Content-Proposal.json#/newObjectProposals/0/proposedWindow",
-      "catalogStateAtAudit": "candidate_only_not_in_audited_catalog",
-      "candidateCatalogWindow": {
-        "start": "12-01",
-        "end": "12-25"
-      },
       "preserveOwnershipAndExistingPlacements": true,
       "nativeEnforcement": "not_verified",
-      "pendingClassGate": null
+      "pendingClassGate": null,
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "dateApproval": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "economyApproved": true,
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "approvedEconomy": {
+        "storePrice": 8,
+        "plantPrice": 4,
+        "currency": "forest_tokens",
+        "approved": true
+      },
+      "businessSettingsApproved": true,
+      "expectedCatalogWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false,
+      "appliesWhenAlreadyOwned": true
     },
     {
       "keys": [
@@ -87,25 +288,46 @@
       ],
       "role": "monument",
       "purchaseWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "newPlacementWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
-      "lastIncludedDate": "12-25",
-      "firstFollowingDateOutside": "12-26",
-      "approvalStatus": "proposed_not_approved",
+      "lastIncludedDate": "12-30",
+      "firstFollowingDateOutside": "12-31",
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "sourceLocation": "Christmas-Content-Proposal.json#/newObjectProposals/1/proposedWindow",
-      "catalogStateAtAudit": "candidate_only_not_in_audited_catalog",
-      "candidateCatalogWindow": {
-        "start": "12-01",
-        "end": "12-25"
-      },
       "preserveOwnershipAndExistingPlacements": true,
       "nativeEnforcement": "not_verified",
-      "pendingClassGate": null
+      "pendingClassGate": null,
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "dateApproval": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "economyApproved": true,
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "approvedEconomy": {
+        "storePrice": 8,
+        "plantPrice": 4,
+        "currency": "forest_tokens",
+        "approved": true
+      },
+      "businessSettingsApproved": true,
+      "expectedCatalogWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false,
+      "appliesWhenAlreadyOwned": true
     },
     {
       "keys": [
@@ -113,25 +335,46 @@
       ],
       "role": "monument",
       "purchaseWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "newPlacementWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
-      "lastIncludedDate": "12-25",
-      "firstFollowingDateOutside": "12-26",
-      "approvalStatus": "proposed_not_approved",
+      "lastIncludedDate": "12-30",
+      "firstFollowingDateOutside": "12-31",
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "sourceLocation": "Christmas-Content-Proposal.json#/newObjectProposals/2/proposedWindow",
-      "catalogStateAtAudit": "candidate_only_not_in_audited_catalog",
-      "candidateCatalogWindow": {
-        "start": "12-01",
-        "end": "12-25"
-      },
       "preserveOwnershipAndExistingPlacements": true,
       "nativeEnforcement": "not_verified",
-      "pendingClassGate": null
+      "pendingClassGate": null,
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "dateApproval": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "economyApproved": true,
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "approvedEconomy": {
+        "storePrice": 8,
+        "plantPrice": 4,
+        "currency": "forest_tokens",
+        "approved": true
+      },
+      "businessSettingsApproved": true,
+      "expectedCatalogWindow": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false,
+      "appliesWhenAlreadyOwned": true
     },
     {
       "keys": [
@@ -139,22 +382,34 @@
       ],
       "role": "animal",
       "purchaseWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
       "newPlacementWindow": {
-        "start": "12-01",
-        "end": "12-25"
+        "start": "12-15",
+        "end": "12-30"
       },
-      "lastIncludedDate": "12-25",
-      "firstFollowingDateOutside": "12-26",
-      "approvalStatus": "proposed_not_approved",
+      "lastIncludedDate": "12-30",
+      "firstFollowingDateOutside": "12-31",
+      "approvalStatus": "art_and_dates_approved_animal_release_deferred",
       "sourceLocation": "Christmas-Content-Proposal.json#/newObjectProposals/3/proposedWindow",
-      "catalogStateAtAudit": "animal_pilot_only",
-      "candidateCatalogWindow": null,
       "preserveOwnershipAndExistingPlacements": true,
       "nativeEnforcement": "not_verified",
-      "pendingClassGate": "Familiars"
+      "pendingClassGate": "Familiars",
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "dateApproval": true,
+      "priceApprovalStatus": "pending",
+      "acquisitionApprovalStatus": "pending",
+      "releaseActivationStatus": "animal_pilot_deferred",
+      "economyApproved": false,
+      "acquisitionApproved": false,
+      "catalogState": "animal_pilot_only",
+      "catalogWindow": null,
+      "runtimeEnabled": false
     },
     {
       "keys": [
@@ -257,42 +512,92 @@
         "frostbloom_tree"
       ],
       "role": "tree",
-      "purchaseWindowProposal": {
-        "start": "12-01",
-        "end": "02-28"
-      },
-      "newPlacementWindowProposal": {
-        "start": "12-01",
-        "end": "02-28"
-      },
-      "lastIncludedDateProposal": "02-28",
-      "approvalStatus": "proposed_not_approved",
-      "catalogStateAtAudit": "registered_disabled",
-      "catalogWindow": null,
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "nativeEnforcement": "not_verified",
       "pendingClassGate": null,
-      "sourceLocation": "pilots/winter_objects_wave2/manifest.json#/items/0"
+      "sourceLocation": "pilots/winter_objects_wave2/manifest.json#/items/0",
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "lastIncludedDate": "02-28",
+      "firstFollowingDateOutside": "03-01 in ordinary years; 02-29 in leap years",
+      "dateApproval": true,
+      "economyApproved": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "approvedEconomy": {
+        "storePrice": 3,
+        "plantPrice": 1,
+        "currency": "forest_tokens",
+        "approved": true
+      },
+      "businessSettingsApproved": true,
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "expectedCatalogWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false,
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "appliesWhenAlreadyOwned": true
     },
     {
       "keys": [
         "snow_lantern_circle"
       ],
       "role": "monument",
-      "purchaseWindowProposal": {
-        "start": "12-01",
-        "end": "02-28"
-      },
-      "newPlacementWindowProposal": {
-        "start": "12-01",
-        "end": "02-28"
-      },
-      "lastIncludedDateProposal": "02-28",
-      "approvalStatus": "proposed_not_approved",
-      "catalogStateAtAudit": "registered_disabled",
-      "catalogWindow": null,
+      "approvalStatus": "dates_economy_and_acquisition_approved",
       "nativeEnforcement": "not_verified",
       "pendingClassGate": null,
-      "sourceLocation": "pilots/winter_objects_wave2/manifest.json#/items/1"
+      "sourceLocation": "pilots/winter_objects_wave2/manifest.json#/items/1",
+      "purchaseWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "newPlacementWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "lastIncludedDate": "02-28",
+      "firstFollowingDateOutside": "03-01 in ordinary years; 02-29 in leap years",
+      "dateApproval": true,
+      "economyApproved": true,
+      "priceApprovalStatus": "approved",
+      "acquisitionApprovalStatus": "approved",
+      "acquisitionApproved": true,
+      "acquisition": "ordinary_seasonal_store_purchase",
+      "approvedEconomy": {
+        "storePrice": 8,
+        "plantPrice": 4,
+        "currency": "forest_tokens",
+        "approved": true
+      },
+      "businessSettingsApproved": true,
+      "releaseActivationStatus": "disabled_pending_native_verification",
+      "expectedCatalogWindow": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "expectedCatalogEnabled": false,
+      "additionalUnlockRequired": false,
+      "inclusive": true,
+      "annual": true,
+      "evaluationDate": "actual_local_device_date",
+      "ownershipPersists": true,
+      "savedPlacementsPersist": true,
+      "appliesWhenAlreadyOwned": true
     },
     {
       "keys": [
@@ -604,38 +909,61 @@
       "sourceLocation": "catalog.json#/trees/5"
     }
   ],
-  "sources": [
-    {
-      "path": "christmas-art-pass/planning/Christmas-Content-Proposal.json",
-      "sha256": "377653e9d816268f2c7bebacb3d786ed967249a89d5a1159ab6eb8cc992f86dc"
+  "animalScope": {
+    "deferralApproved": true,
+    "familiars": "pending_spell_or_achievement_and_earning_conditions",
+    "economy": "unset_all_animals",
+    "acquisition": "unapproved_all_animals",
+    "reindeer": {
+      "dateApproved": true,
+      "window": {
+        "start": "12-15",
+        "end": "12-30"
+      },
+      "artApproved": true,
+      "runtimeCatalogEntry": null
     },
-    {
-      "path": "christmas-art-pass/handoff-updates/Mystic-Forest-Object-Register.json",
-      "sha256": "962b1bcfb50e25c43dd76ed40e581833602699f79d0cac6078e81796a7b4f6aa"
+    "snow_hare": {
+      "dateApprovedPreviously": true,
+      "window": {
+        "start": "12-01",
+        "end": "02-28"
+      }
     },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/catalog.json",
-      "sha256": "d699526e3e1d7dfb22feb6dbd42be285a5c6bf1890c29b6571078cac7b838057"
+    "arctic_fox": {
+      "dateApproved": false,
+      "windowProposal": {
+        "start": "12-01",
+        "end": "02-28"
+      },
+      "catalogWindow": null
     },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/pilots/winter_objects/manifest.json",
-      "sha256": "74c2d70bcfff1da3f01344e926119e6243cb75b2ae303ea794951084a4937cb1"
-    },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/pilots/winter_objects_wave2/manifest.json",
-      "sha256": "fd72961ad2dd57ff587b5bcde8bd49dcdb4b18e70be4cdc19f14997856ff9523"
-    },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md",
-      "sha256": "02df48293eb7fc92e2758cf186121c9dde1ff1d60d060461d9e351c38f73cfac"
-    },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/CLAUDE.md",
-      "sha256": "b442fc39b352cee54a0a2cd4a1abfe602ff5a7e03ce4e76c4948b9d572c41527"
-    },
-    {
-      "path": "christmas-art-pass/approved-winter-pr/repo/scripts/validate.py",
-      "sha256": "ef6bdaf0496f06291b593828a59867788541ce80dfd7fbd6c82eb4478ea1e330"
-    }
-  ]
+    "noAnimalProductionActivation": true
+  },
+  "sharedSeasonalPolicyExtension": [
+    "frostbloom_tree",
+    "snow_lantern_circle"
+  ],
+  "unrelatedInvariants": [
+    "All art bytes and art revisions unchanged",
+    "All other item and pack windows unchanged",
+    "All current enabled flags preserved",
+    "No animal price or acquisition rule assigned",
+    "No animal runtime catalog entries created",
+    "Ownership and saved placements persist",
+    "No other app room dates changed"
+  ],
+  "repeatBusinessApprovalRequiredForSupportedSettings": false,
+  "deferredBacklogHandoffKeys": [
+    "forest.village-hut",
+    "forest.terraforming",
+    "forest.classic-retro",
+    "forest.gold-vein",
+    "forest.silver-vein",
+    "forest.bronze-vein"
+  ],
+  "sourceAudit": {
+    "path": "christmas-date-update/handoff-updates/ChristmasReview/SEASONAL_AVAILABILITY.json",
+    "sha256": "b2d04f7186e4e9b3dfa3070c7f960fc0ccc2edf18a0b6528de5f80356520b0ea"
+  }
 }

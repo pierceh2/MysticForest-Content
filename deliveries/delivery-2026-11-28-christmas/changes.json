@@ -8,8 +8,8 @@
         "kind": "holiday",
         "season": "christmas",
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         },
         "tags": [
           "festive",
@@ -38,8 +38,8 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       },
       {
@@ -58,8 +58,8 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       },
       {
@@ -78,8 +78,8 @@
           "decoration"
         ],
         "window": {
-          "start": "12-01",
-          "end": "12-25"
+          "start": "12-15",
+          "end": "12-30"
         }
       }
     ]
