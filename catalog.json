@@ -151,6 +151,21 @@
       "tags": [
         "deciduous"
       ]
+    },
+    {
+      "key": "frostbloom_tree",
+      "name": "Frostbloom Tree",
+      "description": "Pale icy blossoms gather at the tips of snow-dusted branches.",
+      "tokenPrice": 3,
+      "startsUnlocked": false,
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "winter",
+      "tags": [
+        "ice",
+        "flowers",
+        "magic"
+      ]
     }
   ],
   "landmarks": [
@@ -253,6 +268,24 @@
       "tags": [
         "monument",
         "ore"
+      ]
+    },
+    {
+      "key": "snow_lantern_circle",
+      "name": "Snow Lantern Circle",
+      "description": "Four snow lanterns shelter warm candlelight around a quiet circle.",
+      "tokenPrice": 4,
+      "footprint": [
+        2,
+        2
+      ],
+      "enabled": false,
+      "spriteRevision": 1,
+      "season": "winter",
+      "tags": [
+        "snow",
+        "lanterns",
+        "cosy"
       ]
     }
   ]

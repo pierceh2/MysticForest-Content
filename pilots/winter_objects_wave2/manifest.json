@@ -1,0 +1,277 @@
+{
+  "manifestVersion": 1,
+  "runtimeInput": false,
+  "sourceMainCommit": "1d7b0fe0af5df0f9469e3dfd3ab83b9b7b793dc6",
+  "scope": "Approved Winter Wave 2 artwork; disabled tree/landmark registrations and an animal pilot.",
+  "approval": {
+    "status": "artwork_approved",
+    "date": "2026-11-27",
+    "ownerStatement": "those look great. Go ahead and work on the christmas art pack.",
+    "scope": "The selected original Frostbloom, Snow Lantern Circle and Arctic Fox artwork. Release settings remain separate."
+  },
+  "counts": {
+    "approvedSprites": 3,
+    "disabledRuntimeCatalogEntries": 2,
+    "animalPilots": 1,
+    "enabledNewObjects": 0
+  },
+  "items": [
+    {
+      "key": "frostbloom_tree",
+      "name": "Frostbloom Tree",
+      "designClass": "tree",
+      "runtimeCollection": "trees",
+      "proposedAnimalType": null,
+      "artApproval": "approved",
+      "spritePath": "sprites/default8bit/frostbloom_tree.png",
+      "sha256": "e2f1793e20d8410ef28bb7236da75f609de7e28ea15e9d4615be7554ffc3426a",
+      "canvasPx": [
+        32,
+        48
+      ],
+      "footprintCells": [
+        1,
+        1
+      ],
+      "appearance": "winter_only_base",
+      "reskinPackRequired": false,
+      "runtimeEnabled": false,
+      "catalogStatus": "registered_disabled",
+      "catalogEntry": {
+        "key": "frostbloom_tree",
+        "name": "Frostbloom Tree",
+        "description": "Pale icy blossoms gather at the tips of snow-dusted branches.",
+        "tokenPrice": 3,
+        "startsUnlocked": false,
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "ice",
+          "flowers",
+          "magic"
+        ]
+      },
+      "catalogWindow": null,
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null,
+        "status": "pending"
+      },
+      "acquisition": {
+        "kind": null,
+        "status": "pending"
+      },
+      "conceptRevision": "v1-preferred",
+      "qa": {
+        "formatStatus": "passed",
+        "nativeCanvasPx": [
+          32,
+          48
+        ],
+        "opaqueBoundsPxExclusive": [
+          3,
+          2,
+          28,
+          41
+        ],
+        "lowestOpaqueRow": 40,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 16,
+        "animalCheckScope": null,
+        "nativeAppVerification": "not_performed",
+        "ownerArtworkApproval": "approved"
+      },
+      "stagingEconomy": {
+        "tokenPrice": 3,
+        "effectiveStorePrice": 3,
+        "effectivePlantPrice": 1,
+        "status": "repository_standard_placeholder_not_owner_price_approval",
+        "source": "CHATGPT_HANDOFF.md section 8"
+      }
+    },
+    {
+      "key": "snow_lantern_circle",
+      "name": "Snow Lantern Circle",
+      "designClass": "monument",
+      "runtimeCollection": "landmarks",
+      "proposedAnimalType": null,
+      "artApproval": "approved",
+      "spritePath": "sprites/default8bit/snow_lantern_circle.png",
+      "sha256": "7655ac7ff3b402aeb808984107131b2a3bdac6ad299fa3a870cc76d23af3291d",
+      "canvasPx": [
+        64,
+        96
+      ],
+      "footprintCells": [
+        2,
+        2
+      ],
+      "appearance": "winter_only_base",
+      "reskinPackRequired": false,
+      "runtimeEnabled": false,
+      "catalogStatus": "registered_disabled",
+      "catalogEntry": {
+        "key": "snow_lantern_circle",
+        "name": "Snow Lantern Circle",
+        "description": "Four snow lanterns shelter warm candlelight around a quiet circle.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "spriteRevision": 1,
+        "season": "winter",
+        "tags": [
+          "snow",
+          "lanterns",
+          "cosy"
+        ]
+      },
+      "catalogWindow": null,
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null,
+        "status": "pending"
+      },
+      "acquisition": {
+        "kind": null,
+        "status": "pending"
+      },
+      "conceptRevision": "v1-review",
+      "qa": {
+        "formatStatus": "passed",
+        "nativeCanvasPx": [
+          64,
+          96
+        ],
+        "opaqueBoundsPxExclusive": [
+          2,
+          53,
+          62,
+          95
+        ],
+        "lowestOpaqueRow": 94,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 14,
+        "animalCheckScope": null,
+        "nativeAppVerification": "not_performed",
+        "ownerArtworkApproval": "approved"
+      },
+      "stagingEconomy": {
+        "tokenPrice": 4,
+        "effectiveStorePrice": 8,
+        "effectivePlantPrice": 4,
+        "status": "repository_standard_placeholder_not_owner_price_approval",
+        "source": "CHATGPT_HANDOFF.md section 8"
+      }
+    },
+    {
+      "key": "arctic_fox",
+      "name": "Arctic Fox",
+      "designClass": "animal",
+      "runtimeCollection": null,
+      "proposedAnimalType": "animal",
+      "artApproval": "approved",
+      "spritePath": "pilots/animals/sprites/default8bit/arctic_fox.png",
+      "sha256": "7331a7915b9f982935aa777e405df3063ca2a8a37eb79e55e652c34c70fef49d",
+      "canvasPx": [
+        32,
+        48
+      ],
+      "footprintCells": [
+        1,
+        1
+      ],
+      "appearance": "winter_only_base",
+      "reskinPackRequired": false,
+      "runtimeEnabled": false,
+      "catalogStatus": "animal_pilot_only",
+      "catalogEntry": null,
+      "catalogWindow": null,
+      "finalApprovedEconomy": {
+        "purchasePrice": null,
+        "placementCost": null,
+        "status": "pending"
+      },
+      "acquisition": {
+        "kind": null,
+        "status": "pending"
+      },
+      "conceptRevision": "v1-review",
+      "qa": {
+        "formatStatus": "passed",
+        "nativeCanvasPx": [
+          32,
+          48
+        ],
+        "opaqueBoundsPxExclusive": [
+          2,
+          18,
+          30,
+          41
+        ],
+        "lowestOpaqueRow": 40,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "opaqueColorCount": 16,
+        "animalCheckScope": "Canvas/alpha/palette/anchor only; no native Animals support implied.",
+        "nativeAppVerification": "not_performed",
+        "ownerArtworkApproval": "approved"
+      },
+      "classVisibilityGate": {
+        "name": "Familiars",
+        "kind": null,
+        "candidateKinds": [
+          "spell",
+          "achievement"
+        ],
+        "implementation": "future feature",
+        "acquisitionRule": null,
+        "locked": "Hide the Animals section and animal actions throughout Inventory and Store when Familiars is unavailable, unknown or unearned.",
+        "earned": "Show eligible Animals according to item availability and ownership.",
+        "seasonalPackGrantsAccess": false,
+        "existingPlacements": "Retain and render saved animals independently of menu visibility."
+      },
+      "stagingEconomy": null
+    }
+  ],
+  "catalogMutation": {
+    "treesAdded": [
+      "frostbloom_tree"
+    ],
+    "landmarksAdded": [
+      "snow_lantern_circle"
+    ],
+    "existingEntriesChanged": [],
+    "packsChanged": [],
+    "spriteRevisionForEachNewEntry": 1
+  },
+  "availabilityProposal": {
+    "start": "12-01",
+    "end": "02-28",
+    "inclusive": true,
+    "annual": true,
+    "status": "proposed_not_approved",
+    "catalogWindowConfigured": false,
+    "intendedScope": "Purchase and every new placement, preserving ownership and existing saved placements."
+  },
+  "nativeAppVerification": "not_performed",
+  "openDecisions": [
+    "Final prices and acquisition for all three objects",
+    "Exact purchase and new-placement windows",
+    "Familiars spell versus achievement, stable identifier and earning criteria"
+  ],
+  "handoff": "pilots/winter_objects_wave2/XCODE_HANDOFF.md",
+  "delivery": "deliveries/delivery-2026-11-27-winter-wave2",
+  "activationRule": "Keep the two new catalog entries disabled and Arctic Fox pilot-only until release decisions and native checks are complete. They are not part of the four-key Winter activation approval."
+}

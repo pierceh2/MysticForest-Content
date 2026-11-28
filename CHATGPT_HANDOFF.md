@@ -14,6 +14,10 @@ This integration includes earlier approved PRs #3–#7: Ground atlases, Cow base
 
 Use the [current seasonal-placement handoff](handoffs/seasonal-planting/SEASONAL_PLANTING_XCODE_HANDOFF.md) for the seven existing restricted objects and four Winter-only objects. Dates restrict purchases and every new placement while preserving ownership and saved forests. This needs native enforcement. Update the existing Settings → Future Features screen using the [current roadmap handoff](handoffs/rewards-collections/FUTURE_FEATURES_HANDOFF.md).
 
+### Approved Winter Wave 2 artwork
+
+The original icy-blossom Frostbloom Tree, Snow Lantern Circle and Arctic Fox are approved. The first two are disabled catalog registrations with section 8 price placeholders and no configured purchase/placement window. Arctic Fox remains an Animals pilot behind unresolved Familiars. Exact dates, prices and acquisition remain pending for these three; they do not join the earlier four-key activation approval. See the [Wave 2 manifest](pilots/winter_objects_wave2/manifest.json) and [Xcode handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md). New Christmas artwork is a separate review phase.
+
 ### Ground and Animals for Xcode
 
 Dirt Patch and Dirt Rows have approved base, Autumn Leaves and Winter atlases. Cobblestone Circle has approved base art and joins neighboring stone cells; soil and stone retain their distinct boundaries. Ground gets its own type, Store and Inventory sections and saved cell-surface layer beneath existing trees, animals and landmarks. The planned **Terraforming** spell gates both menus and actions. Surface prices and spell acquisition remain pending. The [Ground handoff](pilots/ground/FOREST_OBJECT_TYPES_XCODE_HANDOFF.md) and [Debug contract](pilots/ground/OBJECT_TYPES.preview.json) cover placement, adjacency, persistence and legacy saves. Monthly floors remain visible independently of this gate.
@@ -110,14 +114,14 @@ Reusing these keeps new art consistent with the set (they are in `tools/make_spr
 
 ## 5. Current content (2026-11-27)
 
-The catalog contains **15 trees and 9 landmarks**, including disabled staging entries. The current pack table and item-by-pack grid are in [PACK_COVERAGE.md](PACK_COVERAGE.md). Refined art is the default under the existing permanent item keys; original Classic Retro sprites remain in `art-archive/classic-retro/` for the future separate pack.
+The catalog contains **16 trees and 10 landmarks**, including disabled staging entries. The current pack table and item-by-pack grid are in [PACK_COVERAGE.md](PACK_COVERAGE.md). Refined art is the default under the existing permanent item keys; original Classic Retro sprites remain in `art-archive/classic-retro/` for the future separate pack.
 
 | Pack | Window | Unlock tokens | Revision | Direct sprite coverage | Release state |
 | --- | --- | ---: | ---: | --- | --- |
-| Default 8-bit / Refined (`default8bit`) | Always | 0 | Item revisions | 24 of 24 | Existing default |
-| Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 24 | Enabled |
-| Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 24 | Enabled |
-| Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 24 | Approved; disabled until native checks |
+| Default 8-bit / Refined (`default8bit`) | Always | 0 | Item revisions | 26 of 26 | Existing default |
+| Autumn Leaves (`fall`) | October 1–December 1 | 10 | 4 | 10 of 26 | Enabled |
+| Thanksgiving Feast (`thanksgiving_feast`) | November 15–November 30 | 10 | 3 | 9 of 26 | Enabled |
+| Winter (`winter`) | December 1–February 28 | 10 | 3 | 13 of 26 | Approved; disabled until native checks |
 
 Missing overrides use the default sprite. Mineral veins and intrinsically winter-only base objects intentionally need no seasonal overrides. The Ground and Animal pilot sprites are counted separately from the runtime tree/landmark grid.
 

@@ -22,3 +22,7 @@ Cherry Blossom remains a disabled tree with its existing 3-token staging price; 
 ## Validation
 
 Run `python3 scripts/validate.py` and `python3 tools/make_pack_coverage.py --check` before publication. Run `python3 pilots/ground/verify.py` for the Ground atlases. Content validation does not replace the required native build, date-rule tests and Day/World visual check.
+
+## Approved Winter Wave 2
+
+The approved original Frostbloom Tree and Snow Lantern Circle are staged as disabled catalog entries; Arctic Fox is a separate Animals pilot. Final acquisition, economy and exact dates remain pending. The [Wave 2 handoff](pilots/winter_objects_wave2/XCODE_HANDOFF.md) records these boundaries and the native visual checks. This batch does not change the earlier Winter release approval or add Christmas artwork.

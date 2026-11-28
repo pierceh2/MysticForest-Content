@@ -1,0 +1,49 @@
+{
+  "add": {
+    "trees": [
+      {
+        "key": "frostbloom_tree",
+        "name": "Frostbloom Tree",
+        "description": "Pale icy blossoms gather at the tips of snow-dusted branches.",
+        "tokenPrice": 3,
+        "startsUnlocked": false,
+        "enabled": false,
+        "season": "winter",
+        "tags": [
+          "ice",
+          "flowers",
+          "magic"
+        ]
+      }
+    ],
+    "landmarks": [
+      {
+        "key": "snow_lantern_circle",
+        "name": "Snow Lantern Circle",
+        "description": "Four snow lanterns shelter warm candlelight around a quiet circle.",
+        "tokenPrice": 4,
+        "footprint": [
+          2,
+          2
+        ],
+        "enabled": false,
+        "season": "winter",
+        "tags": [
+          "snow",
+          "lanterns",
+          "cosy"
+        ]
+      }
+    ]
+  },
+  "spritesChanged": [
+    {
+      "pack": "default8bit",
+      "key": "frostbloom_tree"
+    },
+    {
+      "pack": "default8bit",
+      "key": "snow_lantern_circle"
+    }
+  ]
+}
